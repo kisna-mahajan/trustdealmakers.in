@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trust DealMakers – International Business Consulting</title>
+    <meta name="description" content="Trust DealMakers provides international trade facilitation, industrial asset monetisation, and strategic business advisory services by Anil Mahajane.">
+    <meta property="og:title" content="Trust DealMakers – International Business Consulting">
+    <meta property="og:description" content="Building value through global business solutions. 30+ years of corporate and international business experience.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red:      #CC0000;
+            --red-dk:   #aa0000;
+            --black:    #080808;
+            --dark:     #111111;
+            --ch:       #333333;
+            --g6:       #666666;
+            --g4:       #999999;
+            --g2:       #e0e0e0;
+            --g1:       #f5f5f5;
+            --white:    #ffffff;
+            --mw:       1280px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ────────────────────────
+           NAVIGATION
+        ──────────────────────── */
+        .nav-wrapper {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999;
+        }
+        .nav-accent { height: 3px; background: var(--red); }
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--g2);
+            transition: box-shadow .3s;
+        }
+        nav.scrolled { box-shadow: 0 4px 28px rgba(0,0,0,.09); }
+        .nav-inner {
+            max-width: var(--mw);
+            margin: 0 auto;
+            padding: 0 48px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+        }
+        .nav-logo-fb {
+            display: none;
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--dark);
+            letter-spacing: -.5px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            display: block;
+            padding: 8px 17px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--ch);
+            text-decoration: none;
+            letter-spacing: .2px;
+            transition: color .2s;
+            cursor: pointer;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 17px; right: 17px;
+            height: 2px;
+            background: var(--red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--red); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { transform: scaleX(1); }
+        .nav-cta {
+            background: var(--red) !important;
+            color: var(--white) !important;
+            padding: 9px 22px !important;
+            font-weight: 700 !important;
+            letter-spacing: .4px;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--red-dk) !important; }
+        .mob-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark);
+            padding: 6px;
+        }
+        .mob-btn svg { width: 24px; height: 24px; display: block; }
+
+        /* ────────────────────────
+           HERO
+        ──────────────────────── */
+        .hero {
+            margin-top: 71px;
+            min-height: 80vh;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            background: #111;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            transition: transform 18s ease-out;
+        }
+        .hero:hover .hero-bg { transform: scale(1.04); }
+        .hero-ov {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,.8) 0%,
+                rgba(0,0,0,.4) 55%,
+                rgba(0,0,0,.2) 100%
+            );
+            z-index: 1;
+        }
+        .hero-cnt {
+            position: relative;
+            z-index: 2;
+            max-width: var(--mw);
+            margin: 0 auto;
+            padding: 0 48px 88px;
+            width: 100%;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--red);
+            padding: 5px 14px;
+            margin-bottom: 22px;
+        }
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.2vw, 5rem);
+            font-weight: 900;
+            line-height: 1.03;
+            letter-spacing: -2.5px;
+            color: var(--white);
+            margin-bottom: 22px;
+            max-width: 920px;
+        }
+        .hero p {
+            font-size: clamp(1rem, 1.7vw, 1.18rem);
+            color: rgba(255,255,255,.82);
+            max-width: 620px;
+            line-height: 1.78;
+            font-weight: 300;
+            margin-bottom: 38px;
+        }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        /* ────────────────────────
+           BUTTONS
+        ──────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 13px 28px;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .9px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background .2s, color .2s, border-color .2s;
+            font-family: inherit;
+        }
+        .btn-red  { background: var(--red);  color: var(--white); }
+        .btn-red:hover { background: var(--red-dk); }
+        .btn-wol  { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.6); }
+        .btn-wol:hover { background: var(--white); color: var(--dark); border-color: var(--white); }
+        .btn-dol  { background: transparent; color: var(--dark);  border: 1.5px solid var(--dark); }
+        .btn-dol:hover { background: var(--dark); color: var(--white); }
+
+        /* ────────────────────────
+           SECTION BASE
+        ──────────────────────── */
+        .sec { padding: 96px 48px; }
+        .sec-sm { padding: 72px 48px; }
+        .wrap { max-width: var(--mw); margin: 0 auto; }
+        .sec-tag {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 14px;
+        }
+        .sec-title {
+            font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -1.2px;
+            color: var(--dark);
+            margin-bottom: 18px;
+        }
+        .sec-lead {
+            font-size: 1.08rem;
+            color: var(--g6);
+            max-width: 660px;
+            line-height: 1.82;
+            font-weight: 300;
+            margin-bottom: 56px;
+        }
+        .bg-gray { background: var(--g1); }
+        .bg-dark { background: var(--dark); }
+        .bg-dark .sec-title { color: var(--white); }
+        .bg-dark .sec-lead  { color: rgba(255,255,255,.65); }
+        .bg-dark .sec-tag   { color: #ff6666; }
+
+        /* ────────────────────────
+           GRID LAYOUTS
+        ──────────────────────── */
+        .g2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+        .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        .ga { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px,1fr)); gap: 20px; }
+
+        /* ────────────────────────
+           CARDS
+        ──────────────────────── */
+        .card {
+            background: var(--white);
+            padding: 40px 36px;
+            border-top: 3px solid var(--g2);
+            transition: border-top-color .25s, box-shadow .25s, transform .25s;
+        }
+        .card.click { cursor: pointer; }
+        .card:hover {
+            border-top-color: var(--red);
+            box-shadow: 0 14px 52px rgba(0,0,0,.1);
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 1.13rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 13px;
+            letter-spacing: -.2px;
+            line-height: 1.35;
+        }
+        .card p {
+            font-size: .92rem;
+            color: var(--g6);
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+        .card ul { list-style: none; margin-top: 16px; }
+        .card ul li {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: .88rem;
+            color: var(--g6);
+            line-height: 1.55;
+            border-bottom: 1px solid var(--g1);
+        }
+        .card ul li:last-child { border-bottom: none; }
+        .card ul li::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            color: var(--red);
+            text-decoration: none;
+            transition: gap .2s;
+        }
+        .card-link:hover { gap: 10px; }
+        .card-link::after { content: '→'; }
+
+        .bg-dark .card { background: #1a1a1a; border-top-color: #2a2a2a; }
+        .bg-dark .card:hover { border-top-color: var(--red); }
+        .bg-dark .card h3 { color: var(--white); }
+        .bg-dark .card p  { color: rgba(255,255,255,.6); }
+        .bg-dark .card ul li { color: rgba(255,255,255,.6); border-bottom-color: #2a2a2a; }
+
+        /* ────────────────────────
+           STATS ROW
+        ──────────────────────── */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            border-top: 1px solid rgba(255,255,255,.12);
+            margin-top: 56px;
+        }
+        .stat {
+            padding: 44px 36px;
+            border-right: 1px solid rgba(255,255,255,.12);
+        }
+        .stat:last-child { border-right: none; }
+        .stat-n {
+            font-size: 3.4rem;
+            font-weight: 900;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        .stat-t {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .stat-d {
+            font-size: .87rem;
+            color: rgba(255,255,255,.55);
+            line-height: 1.65;
+        }
+
+        /* ────────────────────────
+           HIGHLIGHT BOX
+        ──────────────────────── */
+        .box {
+            padding: 52px;
+            background: var(--g1);
+            border-left: 4px solid var(--red);
+            margin: 64px 0;
+        }
+        .bg-dark .box { background: #1a1a1a; }
+        .box h3 {
+            font-size: 1.32rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -.3px;
+        }
+        .bg-dark .box h3 { color: var(--white); }
+        .box p {
+            font-size: .96rem;
+            color: var(--g6);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .bg-dark .box p { color: rgba(255,255,255,.6); }
+        .box strong { color: var(--dark); font-weight: 700; }
+        .box ul { list-style: none; margin-top: 18px; }
+        .box ul li {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: .92rem;
+            color: var(--g6);
+            line-height: 1.55;
+            border-bottom: 1px solid var(--g2);
+        }
+        .box ul li:last-child { border-bottom: none; }
+        .box ul li::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+
+        /* ────────────────────────
+           CTA BAND
+        ──────────────────────── */
+        .cta-band {
+            background: var(--dark);
+            padding: 96px 48px;
+            text-align: center;
+        }
+        .cta-band h2 {
+            font-size: clamp(1.9rem, 4vw, 3.1rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.08;
+        }
+        .cta-band p {
+            font-size: 1.08rem;
+            color: rgba(255,255,255,.68);
+            max-width: 580px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+        .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ────────────────────────
+           PROFILE (ABOUT)
+        ──────────────────────── */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .profile-sticky { position: sticky; top: 92px; }
+        .profile-img { width: 100%; display: block; }
+        .profile-cap {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 3px solid var(--red);
+        }
+        .profile-cap strong {
+            display: block;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .profile-cap span { font-size: .78rem; color: var(--g6); }
+        .profile-body h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 900;
+            color: var(--dark);
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+        .profile-role {
+            display: block;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 32px;
+        }
+        .profile-body p {
+            font-size: 1rem;
+            color: var(--g6);
+            line-height: 1.82;
+            margin-bottom: 18px;
+        }
+        .profile-body p strong { color: var(--dark); font-weight: 700; }
+
+        /* ────────────────────────
+           EXPERTISE LIST
+        ──────────────────────── */
+        .exp-list {
+            list-style: none;
+            columns: 2;
+            column-gap: 40px;
+            margin-top: 28px;
+        }
+        .exp-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 9px 0;
+            font-size: .92rem;
+            color: var(--g6);
+            break-inside: avoid;
+            border-bottom: 1px solid var(--g2);
+            line-height: 1.5;
+        }
+        .exp-list li::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+
+        /* ────────────────────────
+           MEDIA LINKS
+        ──────────────────────── */
+        .media-list { list-style: none; }
+        .media-list li { border-top: 1px solid var(--g2); }
+        .media-list li:last-child { border-bottom: 1px solid var(--g2); }
+        .media-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 19px 0;
+            font-size: .92rem;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            transition: color .2s;
+            gap: 16px;
+        }
+        .media-list a:hover { color: var(--red); }
+        .media-list .arr { color: var(--red); font-size: 1.05rem; flex-shrink: 0; }
+
+        /* ────────────────────────
+           CONTACT GRID
+        ──────────────────────── */
+        .contact-row {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            border-top: 1px solid var(--g2);
+            margin-top: 56px;
+        }
+        .contact-cell {
+            padding: 44px 36px;
+            border-right: 1px solid var(--g2);
+        }
+        .contact-cell:last-child { border-right: none; }
+        .contact-lbl {
+            display: block;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 18px;
+        }
+        .contact-cell a {
+            display: block;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: .96rem;
+            font-weight: 500;
+            padding: 3px 0;
+            line-height: 1.6;
+            transition: color .2s;
+        }
+        .contact-cell a:hover { color: var(--red); }
+
+        /* ────────────────────────
+           INTRO PARAGRAPH
+        ──────────────────────── */
+        .intro-p {
+            font-size: 1.22rem;
+            font-weight: 300;
+            color: var(--g6);
+            line-height: 1.85;
+            max-width: 820px;
+            margin-bottom: 56px;
+        }
+
+        /* ────────────────────────
+           FOOTER
+        ──────────────────────── */
+        footer {
+            background: var(--black);
+            padding: 56px 48px;
+        }
+        .foot-inner { max-width: var(--mw); margin: 0 auto; }
+        .foot-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1d1d1d;
+        }
+        .foot-brand strong {
+            display: block;
+            font-size: .98rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+        .foot-brand span { font-size: .78rem; color: #4a4a4a; }
+        .foot-nav { list-style: none; display: flex; gap: 28px; flex-wrap: wrap; }
+        .foot-nav a {
+            font-size: 12.5px;
+            color: #4a4a4a;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .foot-nav a:hover { color: var(--white); }
+        .foot-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 28px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .foot-bot p { font-size: .78rem; color: #383838; }
+        .dot {
+            display: inline-block;
+            width: 4px; height: 4px;
+            background: var(--red);
+            border-radius: 50%;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+
+        /* ────────────────────────
+           PAGE SYSTEM
+        ──────────────────────── */
+        .page { display: none; }
+        .page.active {
+            display: block;
+            animation: pgIn .35s ease forwards;
+        }
+        @keyframes pgIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ────────────────────────
+           RESPONSIVE
+        ──────────────────────── */
+        @media (max-width: 1024px) {
+            .g3, .stats-row, .contact-row { grid-template-columns: 1fr; }
+            .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+            .stat:last-child { border-bottom: none; }
+            .contact-cell { border-right: none; border-bottom: 1px solid var(--g2); padding: 32px 28px; }
+            .contact-cell:last-child { border-bottom: none; }
+            .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+            .profile-sticky { position: static; max-width: 260px; }
+            .foot-top { flex-direction: column; gap: 24px; }
+        }
+        @media (max-width: 768px) {
+            .sec { padding: 60px 24px; }
+            .sec-sm { padding: 52px 24px; }
+            .nav-inner { padding: 0 24px; }
+            .hero-cnt { padding: 0 24px 60px; }
+            .cta-band { padding: 64px 24px; }
+            footer { padding: 44px 24px; }
+            .box { padding: 32px 24px; margin: 44px 0; }
+            .g2, .ga { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 71px; left: 0; right: 0;
+                background: var(--white);
+                border-bottom: 1px solid var(--g2);
+                padding: 8px 0 16px;
+                box-shadow: 0 10px 28px rgba(0,0,0,.1);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 13px 24px; border-bottom: 1px solid var(--g1); }
+            .nav-links a::after { display: none; }
+            .nav-cta { margin: 8px 24px 0; text-align: center; padding: 12px 24px !important; }
+            .mob-btn { display: block; }
+            .exp-list { columns: 1; }
+            .hero h1 { letter-spacing: -1.5px; }
+        }
+        @media (max-width: 480px) {
+            .hero { min-height: 65vh; }
+            .stat-n { font-size: 2.8rem; }
+        }
+
+        /* ────────────────────────
+           SECTION SPACING HELPERS
+        ──────────────────────── */
+        .mt-tag { margin-top: 72px; display: block; }
+        .mt-sm  { margin-top: 32px; }
+        .mt-md  { margin-top: 52px; }
+    </style>
+</head>
+<body>
+
+    <!-- ══ NAVIGATION ══ -->
+    <div class="nav-wrapper">
+        <div class="nav-accent"></div>
+        <nav id="mainNav">
+            <div class="nav-inner">
+                <a class="nav-logo" href="#" onclick="showPage('home'); return false;">
+                    <img src="images/header.jpeg" alt="Trust DealMakers"
+                         onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='block';">
+                    <span id="logo-fb" class="nav-logo-fb">Trust DealMakers</span>
+                </a>
+                <button class="mob-btn" id="mobBtn" onclick="toggleNav()" aria-label="Toggle menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
+                        <path d="M3 6h18M3 12h18M3 18h18"/>
+                    </svg>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a onclick="showPage('home')"       data-page="home">Home</a></li>
+                    <li><a onclick="showPage('trade')"      data-page="trade">International Trade</a></li>
+                    <li><a onclick="showPage('industrial')" data-page="industrial">Industrial Assets</a></li>
+                    <li><a onclick="showPage('about')"      data-page="about">About</a></li>
+                    <li><a onclick="showPage('contact')" class="nav-cta" data-page="contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         HOME
+    ══════════════════════════════ -->
+    <div id="home" class="page active">
+
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('images/cover1.png');"></div>
+            <div class="hero-ov"></div>
+            <div class="hero-cnt">
+                <span class="hero-tag">International Business Consulting</span>
+                <h1>Building value through<br>global business solutions</h1>
+                <p>With over three decades of corporate and international business experience, we help companies expand globally, optimise assets, and navigate complex cross-border markets with confidence.</p>
+                <div class="hero-btns">
+                    <a href="#" onclick="showPage('contact'); return false;" class="btn btn-red">Get started</a>
+                    <a href="#home-services" class="btn btn-wol">Our services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="sec" id="home-services">
+            <div class="wrap">
+                <span class="sec-tag">What we do</span>
+                <h2 class="sec-title">Strategic services at the intersection<br>of global commerce</h2>
+                <p class="sec-lead">From cross-border trade facilitation to industrial asset redeployment — mandate-driven, execution-focused advisory for organisations that value experience and results.</p>
+                <div class="g2">
+                    <div class="card click" onclick="showPage('trade')">
+                        <h3>International Trade &amp; Indenting</h3>
+                        <p>Enabling manufacturers, suppliers, and buyers to discover reliable overseas partners and execute cross-border transactions with confidence, speed, and credibility.</p>
+                        <a href="#" onclick="showPage('trade'); return false;" class="card-link">Explore service</a>
+                    </div>
+                    <div class="card click" onclick="showPage('industrial')">
+                        <h3>Industrial Asset Monetisation</h3>
+                        <p>International redeployment of surplus industrial assets through global secondary markets during technology upgrades — commanding strategic value, not scrap pricing.</p>
+                        <a href="#" onclick="showPage('industrial'); return false;" class="card-link">Explore service</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why work with us -->
+        <section class="sec bg-dark">
+            <div class="wrap">
+                <span class="sec-tag">Why work with us</span>
+                <h2 class="sec-title">Three decades of proven expertise</h2>
+                <div class="stats-row">
+                    <div class="stat">
+                        <div class="stat-n">30+</div>
+                        <div class="stat-t">Years of experience</div>
+                        <div class="stat-d">Solid corporate and international business experience across multiple industries and geographies</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n">IIFT</div>
+                        <div class="stat-t">Elite education</div>
+                        <div class="stat-d">MBA in International Trade from India's prestigious Indian Institute of Foreign Trade (1984)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n">2+</div>
+                        <div class="stat-t">Continents served</div>
+                        <div class="stat-d">Strong international networks spanning India, the Middle East, and beyond — across sectors and decision-makers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-band">
+            <h2>Ready to expand your global footprint?</h2>
+            <p>Let's discuss how we can help your organisation unlock new opportunities across international markets.</p>
+            <div class="cta-btns">
+                <a href="#" onclick="showPage('contact')" class="btn btn-red">Get in touch</a>
+                <a href="#" onclick="showPage('about')" class="btn btn-wol">Learn about us</a>
+            </div>
+        </div>
+
+    </div><!-- /home -->
+
+
+    <!-- ══════════════════════════════
+         INTERNATIONAL TRADE
+    ══════════════════════════════ -->
+    <div id="trade" class="page">
+
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('images/international.jpeg');"></div>
+            <div class="hero-ov"></div>
+            <div class="hero-cnt">
+                <span class="hero-tag">Service</span>
+                <h1>International Trade<br>&amp; Indenting</h1>
+                <p>Adding strategic value to client companies through cross-border commerce expertise built over three decades.</p>
+                <div class="hero-btns">
+                    <a href="#" onclick="showPage('contact'); return false;" class="btn btn-red">Start a conversation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="wrap">
+                <p class="intro-p">In global trade, success is rarely about finding opportunities — it is about executing them with certainty, speed, and credibility.</p>
+
+                <div class="box">
+                    <h3>Professional Foundation</h3>
+                    <p><strong>MBA in International Trade</strong> from India's premier institute IIFT (Indian Institute of Foreign Trade) in 1984, followed by 10+ years of corporate experience including senior-level exposure to:</p>
+                    <ul>
+                        <li>International sourcing and overseas sales</li>
+                        <li>Cross-border commercial negotiations</li>
+                        <li>Export–import operations, compliance, and documentation</li>
+                        <li>Working with multinational counterparties and large domestic organisations</li>
+                    </ul>
+                </div>
+
+                <span class="sec-tag">Our offering</span>
+                <h2 class="sec-title">What we do for clients</h2>
+
+                <div class="ga" style="margin-top:36px;">
+                    <div class="card">
+                        <h3>Strategic Market Access</h3>
+                        <ul>
+                            <li>Identifying reliable overseas buyers, suppliers, or principals</li>
+                            <li>Assessing commercial viability and pricing benchmarks</li>
+                            <li>Reducing trial-and-error costs in unfamiliar markets</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Qualified Buyer &amp; Supplier Identification</h3>
+                        <ul>
+                            <li>Pre-screened, decision-capable counterparties</li>
+                            <li>Business credibility and operational capacity verification</li>
+                            <li>Alignment on quality, volumes, delivery, and payment terms</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Commercial Negotiation Support</h3>
+                        <ul>
+                            <li>Competitive yet sustainable pricing structures</li>
+                            <li>Clear contractual expectations</li>
+                            <li>Balanced risk allocation between parties</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Indenting &amp; Transaction Facilitation</h3>
+                        <ul>
+                            <li>Commercial interface between buyer and seller</li>
+                            <li>Coordination of specifications and documentation</li>
+                            <li>Single-point accountability without internal overhead</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Trade Process Coordination</h3>
+                        <ul>
+                            <li>Incoterms clarity and contractual alignment</li>
+                            <li>Export–import documentation coordination</li>
+                            <li>Predictable execution and regulatory compliance</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Risk Mitigation &amp; Due Diligence</h3>
+                        <ul>
+                            <li>Counterparty credibility assessment</li>
+                            <li>Market and country risk evaluation</li>
+                            <li>Contractual and execution exposure analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-band">
+            <h2>Build sustainable international trade relationships</h2>
+            <p>If your organisation values experience, structure, and credibility in international trade.</p>
+            <div class="cta-btns">
+                <a href="#" onclick="showPage('contact')" class="btn btn-red">Start a conversation</a>
+            </div>
+        </div>
+
+    </div><!-- /trade -->
+
+
+    <!-- ══════════════════════════════
+         INDUSTRIAL ASSETS
+    ══════════════════════════════ -->
+    <div id="industrial" class="page">
+
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('images/industrial.jpeg');"></div>
+            <div class="hero-ov"></div>
+            <div class="hero-cnt">
+                <span class="hero-tag">Service</span>
+                <h1>International Monetisation<br>of Surplus Assets</h1>
+                <p>During technology upgrades and industrial transitions — turning replaced equipment into strategic international value.</p>
+                <div class="hero-btns">
+                    <a href="#" onclick="showPage('contact'); return false;" class="btn btn-red">Explore opportunities</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="wrap">
+                <p class="intro-p">As manufacturers worldwide invest in advanced, next-generation production technology, the replacement of existing plants and machinery creates a strategic opportunity — international redeployment of surplus industrial assets.</p>
+
+                <div class="box">
+                    <h3>Global Market Access. Commercial Precision.</h3>
+                    <p>Backed by three decades of corporate experience and formal expertise in International Trade (MBA, IIFT), this service is structured around <strong>cross-border demand mapping, not distress liquidation.</strong></p>
+                </div>
+
+                <span class="sec-tag">Our network</span>
+                <h2 class="sec-title">International connections that deliver value</h2>
+                <p class="sec-lead">Through an established international network, surplus assets are positioned where operational equipment commands strategic value — not scrap pricing.</p>
+
+                <div class="g2">
+                    <div class="card">
+                        <h3>Overseas Industrial Buyers</h3>
+                        <p>Direct connections with qualified buyers actively seeking operational equipment across emerging and developing markets worldwide.</p>
+                    </div>
+                    <div class="card">
+                        <h3>EPC Contractors</h3>
+                        <p>Project developers and system integrators in emerging markets requiring cost-effective production infrastructure for new projects.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Refurbishers</h3>
+                        <p>Specialists in upgrading and redeploying industrial machinery to meet new operational requirements in target markets.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Capacity-Expansion Investors</h3>
+                        <p>Organisations seeking cost-effective production capacity to scale operations without full greenfield capital investment.</p>
+                    </div>
+                </div>
+
+                <span class="sec-tag mt-tag">Deliverables</span>
+                <h2 class="sec-title">What we deliver</h2>
+
+                <div class="g2 mt-sm">
+                    <div class="card">
+                        <ul>
+                            <li>Global marketing of replaced plants and process lines</li>
+                            <li>Identification and qualification of serious international buyers</li>
+                            <li>Structured commercial negotiations across jurisdictions</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li>Coordination of technical documentation and evaluations</li>
+                            <li>Support on dismantling, logistics, and export execution</li>
+                            <li>High standards of confidentiality and governance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>A Clean Transition Strategy</h3>
+                    <p style="font-size:1.05rem; line-height:2.1;">
+                        <strong>You commission the future.</strong><br>
+                        <strong>Your replaced assets are monetised internationally.</strong>
+                    </p>
+                    <p>The engagement model is selective, mandate-driven, and execution-focused — ensuring senior management attention remains firmly on operational continuity and growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-band">
+            <h2>Turn industrial transition into opportunity</h2>
+            <p>Best suited for multinational manufacturers and companies replacing complete plants or core process lines.</p>
+            <div class="cta-btns">
+                <a href="#" onclick="showPage('contact')" class="btn btn-red">Start a conversation</a>
+            </div>
+        </div>
+
+    </div><!-- /industrial -->
+
+
+    <!-- ══════════════════════════════
+         ABOUT
+    ══════════════════════════════ -->
+    <div id="about" class="page">
+
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('images/cover1.png');"></div>
+            <div class="hero-ov"></div>
+            <div class="hero-cnt">
+                <span class="hero-tag">About</span>
+                <h1>Anil Mahajane</h1>
+                <p>Turnaround specialist and international business expert with over three decades of corporate leadership across India and the Middle East.</p>
+                <div class="hero-btns">
+                    <a href="#" onclick="showPage('contact'); return false;" class="btn btn-red">Connect with me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="wrap">
+                <div class="profile-grid">
+
+                    <div class="profile-sticky">
+                        <img src="images/display-image.jpeg" alt="Anil Mahajane – Founder &amp; CEO" class="profile-img"
+                             onerror="this.parentElement.style.display='none';">
+                        <div class="profile-cap">
+                            <strong>Anil Mahajane</strong>
+                            <span>Founder &amp; CEO, Trust DealMakers</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-body">
+                        <h2>Anil Mahajane</h2>
+                        <span class="profile-role">Founder &amp; CEO, Trust DealMakers</span>
+
+                        <p>Highly qualified in Management from the prestigious <strong>Indian Institute of Foreign Trade (IIFT)</strong> and thoroughly experienced for over three decades in International Trade.</p>
+                        <p>Best known as a <strong>Turnaround Specialist</strong> and an astute <strong>Headhunter</strong> in industry circles in India and the Middle East.</p>
+                        <p>He has worked as a successful <strong>CEO in several multi-million dollar organisations in India for a decade</strong>, delivering measurable impact across sectors and geographies.</p>
+
+                        <div class="box" style="margin-top:40px; margin-bottom:48px;">
+                            <h3>Corporate Leadership Experience</h3>
+                            <p>Trusted by boards and leadership teams across India and the Middle East for high-stakes mandates — whether structuring an international trade relationship, identifying C-suite talent, or monetising industrial assets at the right value.</p>
+                        </div>
+
+                        <span class="sec-tag">Expertise</span>
+                        <h3 style="font-size:1.35rem; font-weight:800; color:var(--dark); letter-spacing:-.3px; margin-bottom:0;">Areas of professional expertise</h3>
+                        <ul class="exp-list">
+                            <li>International Trade &amp; Indenting</li>
+                            <li>Industrial Asset Monetisation</li>
+                            <li>Turnaround Leadership</li>
+                            <li>Cross-Border Negotiations</li>
+                            <li>CEO &amp; Board Advisory</li>
+                            <li>Export-Import Compliance</li>
+                            <li>Market Entry Strategy</li>
+                            <li>Strategic Advisory</li>
+                        </ul>
+
+                        <div style="margin-top:64px;">
+                            <span class="sec-tag">Media recognition</span>
+                            <h3 style="font-size:1.35rem; font-weight:800; color:var(--dark); letter-spacing:-.3px; margin-bottom:22px;">Featured in (1999–2005)</h3>
+                            <ul class="media-list">
+                                <li>
+                                    <a href="https://economictimes.indiatimes.com/indian-firms-yet-to-take-to-hr-outsourcing-in-a-big-way/articleshow/655118.cms" target="_blank" rel="noopener">
+                                        Economic Times: Indian Firms Yet to Take to HR Outsourcing in a Big Way
+                                        <span class="arr">↗</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://economictimes.indiatimes.com/foreign-professionals-seek-jobs-in-india/articleshow/489370.cms" target="_blank" rel="noopener">
+                                        Economic Times: Foreign Professionals Seek Jobs in India
+                                        <span class="arr">↗</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.rediff.com/money/2004/feb/11bpo1.htm" target="_blank" rel="noopener">
+                                        Rediff: BPO Industry Analysis
+                                        <span class="arr">↗</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://anilmahajaninmedia.blogspot.com/?m=1" target="_blank" rel="noopener">
+                                        Complete Media Portfolio
+                                        <span class="arr">↗</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /about -->
+
+
+    <!-- ══════════════════════════════
+         CONTACT
+    ══════════════════════════════ -->
+    <div id="contact" class="page">
+
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('images/cover1.png');"></div>
+            <div class="hero-ov"></div>
+            <div class="hero-cnt">
+                <span class="hero-tag">Contact</span>
+                <h1>Get in touch</h1>
+                <p>Let's discuss how we can contribute to your organisation's success — whether in international trade, industrial assets, or strategic advisory.</p>
+                <div class="hero-btns">
+                    <a href="mailto:anil@TrustDealMakers.in" class="btn btn-red">Send an email</a>
+                    <a href="tel:+919650445498" class="btn btn-wol">Call now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="wrap">
+                <span class="sec-tag">Reach out</span>
+                <h2 class="sec-title">Anil Mahajane</h2>
+                <p style="font-size:.78rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:0;">Founder &amp; CEO, Trust DealMakers</p>
+
+                <div class="contact-row">
+                    <div class="contact-cell">
+                        <span class="contact-lbl">Email</span>
+                        <a href="mailto:anil@TrustDealMakers.in">anil@TrustDealMakers.in</a>
+                        <a href="mailto:TrustDealMakers@gmail.com">TrustDealMakers@gmail.com</a>
+                    </div>
+                    <div class="contact-cell">
+                        <span class="contact-lbl">Phone</span>
+                        <a href="tel:+919650445498">+91 96504 45498</a>
+                        <a href="tel:+918058534511">+91 80585 34511</a>
+                    </div>
+                    <div class="contact-cell">
+                        <span class="contact-lbl">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/honchohunters" target="_blank" rel="noopener">linkedin.com/in/honchohunters</a>
+                    </div>
+                </div>
+
+                <div class="box" style="margin-top:60px;">
+                    <h3>Areas of Expertise</h3>
+                    <ul class="exp-list" style="margin-top:22px;">
+                        <li>International Trade &amp; Indenting</li>
+                        <li>Cross-Border Negotiations</li>
+                        <li>Industrial Asset Monetisation</li>
+                        <li>Market Entry Strategy</li>
+                        <li>CEO &amp; Board Advisory</li>
+                        <li>Export-Import Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-band">
+            <h2>Ready to start a conversation?</h2>
+            <p>Whether you're looking to expand internationally or monetise industrial assets — let's connect.</p>
+            <div class="cta-btns">
+                <a href="mailto:anil@TrustDealMakers.in" class="btn btn-red">Send an email</a>
+                <a href="https://www.linkedin.com/in/honchohunters" target="_blank" rel="noopener" class="btn btn-wol">Connect on LinkedIn</a>
+            </div>
+        </div>
+
+    </div><!-- /contact -->
+
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <div class="foot-inner">
+            <div class="foot-top">
+                <div class="foot-brand">
+                    <strong>Trust DealMakers</strong>
+                    <span>International Business Consulting</span>
+                </div>
+                <ul class="foot-nav">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('trade')">International Trade</a></li>
+                    <li><a onclick="showPage('industrial')">Industrial Assets</a></li>
+                    <li><a onclick="showPage('about')">About</a></li>
+                    <li><a onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="foot-bot">
+                <p>&copy; 2024 Trust DealMakers <span class="dot"></span> Anil Mahajane <span class="dot"></span> All rights reserved</p>
+                <p>International Trade <span class="dot"></span> Industrial Assets <span class="dot"></span> Strategic Advisory</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const page = document.getElementById(id);
+            if (page) page.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+                a.classList.toggle('active', a.dataset.page === id);
+            });
+            document.getElementById('navLinks').classList.remove('open');
+        }
+
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Nav shadow on scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 40);
+        });
+
+        // Close mobile nav on outside click
+        document.addEventListener('click', e => {
+            const wrapper = document.querySelector('.nav-wrapper');
+            if (!wrapper.contains(e.target)) {
+                document.getElementById('navLinks').classList.remove('open');
+            }
+        });
+
+        // Close on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.getElementById('navLinks').classList.remove('open');
+            }
+        });
+
+        // Smooth scroll for #home-services anchor link
+        document.addEventListener('click', e => {
+            const t = e.target.closest('a');
+            if (t && t.getAttribute('href') === '#home-services') {
+                e.preventDefault();
+                document.getElementById('home-services')?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Keyboard: Esc closes mobile nav
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') document.getElementById('navLinks').classList.remove('open');
+        });
+
+        // Mark initial active nav item
+        document.querySelector('[data-page="home"]').classList.add('active');
+    </script>
+</body>
+</html>
