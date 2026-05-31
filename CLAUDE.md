@@ -30,8 +30,8 @@ Machinery manufacturers · Industrial chemicals · Specialty chemicals · Medica
 
 ### Contact details
 
-- Email: anil@TrustDealMakers.in / TrustDealMakers@gmail.com
-- Phone: +91 96504 45498 / +91 80585 34511
+- Email: india@trustdealmakers.in (primary, shown on website)
+- Phone: +91 80585 34511 (shown on website)
 - LinkedIn: linkedin.com/in/honchohunters
 
 ---
@@ -99,12 +99,6 @@ Key patterns: cards with red top-border on hover · dark stats section · CTA ba
 
 ---
 
-## Content not yet on the website (to add in a future update)
+## Typography
 
-The following content was provided but not yet incorporated into `index.html`:
-
-1. **Industry Advisory & Domain Expertise** section — the network of IIT engineers, medical professionals, and commercial specialists
-2. **Updated founder bio** — detailed Vardhaman Steel and Oswal Agro corporate history
-3. **International Representation** as a more distinct service with the industries list (machinery, chemicals, medical, buying houses, etc.)
-
-These should be added to the Home page (as a new section) and the About page.
+Dual-font system: **Playfair Display** (serif, headlines) + **Inter** (sans-serif, body). Loaded via Google Fonts.
