@@ -644,8 +644,9 @@
        INDUSTRY TAGS
     ───────────────────────────────────── */
     .tag-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
       gap: 10px;
       margin-top: 32px;
     }
@@ -990,7 +991,8 @@
     @media (max-width: 768px) {
       .sec { padding: 60px 24px; }
       .nav-inner { padding: 0 24px; }
-      .hero-cnt { padding: 0 24px 60px; }
+      .hero-cnt { padding: 32px 24px 60px; }
+      .tag-grid { grid-template-columns: repeat(2, 1fr); }
       .cta-band { padding: 64px 24px; }
       footer { padding: 44px 24px 0; }
       .box { padding: 32px 24px; margin: 40px 0; }
@@ -1071,7 +1073,7 @@
         <h1>Building value through<br>global business solutions</h1>
         <p>With over three decades of corporate and international business experience, we connect global suppliers, buyers, and investors with qualified counterparties across India.</p>
         <div class="hero-btns">
-          <a onclick="showPage('contact')" class="btn btn-red" style="cursor:pointer;">Engage us</a>
+          <a onclick="showPage('contact')" class="btn btn-red" style="cursor:pointer;">Engage Us</a>
           <a onclick="showPage('trade')" class="btn btn-wol" style="cursor:pointer;">Our services</a>
         </div>
       </div>
@@ -1152,7 +1154,7 @@
       <p>Let's discuss how Trust DealMakers can help your organisation unlock new opportunities across international markets.</p>
       <div class="cta-btns">
         <a onclick="showPage('contact')" class="btn btn-red" style="cursor:pointer;">Start a conversation</a>
-        <a onclick="showPage('about')" class="btn btn-wol" style="cursor:pointer;">About Anil Mahajane</a>
+        <a onclick="showPage('about')" class="btn btn-wol" style="cursor:pointer;">About</a>
       </div>
     </div>
 
@@ -1250,7 +1252,7 @@
         <p class="s-label-l">Industries represented</p>
         <h2 class="s-title">Sectors we serve</h2>
         <p style="font-size:.95rem; color:var(--muted); margin-bottom:0;">Trust DealMakers represents and facilitates for principals across the following industries:</p>
-        <div class="tag-grid" style="display:grid;grid-template-columns:repeat(4,1fr);text-align:center;">
+        <div class="tag-grid">
           <span class="tag">Machinery Manufacturers</span>
           <span class="tag">Industrial Chemicals</span>
           <span class="tag">Specialty Chemicals</span>
@@ -1460,7 +1462,7 @@
       <h2>Ready for a conversation?</h2>
       <p>Whether you're looking to expand internationally, reposition industrial assets, or explore market development in India — let's connect.</p>
       <div class="cta-btns">
-        <a onclick="showPage('contact')" class="btn btn-red" style="cursor:pointer;">Engage us</a>
+        <a onclick="showPage('contact')" class="btn btn-red" style="cursor:pointer;">Engage Us</a>
       </div>
     </div>
 
@@ -1583,7 +1585,7 @@
         <h4>Company</h4>
         <ul>
           <li><a onclick="showPage('home')">Home</a></li>
-          <li><a onclick="showPage('about')">About Anil Mahajane</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
           <li><a onclick="showPage('contact')">Engage Us</a></li>
           <li><a href="https://www.linkedin.com/in/honchohunters" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
