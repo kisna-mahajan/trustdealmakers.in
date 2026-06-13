@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trust DealMakers</title>
+  <script>
+    var urlToPage = {
+      '/trade':      'trade',
+      '/industrial': 'industrial',
+      '/about':      'about',
+      '/contact':    'contact'
+    };
+    var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+    var page = urlToPage[path] || 'home';
+    sessionStorage.setItem('tdm-page', page);
+    window.location.replace('https://trustdealmakers.in/');
+  </script>
+</head>
+<body></body>
+</html>
