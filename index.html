@@ -1599,7 +1599,22 @@
 
 
   <script>
-    function showPage(id) {
+    const pageUrls = {
+      home:       '/',
+      trade:      '/trade',
+      industrial: '/industrial',
+      about:      '/about',
+      contact:    '/contact'
+    };
+
+    const urlToPage = {
+      '/trade':      'trade',
+      '/industrial': 'industrial',
+      '/about':      'about',
+      '/contact':    'contact'
+    };
+
+    function _activate(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const page = document.getElementById(id);
       if (page) page.classList.add('active');
@@ -1610,9 +1625,19 @@
       document.getElementById('navLinks').classList.remove('open');
     }
 
+    function showPage(id) {
+      _activate(id);
+      history.pushState({ page: id }, '', pageUrls[id] || '/');
+    }
+
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
     }
+
+    // Browser back/forward — restore page without pushing new history entry
+    window.addEventListener('popstate', function(e) {
+      _activate((e.state && e.state.page) || 'home');
+    });
 
     window.addEventListener('scroll', () => {
       document.getElementById('mainNav').classList.toggle('scrolled', window.pageYOffset > 40);
@@ -1633,7 +1658,20 @@
       if (e.key === 'Escape') document.getElementById('navLinks').classList.remove('open');
     });
 
-    document.querySelector('[data-page="home"]').classList.add('active');
+    // Initial load — check for redirect from 404.html or direct URL access
+    (function () {
+      var stored = sessionStorage.getItem('tdm-page');
+      if (stored) {
+        sessionStorage.removeItem('tdm-page');
+        _activate(stored);
+        history.replaceState({ page: stored }, '', pageUrls[stored] || '/');
+        return;
+      }
+      var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+      var initial = urlToPage[path] || 'home';
+      _activate(initial);
+      history.replaceState({ page: initial }, '', pageUrls[initial] || '/');
+    })();
   </script>
 </body>
 </html>
