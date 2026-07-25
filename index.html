@@ -2708,7 +2708,12 @@
         var f = document.getElementById('contact-form');
         var s = document.getElementById('form-success');
         if (f) f.style.display = 'none';
-        if (s) s.style.display = 'block';
+        if (s) {
+          s.style.display = 'block';
+          setTimeout(function () {
+            s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 400);
+        }
         return;
       }
       var stored = sessionStorage.getItem('tdm-page');
