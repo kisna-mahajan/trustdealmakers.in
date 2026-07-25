@@ -356,7 +356,9 @@
       max-width: 880px;
     }
     #home .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-size: clamp(1.75rem, 3.2vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -.2px;
       max-width: 100%;
     }
     #trade .hero h2, #industrial .hero h2, #about .hero h2,
@@ -2500,9 +2502,10 @@
             <p>All enquiries are treated with complete discretion. We do not share client or counterparty information without explicit consent.</p>
           </div>
 
-          <form id="contact-form" class="form" action="https://formsubmit.co/india@trustdealmakers.in" method="POST">
+          <form id="contact-form" class="form" action="https://formsubmit.co/india@trustdealmakers.in" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_subject" value="New Enquiry — Trust DealMakers" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://trustdealmakers.in/?submitted=1" />
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div class="form-row">
@@ -2689,33 +2692,6 @@
       window.scrollTo({ top: top, behavior: 'smooth' });
     }
 
-    // Contact form — AJAX submission to stay on page and show success message
-    (function () {
-      var form = document.getElementById('contact-form');
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = form.querySelector('button[type="submit"]');
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        fetch('https://formsubmit.co/ajax/india@trustdealmakers.in', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(form)
-        })
-        .then(function (r) { return r.json(); })
-        .then(function () {
-          form.style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-          document.getElementById('form-error').style.display = 'none';
-        })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Send Enquiry';
-          document.getElementById('form-error').style.display = 'block';
-        });
-      });
-    })();
 
     // Keyboard accessibility: make all onclick-only anchors focusable
     document.querySelectorAll('a[onclick]:not([href])').forEach(el => {
@@ -2723,8 +2699,18 @@
       el.setAttribute('role', 'button');
     });
 
-    // Initial load — check for redirect from 404.html or direct URL access
+    // Initial load — check for redirect from 404.html, direct URL access, or form submission
     (function () {
+      // Form submission redirect: FormSubmit sends back to /?submitted=1
+      if (window.location.search.includes('submitted=1')) {
+        history.replaceState({}, '', '/');
+        _activate('contact');
+        var f = document.getElementById('contact-form');
+        var s = document.getElementById('form-success');
+        if (f) f.style.display = 'none';
+        if (s) s.style.display = 'block';
+        return;
+      }
       var stored = sessionStorage.getItem('tdm-page');
       if (stored) {
         sessionStorage.removeItem('tdm-page');
