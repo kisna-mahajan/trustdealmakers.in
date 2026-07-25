@@ -355,12 +355,17 @@
       margin-bottom: 20px;
       max-width: 880px;
     }
+    #home .hero h1 {
+      font-size: clamp(1.9rem, 3.8vw, 3.6rem);
+    }
     #trade .hero h2, #industrial .hero h2, #about .hero h2,
     #vision .hero h2, #faq .hero h2 {
       font-size: clamp(1.75rem, 3.2vw, 3rem);
       font-weight: 700;
       letter-spacing: -.2px;
     }
+    #home .pathway-grid { grid-template-columns: repeat(5, 1fr); }
+    #home .pathway-card { padding: 26px 18px; }
     .hero p {
       font-size: clamp(1rem, 1.6vw, 1.15rem);
       color: rgba(255,255,255,.8);
@@ -619,11 +624,12 @@
       padding: 18px 28px;
       margin: 36px 0;
       background: var(--bg);
-      font-family: var(--fh);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--dark);
-      line-height: 1.65;
+      font-family: var(--fb);
+      font-style: normal;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.85;
     }
 
     /* ─────────────────────────────────────
@@ -991,6 +997,11 @@
       .exp-card:nth-child(n+4) { border-top: none; }
       .exp-card:nth-child(6) { border-right: none; }
     }
+    @media (max-width: 1200px) {
+      #home .pathway-grid { grid-template-columns: repeat(3, 1fr); }
+      #home .pathway-card { padding: 26px 20px; }
+      #home .g3[style*="repeat(5"] { grid-template-columns: repeat(3, 1fr) !important; }
+    }
     @media (max-width: 1024px) {
       .foot-inner { grid-template-columns: 1fr 1fr; }
       .foot-brand { grid-column: 1 / -1; }
@@ -1267,6 +1278,8 @@
       .service-item:last-child { border-bottom: none !important; }
       .faq-header { padding: 80px 24px 52px; }
       .vision-promise { padding: 52px 24px; }
+      #home .pathway-grid { grid-template-columns: 1fr; }
+      #home .g3[style*="repeat(5"] { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 480px) {
       .industry-grid { grid-template-columns: 1fr; }
@@ -1366,7 +1379,7 @@
         <p class="s-label">Our Core Capabilities</p>
         <h2 class="s-title s-title-c">What we do for your business</h2>
         <p class="s-lead s-lead-c">Mandate-driven, execution-focused services for organisations building trusted commercial relationships between India and the world.</p>
-        <div class="g3">
+        <div class="g3" style="grid-template-columns:repeat(5,1fr);">
           <div class="card click" onclick="showPage('trade')">
             <h3>Cross-Border Market Access</h3>
             <p>Helping organisations establish meaningful commercial relationships across India and international markets — from identification through to commercial execution.</p>
@@ -1530,7 +1543,11 @@
           <p>Many organisations can help execute a shipment. Far fewer can help you build a market. Trust DealMakers supports organisations throughout the entire business development journey — from understanding market opportunities to identifying the right customers, suppliers, technology partners, and commercial relationships.</p>
           <p style="margin-top:10px;">We believe international business succeeds when the right people, companies, and technologies come together with trust and shared objectives.</p>
         </div>
+      </div>
+    </section>
 
+    <section class="sec bg-light">
+      <div class="wrap">
         <p class="s-label-l">Our Services</p>
         <h2 class="s-title">What we do for clients</h2>
         <div class="g3" style="margin-top:32px;">
@@ -1560,7 +1577,12 @@
           </div>
         </div>
 
-        <p class="s-label-l mt-tag">Sectors We Serve</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Sectors We Serve</p>
         <h2 class="s-title">Industries we currently focus on</h2>
         <p style="font-size:.95rem; color:var(--muted); margin-bottom:0; max-width:720px;">Trust DealMakers represents international manufacturers, technology providers, industrial suppliers, healthcare companies, and buying organisations seeking long-term business opportunities in India.</p>
         <div class="sector-grid">
@@ -1655,7 +1677,12 @@
           <p>Trust DealMakers continuously expands its domain expertise in response to global manufacturing trends and India's industrial priorities. While our current focus reflects today's priorities, we remain open to representation opportunities in other industrial and technology domains where we can create meaningful long-term value.</p>
         </div>
 
-        <div class="box mt-tag">
+      </div>
+    </section>
+
+    <section class="sec bg-light">
+      <div class="wrap">
+        <div class="box">
           <h3>Why Trust DealMakers?</h3>
           <p>Our founder brings firsthand experience in executive leadership of manufacturing businesses, international commodity trading, cross-border commercial negotiations, chartering ocean-going vessels, industrial procurement, capital equipment evaluation, steel plant expansion, manufacturing operations, project execution, and international business development.</p>
           <p style="margin-top:10px;">This practical understanding enables effective communication with industrial buyers, overseas manufacturers, engineering consultants, procurement leaders, project organisations, and business owners.</p>
@@ -1748,7 +1775,12 @@
           </div>
         </div>
 
-        <p class="s-label-l mt-tag">Our International Network</p>
+      </div>
+    </section>
+
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Our International Network</p>
         <h2 class="s-title">Connecting industrial assets with global opportunity</h2>
         <p class="s-lead">Through our international business development activities, we seek to connect industrial assets with organisations capable of extracting long-term productive value.</p>
 
@@ -1771,7 +1803,12 @@
           </div>
         </div>
 
-        <p class="s-label-l mt-tag">Scope of Engagement</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Scope of Engagement</p>
         <h2 class="s-title">What we deliver</h2>
         <div class="g2" style="margin-top:28px;">
           <div class="card">
@@ -1794,7 +1831,12 @@
           </div>
         </div>
 
-        <p class="s-label-l mt-tag">Industries We Support</p>
+      </div>
+    </section>
+
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Industries We Support</p>
         <h2 class="s-title">Our current areas of focus</h2>
         <div class="sector-grid">
           <div class="sector-card">
@@ -1859,7 +1901,12 @@
           </div>
         </div>
 
-        <div class="box" style="margin-top:32px;">
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <div class="box">
           <h3>A Clean Transition Strategy</h3>
           <p><strong>You commission the future. We help unlock the value of the past.</strong></p>
           <p style="margin-top:10px;">While your organisation focuses on commissioning next-generation manufacturing technologies, Trust DealMakers manages the commercial lifecycle of the assets being replaced. Our engagement model is confidential, selective, execution-focused, and designed to minimise management time while maximising commercial outcomes.</p>
@@ -2228,7 +2275,6 @@
 
     <section class="sec">
       <div class="wrap">
-
         <div class="faq-block">
           <h3 class="faq-block-title">About Trust DealMakers</h3>
           <div class="faq-item">
@@ -2260,7 +2306,11 @@
             <p class="faq-a">Yes. We work with businesses of different sizes where there is a strong strategic fit and long-term partnership potential.</p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="sec bg-light">
+      <div class="wrap">
         <div class="faq-block">
           <h3 class="faq-block-title">India Buying Office</h3>
           <div class="faq-item">
@@ -2292,7 +2342,11 @@
             <p class="faq-a">Yes. We assist in identifying potential distributors, dealers, business partners, and industrial customers aligned with your products and market objectives.</p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="sec">
+      <div class="wrap">
         <div class="faq-block">
           <h3 class="faq-block-title">Technology Partnerships &amp; Healthcare</h3>
           <div class="faq-item">
@@ -2324,7 +2378,11 @@
             <p class="faq-a">Yes. We can facilitate connections between qualified buyers and sellers of industrial assets.</p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="sec bg-light">
+      <div class="wrap">
         <div class="faq-block">
           <h3 class="faq-block-title">Commercial Engagement</h3>
           <div class="faq-item">
@@ -2389,22 +2447,22 @@
       <div class="wrap" style="max-width:900px;">
         <p class="s-label" style="text-align:center; margin-bottom:22px;">How can we help?</p>
         <div class="engage-pathways">
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='manufacturer'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('manufacturer');">
             <span>&#8594;</span> I'm an Overseas Manufacturer
           </button>
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='sourcing'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('sourcing');">
             <span>&#8594;</span> I'm Looking to Source from India
           </button>
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='representation'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('representation');">
             <span>&#8594;</span> I Need an India Representation Partner
           </button>
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='technology'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('technology');">
             <span>&#8594;</span> I'm Looking for Technology Partners
           </button>
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='opportunity'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('opportunity');">
             <span>&#8594;</span> I Have an International Business Opportunity
           </button>
-          <button class="engage-pathway-btn" onclick="document.getElementById('f-enquiry').value='industrial'; document.getElementById('f-enquiry').closest('form').scrollIntoView({behavior:'smooth'});">
+          <button class="engage-pathway-btn" onclick="selectEnquiry('industrial');">
             <span>&#8594;</span> I Have Industrial Assets to Monetise or Redeploy
           </button>
         </div>
@@ -2605,6 +2663,14 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') document.getElementById('navLinks').classList.remove('open');
     });
+
+    function selectEnquiry(val) {
+      const sel = document.getElementById('f-enquiry');
+      sel.value = val;
+      const form = sel.closest('form');
+      const top = form.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
 
     // Keyboard accessibility: make all onclick-only anchors focusable
     document.querySelectorAll('a[onclick]:not([href])').forEach(el => {
