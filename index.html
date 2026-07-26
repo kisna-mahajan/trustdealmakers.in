@@ -190,6 +190,7 @@
       color: var(--text);
       background: var(--white);
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
@@ -847,6 +848,8 @@
     .form-group input,
     .form-group select,
     .form-group textarea {
+      width: 100%;
+      min-width: 0;
       padding: 11px 14px;
       border: 1.5px solid var(--border);
       font-family: var(--fb);
