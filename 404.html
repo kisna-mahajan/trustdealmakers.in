@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Trust DealMakers – International Business Consulting India" />
+  <meta name="description" content="Trust DealMakers – Cross-Border Business Development | India" />
   <title>Trust DealMakers</title>
   <script>
     var urlToPage = {
-      '/trade':      'trade',
-      '/industrial': 'industrial',
-      '/about':      'about',
-      '/vision':     'vision',
-      '/faq':        'faq',
-      '/contact':    'contact'
+      '/bring-to-india':          'bring-to-india',
+      '/global-market-development': 'take-to-world',
+      '/industrial':              'industrial',
+      '/strategic-partnerships':  'strategic-partnerships',
+      '/about':                   'about',
+      '/vision':                  'vision',
+      '/faq':                     'faq',
+      '/engage':                  'engage'
     };
-    var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+    var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     var page = urlToPage[path] || 'home';
     sessionStorage.setItem('tdm-page', page);
     window.location.replace('https://trustdealmakers.in/');
