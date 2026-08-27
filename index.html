@@ -329,8 +329,10 @@
       padding: 8px 0;
       z-index: 100;
     }
-    .nav-dd:hover .nav-dd-menu { display: block; }
-    .nav-dd:hover > a .dd-arrow { transform: rotate(180deg); }
+    .nav-dd:hover .nav-dd-menu,
+    .nav-dd.dd-open .nav-dd-menu { display: block; }
+    .nav-dd:hover > a .dd-arrow,
+    .nav-dd.dd-open > a .dd-arrow { transform: rotate(180deg); }
     .nav-dd-menu a {
       display: block;
       padding: 10px 20px;
@@ -357,7 +359,9 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
+      padding: 10px;
+      min-width: 44px;
+      min-height: 44px;
       color: var(--dark);
     }
     .mob-btn svg { width: 24px; height: 24px; display: block; }
@@ -366,7 +370,7 @@
        HERO
     ═══════════════════════════════════ */
     .hero {
-      margin-top: 71px;
+      margin-top: 72px;
       min-height: 78vh;
       display: flex;
       align-items: flex-end;
@@ -430,7 +434,7 @@
 
     /* Sub-hero (pages without hero image) */
     .sub-hero {
-      margin-top: 71px;
+      margin-top: 72px;
       background: var(--dark);
       padding: 100px 48px 72px;
       text-align: center;
@@ -969,6 +973,8 @@
       align-items: center;
       gap: 6px;
       margin-top: 8px;
+      padding: 10px 0;
+      min-height: 44px;
       font-size: .78rem;
       font-weight: 600;
       color: var(--red);
@@ -1286,7 +1292,7 @@
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 71px; left: 0; right: 0;
+        top: 72px; left: 0; right: 0;
         background: var(--white);
         border-bottom: 1px solid var(--border);
         padding: 8px 0 16px;
@@ -1303,10 +1309,19 @@
         display: block;
         background: var(--bg);
       }
-      .nav-dd-menu a { padding: 10px 24px 10px 40px; border-bottom: 1px solid var(--border); }
+      .nav-dd-menu a { padding: 11px 24px 11px 40px; border-bottom: 1px solid var(--border); }
       .nav-engage { margin: 8px 24px 0; text-align: center; padding: 12px 24px !important; }
       .mob-btn { display: block; }
       .form-row { grid-template-columns: 1fr; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea { font-size: 16px; }
+      .hero-label, .s-label, .s-label-l { font-size: 10.5px; letter-spacing: 2px; }
+      .stat-t { font-size: .78rem; }
+      .hero-btns .btn { font-size: 11px; letter-spacing: .5px; padding: 14px 20px; text-align: center; width: 100%; }
+      .foot-col ul li { margin-bottom: 14px; }
+      .foot-col ul a { padding: 4px 0; display: inline-block; }
+      .profile-card-aside { justify-self: center; }
       .expertise-grid { grid-template-columns: repeat(2,1fr); }
       .exp-card:nth-child(2n) { border-right: none; }
     }
@@ -2880,9 +2895,27 @@
       return urlToPage[p] || 'home';
     }
 
+    /* ── Pathways dropdown click ── */
+    (function() {
+      var dd = document.querySelector('.nav-dd');
+      var timer;
+      dd.querySelector('a[data-page="pathways"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        clearTimeout(timer);
+        dd.classList.add('dd-open');
+        timer = setTimeout(function() { dd.classList.remove('dd-open'); }, 2000);
+      });
+      dd.querySelector('.nav-dd-menu').addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dd.querySelector('.nav-dd-menu').addEventListener('mouseleave', function() {
+        timer = setTimeout(function() { dd.classList.remove('dd-open'); }, 2000);
+      });
+    })();
+
     /* ── Mobile Nav ── */
     function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('open');
+      var links = document.getElementById('navLinks');
+      links.classList.toggle('open');
+      document.getElementById('mobBtn').setAttribute('aria-expanded', links.classList.contains('open'));
     }
     function closeNav() {
       document.getElementById('navLinks').classList.remove('open');
