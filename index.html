@@ -329,8 +329,10 @@
       padding: 8px 0;
       z-index: 100;
     }
-    .nav-dd:hover .nav-dd-menu { display: block; }
-    .nav-dd:hover > a .dd-arrow { transform: rotate(180deg); }
+    .nav-dd:hover .nav-dd-menu,
+    .nav-dd.dd-open .nav-dd-menu { display: block; }
+    .nav-dd:hover > a .dd-arrow,
+    .nav-dd.dd-open > a .dd-arrow { transform: rotate(180deg); }
     .nav-dd-menu a {
       display: block;
       padding: 10px 20px;
@@ -2879,6 +2881,22 @@
       var p = window.location.pathname.replace(/\/$/, '').toLowerCase();
       return urlToPage[p] || 'home';
     }
+
+    /* ── Pathways dropdown click ── */
+    (function() {
+      var dd = document.querySelector('.nav-dd');
+      var timer;
+      dd.querySelector('a[data-page="pathways"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        clearTimeout(timer);
+        dd.classList.add('dd-open');
+        timer = setTimeout(function() { dd.classList.remove('dd-open'); }, 2000);
+      });
+      dd.querySelector('.nav-dd-menu').addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dd.querySelector('.nav-dd-menu').addEventListener('mouseleave', function() {
+        timer = setTimeout(function() { dd.classList.remove('dd-open'); }, 2000);
+      });
+    })();
 
     /* ── Mobile Nav ── */
     function toggleNav() {
