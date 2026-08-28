@@ -1101,6 +1101,54 @@
     .asset-fields.visible { display: flex; flex-direction: column; gap: 18px; }
 
     /* ═══════════════════════════════════
+       PAGE SECTION NAVIGATION
+    ═══════════════════════════════════ */
+    .sec-nav {
+      position: sticky;
+      top: 71px;
+      z-index: 90;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 48px;
+    }
+    .sec-nav .wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sec-nav-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .sec-nav-sel {
+      flex: 1;
+      max-width: 420px;
+      padding: 10px 36px 10px 14px;
+      font-family: var(--fb);
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .sec-nav-sel:focus {
+      outline: none;
+      border-color: var(--red);
+    }
+
+    /* ═══════════════════════════════════
        CTA BAND
     ═══════════════════════════════════ */
     .cta-band {
@@ -1277,6 +1325,10 @@
     }
     @media (max-width: 768px) {
       .sec { padding: 60px 24px; }
+      .sec-nav { padding: 12px 24px; top: 71px; }
+      .sec-nav .wrap { gap: 10px; }
+      .sec-nav-label { display: none; }
+      .sec-nav-sel { max-width: 100%; font-size: 16px; }
       .nav-inner { padding: 0 24px; }
       .hero-cnt { padding: 32px 24px 60px; }
       .sub-hero { padding: 80px 24px 52px; }
@@ -2945,6 +2997,20 @@
         var y = toc.getBoundingClientRect().top + window.pageYOffset - 90;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
+    }
+
+    /* ── Section Jump (page dropdowns) ── */
+    function secJump(sel) {
+      var id = sel.value;
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (el) {
+        var navH = 72;
+        var secNavH = document.querySelector('.sec-nav') ? document.querySelector('.sec-nav').offsetHeight : 0;
+        var y = el.getBoundingClientRect().top + window.pageYOffset - navH - secNavH - 8;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      sel.value = '';
     }
 
     /* ── Init ── */
