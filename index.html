@@ -204,13 +204,13 @@
   </script>
 
   <!-- Preload hero images -->
-  <link rel="preload" as="image" href="images/cover1.webp" />
+  <link rel="preload" as="image" href="images/cover1.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="images/bti-hero.jpg" />
   <link rel="preload" as="image" href="images/industrial.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
   <style>
     /* ═══════════════════════════════════
@@ -740,7 +740,7 @@
       font-size: 2rem;
       font-weight: 700;
       color: var(--red);
-      opacity: .25;
+      opacity: .45;
       margin-bottom: 16px;
       display: block;
     }
@@ -1170,23 +1170,24 @@
     .foot-brand img { height: 48px; width: auto; margin-bottom: 14px; }
     .foot-brand p {
       font-size: .82rem;
-      color: #444;
+      color: #999;
       line-height: 1.7;
       max-width: 280px;
     }
-    .foot-col h4 {
+    .foot-col h4,
+    .foot-col .foot-heading {
       font-size: .68rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #555;
+      color: #aaa;
       margin-bottom: 18px;
     }
     .foot-col ul { list-style: none; }
     .foot-col ul li { margin-bottom: 10px; }
     .foot-col ul a {
       font-size: .82rem;
-      color: #444;
+      color: #999;
       cursor: pointer;
       transition: color .2s;
     }
@@ -1201,7 +1202,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-    .foot-bottom span { font-size: .75rem; color: #333; }
+    .foot-bottom span { font-size: .75rem; color: #999; }
     .foot-dot {
       display: inline-block;
       width: 3px; height: 3px;
@@ -1336,13 +1337,14 @@
 </head>
 <body>
 
+  <main>
   <!-- ══ NAVIGATION ══ -->
   <div class="nav-bar">
     <div class="nav-accent"></div>
     <nav id="mainNav" role="navigation" aria-label="Main navigation">
       <div class="nav-inner">
         <div class="nav-logo" onclick="showPage('home')">
-          <img src="images/Logo.png" alt="Trust DealMakers" />
+          <img src="images/Logo.png" alt="Trust DealMakers" width="181" height="48" />
         </div>
         <button class="mob-btn" id="mobBtn" onclick="toggleNav()" aria-label="Toggle menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
@@ -1351,18 +1353,18 @@
         </button>
         <ul class="nav-links" id="navLinks">
           <li class="nav-dd">
-            <a data-page="pathways">Our Pathways <span class="dd-arrow">&#9662;</span></a>
+            <a href="/" data-page="pathways">Our Pathways <span class="dd-arrow">&#9662;</span></a>
             <div class="nav-dd-menu">
-              <a onclick="showPage('bring-to-india')" data-page="bring-to-india">Bring to India</a>
-              <a onclick="showPage('take-to-world')" data-page="take-to-world">Take to the World</a>
-              <a onclick="showPage('industrial')" data-page="industrial">Redeploy Globally</a>
-              <a onclick="showPage('strategic-partnerships')" data-page="strategic-partnerships">Strategic Partnerships</a>
+              <a href="/bring-to-india/" onclick="showPage('bring-to-india');return false;" data-page="bring-to-india">Bring to India</a>
+              <a href="/global-market-development/" onclick="showPage('take-to-world');return false;" data-page="take-to-world">Take to the World</a>
+              <a href="/industrial/" onclick="showPage('industrial');return false;" data-page="industrial">Redeploy Globally</a>
+              <a href="/strategic-partnerships/" onclick="showPage('strategic-partnerships');return false;" data-page="strategic-partnerships">Strategic Partnerships</a>
             </div>
           </li>
-          <li><a onclick="showPage('about')" data-page="about">About</a></li>
-          <li><a onclick="showPage('vision')" data-page="vision">Vision 2036</a></li>
-          <li><a onclick="showPage('faq')" data-page="faq">FAQ</a></li>
-          <li><a onclick="showPage('engage')" class="nav-engage" data-page="engage">Engage</a></li>
+          <li><a href="/about/" onclick="showPage('about');return false;" data-page="about">About</a></li>
+          <li><a href="/vision/" onclick="showPage('vision');return false;" data-page="vision">Vision 2036</a></li>
+          <li><a href="/faq/" onclick="showPage('faq');return false;" data-page="faq">FAQ</a></li>
+          <li><a href="/engage/" onclick="showPage('engage');return false;" class="nav-engage" data-page="engage">Engage</a></li>
         </ul>
       </div>
     </nav>
@@ -1382,8 +1384,8 @@
         <h1>Building Trusted Commercial Bridges Between India and the World</h1>
         <p>We help international companies develop business in India, Indian companies develop international markets, industrial asset owners find global buyers, and organisations build strategic partnerships.</p>
         <div class="hero-btns">
-          <a onclick="showPage('engage')" class="btn btn-red" style="cursor:pointer;">Start a Conversation</a>
-          <a onclick="showPage('about')" class="btn btn-wol" style="cursor:pointer;">About Us</a>
+          <a href="/engage/" onclick="showPage('engage');return false;" class="btn btn-red">Start a Conversation</a>
+          <a href="/about/" onclick="showPage('about');return false;" class="btn btn-wol">About Us</a>
         </div>
       </div>
     </section>
@@ -1477,7 +1479,7 @@
       <h2>Start With Your Objective</h2>
       <p>Tell us what you are trying to achieve. We will determine whether Trust DealMakers can contribute and which commercial pathway is most appropriate.</p>
       <div class="cta-btns">
-        <a onclick="showPage('engage')" class="btn btn-red" style="cursor:pointer;">Engage With Trust DealMakers</a>
+        <a href="/engage/" onclick="showPage('engage');return false;" class="btn btn-red">Engage With Trust DealMakers</a>
       </div>
     </div>
 
@@ -1497,7 +1499,7 @@
         <h2>India Market Entry &amp; Commercial Development for International Companies</h2>
         <p>Helping international manufacturers, technology companies and industrial organisations develop customers, partners and commercial presence in India.</p>
         <div class="hero-btns">
-          <a onclick="engageFrom('bring-to-india')" class="btn btn-red" style="cursor:pointer;">I Want to Bring My Business to India</a>
+          <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" class="btn btn-red">I Want to Bring My Business to India</a>
         </div>
       </div>
     </section>
@@ -1604,7 +1606,7 @@
       <h2>Bring Your Business to India</h2>
       <p>Tell us about your company, technology and commercial objectives. We will assess whether India presents a meaningful opportunity.</p>
       <div class="cta-btns">
-        <a onclick="engageFrom('bring-to-india')" class="btn btn-red" style="cursor:pointer;">Submit India Market Enquiry</a>
+        <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" class="btn btn-red">Submit India Market Enquiry</a>
       </div>
     </div>
 
@@ -1624,7 +1626,7 @@
         <h2>Global Market Development for Indian Companies</h2>
         <p>Helping selected Indian manufacturers and technology companies develop international markets, identify overseas buyers and build global commercial relationships.</p>
         <div class="hero-btns">
-          <a onclick="engageFrom('take-to-world')" class="btn btn-red" style="cursor:pointer;">I Want to Take My Business to the World</a>
+          <a href="/engage/" onclick="engageFrom('take-to-world');return false;" class="btn btn-red">I Want to Take My Business to the World</a>
         </div>
       </div>
     </section>
@@ -1702,7 +1704,7 @@
       <h2>Take Your Business to the World</h2>
       <p>Tell us about your company, products and international ambitions. We will assess whether there is a meaningful global market opportunity.</p>
       <div class="cta-btns">
-        <a onclick="engageFrom('take-to-world')" class="btn btn-red" style="cursor:pointer;">Submit Global Market Enquiry</a>
+        <a href="/engage/" onclick="engageFrom('take-to-world');return false;" class="btn btn-red">Submit Global Market Enquiry</a>
       </div>
     </div>
 
@@ -1722,7 +1724,7 @@
         <h2>International Buyers for Surplus Industrial Plants, Machinery &amp; Equipment</h2>
         <p>Helping owners of surplus, replaced or under-utilised industrial assets identify qualified international buyers and productive second-life opportunities.</p>
         <div class="hero-btns">
-          <a onclick="engageFrom('industrial')" class="btn btn-red" style="cursor:pointer;">I Have Industrial Assets to Sell</a>
+          <a href="/engage/" onclick="engageFrom('industrial');return false;" class="btn btn-red">I Have Industrial Assets to Sell</a>
         </div>
       </div>
     </section>
@@ -1807,7 +1809,7 @@
       <h2>Redeploy Your Industrial Assets Globally</h2>
       <p>Tell us about your surplus machinery, plant or equipment. We will assess the international market opportunity and identify potential buyers.</p>
       <div class="cta-btns">
-        <a onclick="engageFrom('industrial')" class="btn btn-red" style="cursor:pointer;">Submit Industrial Asset Enquiry</a>
+        <a href="/engage/" onclick="engageFrom('industrial');return false;" class="btn btn-red">Submit Industrial Asset Enquiry</a>
       </div>
     </div>
 
@@ -1827,7 +1829,7 @@
         <h2>Technology, OEM, Manufacturing &amp; Commercial Alliances</h2>
         <p>Helping companies explore technology, OEM, manufacturing, sourcing, distribution and other strategic commercial partnerships.</p>
         <div class="hero-btns">
-          <a onclick="engageFrom('strategic-partnerships')" class="btn btn-red" style="cursor:pointer;">I Am Looking for a Strategic Partner</a>
+          <a href="/engage/" onclick="engageFrom('strategic-partnerships');return false;" class="btn btn-red">I Am Looking for a Strategic Partner</a>
         </div>
       </div>
     </section>
@@ -1905,7 +1907,7 @@
       <h2>Explore a Strategic Partnership</h2>
       <p>Tell us what kind of partnership you are looking for. We will assess whether Trust DealMakers can help identify the right partner.</p>
       <div class="cta-btns">
-        <a onclick="engageFrom('strategic-partnerships')" class="btn btn-red" style="cursor:pointer;">Submit Partnership Enquiry</a>
+        <a href="/engage/" onclick="engageFrom('strategic-partnerships');return false;" class="btn btn-red">Submit Partnership Enquiry</a>
       </div>
     </div>
 
@@ -1980,61 +1982,61 @@
           <div class="faq-item" id="fq1">
             <div class="faq-q">1. What does Trust DealMakers do?</div>
             <div class="faq-a">Trust DealMakers is an India-based cross-border business development and commercial relationship organisation. We help international companies develop business in India, Indian companies develop international markets, industrial asset owners find global buyers, and organisations explore technology, OEM, manufacturing and strategic partnerships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq2">
             <div class="faq-q">2. Who is behind Trust DealMakers?</div>
             <div class="faq-a">Trust DealMakers is led by Anil Mahajane, MBA (IIFT), combining industrial technology experience, manufacturing, international trade, procurement, project execution, executive search and commercial development experience spanning over three decades.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq3">
             <div class="faq-q">3. What are the four commercial pathways?</div>
             <div class="faq-a">Bring to India (India market entry for international companies), Take to the World (global market development for Indian companies), Redeploy Globally (international buyers for industrial assets), and Strategic Partnerships (technology, OEM, manufacturing and commercial alliances).</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq4">
             <div class="faq-q">4. What is Bring to India?</div>
             <div class="faq-a">Bring to India helps international manufacturers, technology companies and industrial organisations develop customers, partners and commercial presence in India. This includes market entry, customer development, commercial representation, distribution, OEM partnerships and strategic sourcing.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq5">
             <div class="faq-q">5. What is Take to the World?</div>
             <div class="faq-a">Take to the World helps selected Indian manufacturers and technology companies develop international markets, identify overseas buyers, distributors, OEM customers and build global commercial relationships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq6">
             <div class="faq-q">6. What is Redeploy Globally?</div>
             <div class="faq-a">Redeploy Globally helps owners of surplus, replaced or under-utilised industrial plants, machinery and equipment identify qualified international buyers and productive second-life opportunities.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq7">
             <div class="faq-q">7. What is Strategic Partnerships?</div>
             <div class="faq-a">Strategic Partnerships helps companies explore technology, OEM, manufacturing, sourcing, distribution, representation and other strategic commercial relationships — connecting complementary capabilities into greater commercial possibility.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq8">
             <div class="faq-q">8. Is Trust DealMakers a consulting firm?</div>
             <div class="faq-a">Trust DealMakers is a cross-border business development and commercial relationship organisation. Our focus is on building commercial relationships, not producing consulting reports. We work towards tangible commercial outcomes — customers, buyers, partners and business relationships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq9">
             <div class="faq-q">9. Is Trust DealMakers a trading company?</div>
             <div class="faq-a">No. Trust DealMakers does not trade, buy or sell products or commodities. We develop commercial relationships between companies — connecting buyers with sellers, manufacturers with markets, technologies with applications, and capability with opportunity.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq10">
             <div class="faq-q">10. What industries does Trust DealMakers work with?</div>
             <div class="faq-a">Our perspective is particularly relevant to industrial manufacturing, machinery, industrial automation, robotics, steel and heavy engineering, medical equipment, industrial chemicals, process industries, electronics, aerospace, defence manufacturing, capital equipment and technology-driven B2B sectors.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
         </div>
 
@@ -2045,61 +2047,61 @@
           <div class="faq-item" id="fq11">
             <div class="faq-q">11. Can Trust DealMakers help an international company enter India?</div>
             <div class="faq-a">Yes. Through our Bring to India pathway, we help international companies with India market entry, customer development, commercial representation, distribution, manufacturing partnerships, OEM relationships, technology partnerships and strategic sourcing.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq12">
             <div class="faq-q">12. Can Trust DealMakers help an Indian company find overseas buyers?</div>
             <div class="faq-a">Yes. Through our Take to the World pathway, we help Indian companies identify international buyers, develop export markets, find overseas distributors, develop OEM customers and build global commercial relationships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq13">
             <div class="faq-q">13. Can Trust DealMakers help sell industrial machinery?</div>
             <div class="faq-a">Yes. Through our Redeploy Globally pathway, we help owners of surplus, replaced or under-utilised industrial machinery, complete plants and production lines identify qualified international buyers.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq14">
             <div class="faq-q">14. Can Trust DealMakers help find a technology partner?</div>
             <div class="faq-a">Yes. Through our Strategic Partnerships pathway, we help companies explore technology partnerships, OEM relationships, manufacturing collaborations, licensing, joint ventures and other strategic commercial alliances.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq15">
             <div class="faq-q">15. Does Trust DealMakers work with startups?</div>
             <div class="faq-a">Trust DealMakers works with companies that have established products, manufacturing capabilities or technologies. Early-stage startups without a proven product or manufacturing capability may not be the best fit for our commercial-development approach.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq16">
             <div class="faq-q">16. How does Trust DealMakers charge?</div>
             <div class="faq-a">Engagement structures are discussed after an initial assessment of the opportunity. They may include retainers, success-based arrangements, commissions or hybrid models depending on the nature and complexity of the assignment.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq17">
             <div class="faq-q">17. Does Trust DealMakers take an equity stake?</div>
             <div class="faq-a">No. Trust DealMakers does not take equity positions in client companies. We are a commercial-development organisation, not an investment firm.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq18">
             <div class="faq-q">18. Where is Trust DealMakers based?</div>
             <div class="faq-a">Trust DealMakers is based in Greater Noida, National Capital Region, India, with a commercial orientation extending across India and international markets.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq19">
             <div class="faq-q">19. Which countries does Trust DealMakers cover?</div>
             <div class="faq-a">Our perspective extends across India, Middle East, Southeast Asia, Europe and global markets. The geography changes from assignment to assignment based on the commercial opportunity.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq20">
             <div class="faq-q">20. What is the minimum engagement size?</div>
             <div class="faq-a">There is no fixed minimum. What matters is whether the commercial opportunity is genuine, the company is serious and Trust DealMakers can contribute meaningfully.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
         </div>
 
@@ -2110,61 +2112,61 @@
           <div class="faq-item" id="fq21">
             <div class="faq-q">21. How long does a typical engagement last?</div>
             <div class="faq-a">Timelines vary significantly. Market-entry and business-development assignments are typically medium to long term. Industrial asset mandates may have shorter timelines. Partnership assignments depend on the complexity of the opportunity.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq22">
             <div class="faq-q">22. What does selective mean?</div>
             <div class="faq-a">Trust DealMakers does not pursue every enquiry. We assess whether the opportunity is commercially viable, whether the company is serious and whether we can contribute meaningfully before accepting an assignment.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq23">
             <div class="faq-q">23. What kind of industrial assets can Trust DealMakers help redeploy?</div>
             <div class="faq-a">Complete plants, production lines, machine tools, CNC machinery, steel plant equipment, rolling mills, furnaces, process equipment, industrial automation, robotics, healthcare equipment, cement and heavy engineering equipment and other industrial assets.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq24">
             <div class="faq-q">24. Can Trust DealMakers help sell an entire plant?</div>
             <div class="faq-a">Yes. We work with complete plants including steel plants, manufacturing facilities, process plants and production units — identifying international buyers for whom the asset represents a productive investment.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq25">
             <div class="faq-q">25. How does the industrial asset process work?</div>
             <div class="faq-a">We begin by understanding the asset — what it is, its condition, capacity, technology and commercial history. We then assess the international market opportunity, identify potential buyers, manage enquiries and support commercial negotiations.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq26">
             <div class="faq-q">26. What makes Trust DealMakers different from a used-machinery dealer?</div>
             <div class="faq-a">Trust DealMakers is not a machinery dealer. We are a commercial-development organisation that helps industrial asset owners identify qualified international buyers. Our industrial technology experience allows us to understand the asset's value and identify markets where that technology remains commercially relevant.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq27">
             <div class="faq-q">27. What kind of technology partnerships does Trust DealMakers facilitate?</div>
             <div class="faq-a">Technology transfer, technology licensing, co-development, R&amp;D collaboration, technology localisation, OEM technology relationships and technology-based commercial partnerships between Indian and international companies.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq28">
             <div class="faq-q">28. Can Trust DealMakers help find an OEM partner?</div>
             <div class="faq-a">Yes. Through our Strategic Partnerships pathway, we help companies identify OEM manufacturing partners, OEM supply relationships and OEM-based commercial arrangements.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq29">
             <div class="faq-q">29. Can Trust DealMakers help find a contract manufacturer in India?</div>
             <div class="faq-a">Yes. Through our Bring to India and Strategic Partnerships pathways, we help international companies identify Indian contract manufacturing partners, evaluate capabilities and develop manufacturing relationships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq30">
             <div class="faq-q">30. What does Trust DealMakers mean by commercial relationship?</div>
             <div class="faq-a">A commercial relationship is more than a single transaction. It involves understanding, trust, ongoing business activity and mutual commercial value. Our objective is to help build relationships that create sustained value — not one-time introductions.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
         </div>
 
@@ -2175,61 +2177,61 @@
           <div class="faq-item" id="fq31">
             <div class="faq-q">31. How is Trust DealMakers different from a trade promotion agency?</div>
             <div class="faq-a">Trade promotion agencies typically provide information and facilitate trade events. Trust DealMakers works directly on commercial development — identifying specific organisations, reaching decision-makers and helping develop business relationships.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq32">
             <div class="faq-q">32. Can I contact Trust DealMakers if I am unsure which pathway applies?</div>
             <div class="faq-a">Yes. Tell us what you are trying to achieve and we will determine which commercial pathway is most appropriate — or whether your requirement falls outside our current scope.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq33">
             <div class="faq-q">33. Does Trust DealMakers handle logistics and shipping?</div>
             <div class="faq-a">Trust DealMakers is not a logistics or shipping company. However, we can coordinate with logistics providers and support documentation and shipping arrangements as part of a broader commercial engagement.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq34">
             <div class="faq-q">34. Does Trust DealMakers provide market research reports?</div>
             <div class="faq-a">Trust DealMakers is not a market research firm. Our work is focused on commercial development and building business relationships. Market understanding is developed as part of our engagement, not sold as a standalone product.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq35">
             <div class="faq-q">35. Is Trust DealMakers a government body?</div>
             <div class="faq-a">No. Trust DealMakers is a private commercial organisation. We are not affiliated with any government body, trade promotion council or statutory authority.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq36">
             <div class="faq-q">36. How do I start a conversation with Trust DealMakers?</div>
             <div class="faq-a">Visit our Engage page, select the pathway closest to your requirement and submit your enquiry. You can also email us directly at india@trustdealmakers.in or call +91 80585 34511.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq37">
             <div class="faq-q">37. What is Vision 2036?</div>
             <div class="faq-a">Vision 2036 is Trust DealMakers' long-term commercial perspective on India's potential to become an increasingly important global manufacturing, technology, sourcing and supply-chain hub — and the opportunities this creates for international and Indian companies.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq38">
             <div class="faq-q">38. Why does executive search experience matter for business development?</div>
             <div class="faq-a">30 years of interviewing CEOs, CXOs and senior industry professionals provides a deep understanding of how organisations make commercial decisions, who the decision-makers are and how to reach them — a perspective that is directly relevant to B2B business development.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq39">
             <div class="faq-q">39. Why does industrial technology experience matter?</div>
             <div class="faq-a">Industrial technology cannot always be evaluated at a superficial level. Understanding what a technology, machine or manufacturing capability actually does — and where it is commercially relevant — is essential for effective commercial development in industrial B2B sectors.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
 
           <div class="faq-item" id="fq40">
             <div class="faq-q">40. What is the best way to contact Trust DealMakers?</div>
             <div class="faq-a">The best way is through our Engage page at trustdealmakers.in/engage/ — select your pathway and submit your enquiry. You can also email india@trustdealmakers.in or call +91 80585 34511.</div>
-            <a class="faq-back" onclick="faqBack()">Back to Questions</a>
+            <a href="/faq/" class="faq-back" onclick="faqBack();return false;">Back to Questions</a>
           </div>
         </div>
 
@@ -2240,7 +2242,7 @@
       <h2>Have a Question Not Listed Here?</h2>
       <p>Tell us what you are trying to achieve. We will determine whether Trust DealMakers can help.</p>
       <div class="cta-btns">
-        <a onclick="showPage('engage')" class="btn btn-red" style="cursor:pointer;">Engage With Trust DealMakers</a>
+        <a href="/engage/" onclick="showPage('engage');return false;" class="btn btn-red">Engage With Trust DealMakers</a>
       </div>
     </div>
 
@@ -2396,7 +2398,7 @@
       <h2>Start With Your Objective</h2>
       <p>You do not need to have the entire answer before contacting us. Tell us what you are trying to achieve. We will determine whether Trust DealMakers can contribute.</p>
       <div class="cta-btns">
-        <a onclick="showPage('engage')" class="btn btn-red" style="cursor:pointer;">Engage With Trust DealMakers</a>
+        <a href="/engage/" onclick="showPage('engage');return false;" class="btn btn-red">Engage With Trust DealMakers</a>
       </div>
     </div>
 
@@ -2517,7 +2519,7 @@
       <h2>Start the Conversation</h2>
       <p>Whether you are an international company considering India, an Indian manufacturer looking for global markets, or a company seeking a strategic partner — tell us what you are trying to achieve.</p>
       <div class="cta-btns">
-        <a onclick="showPage('engage')" class="btn btn-red" style="cursor:pointer;">Engage With Trust DealMakers</a>
+        <a href="/engage/" onclick="showPage('engage');return false;" class="btn btn-red">Engage With Trust DealMakers</a>
       </div>
     </div>
 
@@ -2680,47 +2682,48 @@
   <!-- ══════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════ -->
+  </main>
   <footer role="contentinfo">
     <div class="foot-inner">
       <div class="foot-brand">
-        <img src="images/Logo.png" alt="Trust DealMakers" />
+        <img src="images/Logo.png" alt="Trust DealMakers" width="181" height="48" />
         <p>Building trusted commercial bridges between India and the world. Cross-border business development and commercial relationships.</p>
       </div>
       <div class="foot-col">
-        <h4>Pathways</h4>
+        <p class="foot-heading">Pathways</p>
         <ul>
-          <li><a onclick="showPage('bring-to-india')">Bring to India</a></li>
-          <li><a onclick="showPage('take-to-world')">Take to the World</a></li>
-          <li><a onclick="showPage('industrial')">Redeploy Globally</a></li>
-          <li><a onclick="showPage('strategic-partnerships')">Strategic Partnerships</a></li>
+          <li><a href="/bring-to-india/" onclick="showPage('bring-to-india');return false;">Bring to India</a></li>
+          <li><a href="/global-market-development/" onclick="showPage('take-to-world');return false;">Take to the World</a></li>
+          <li><a href="/industrial/" onclick="showPage('industrial');return false;">Redeploy Globally</a></li>
+          <li><a href="/strategic-partnerships/" onclick="showPage('strategic-partnerships');return false;">Strategic Partnerships</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <p class="foot-heading">Company</p>
         <ul>
-          <li><a onclick="showPage('about')">About</a></li>
-          <li><a onclick="showPage('vision')">Vision 2036</a></li>
-          <li><a onclick="showPage('faq')">FAQ</a></li>
-          <li><a onclick="showPage('engage')">Engage</a></li>
+          <li><a href="/about/" onclick="showPage('about');return false;">About</a></li>
+          <li><a href="/vision/" onclick="showPage('vision');return false;">Vision 2036</a></li>
+          <li><a href="/faq/" onclick="showPage('faq');return false;">FAQ</a></li>
+          <li><a href="/engage/" onclick="showPage('engage');return false;">Engage</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Contact</h4>
+        <p class="foot-heading">Contact</p>
         <ul>
           <li><a href="mailto:india@trustdealmakers.in">india@trustdealmakers.in</a></li>
           <li><a href="tel:+918058534511">+91 80585 34511</a></li>
-          <li><span style="font-size:.82rem; color:#444;">Greater Noida, NCR, India</span></li>
+          <li><span style="font-size:.82rem; color:#999;">Greater Noida, NCR, India</span></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>&copy; 2026 Trust DealMakers. All rights reserved.</span>
       <span>
-        <a onclick="showPage('home')" style="cursor:pointer; color:#444;">Home</a>
+        <a href="/" onclick="showPage('home');return false;" style="cursor:pointer; color:#999;">Home</a>
         <span class="foot-dot"></span>
-        <a onclick="showPage('about')" style="cursor:pointer; color:#444;">About</a>
+        <a href="/about/" onclick="showPage('about');return false;" style="cursor:pointer; color:#999;">About</a>
         <span class="foot-dot"></span>
-        <a onclick="showPage('engage')" style="cursor:pointer; color:#444;">Engage</a>
+        <a href="/engage/" onclick="showPage('engage');return false;" style="cursor:pointer; color:#999;">Engage</a>
       </span>
     </div>
   </footer>
