@@ -19,6 +19,7 @@
     var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     var page = urlToPage[path] || 'home';
     sessionStorage.setItem('tdm-page', page);
+    if (window.location.hash) sessionStorage.setItem('tdm-hash', window.location.hash);
     window.location.replace('https://trustdealmakers.in/');
   </script>
 </head>
