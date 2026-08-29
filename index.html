@@ -4380,15 +4380,29 @@
 
       // Handle SPA routing from 404.html redirect
       var savedPage = sessionStorage.getItem('tdm-page');
+      var savedHash = sessionStorage.getItem('tdm-hash');
       if (savedPage) {
         sessionStorage.removeItem('tdm-page');
+        sessionStorage.removeItem('tdm-hash');
         _activate(savedPage);
         var url = pageUrls[savedPage] || '/';
+        if (savedHash) url += savedHash;
         history.replaceState({ page: savedPage }, '', url);
+        if (savedHash) {
+          var hashId = savedHash.replace('#', '');
+          setTimeout(function() { secJump(hashId); }, 100);
+        }
       } else {
         var id = pageFromUrl();
         _activate(id);
-        history.replaceState({ page: id }, '', pageUrls[id] || '/');
+        var initUrl = pageUrls[id] || '/';
+        var initHash = window.location.hash;
+        if (initHash) initUrl += initHash;
+        history.replaceState({ page: id }, '', initUrl);
+        if (initHash) {
+          var hid = initHash.replace('#', '');
+          setTimeout(function() { secJump(hid); }, 100);
+        }
       }
 
       // Init engage dropdown
