@@ -1101,7 +1101,7 @@
     .asset-fields.visible { display: flex; flex-direction: column; gap: 18px; }
 
     /* ═══════════════════════════════════
-       PAGE SECTION NAVIGATION
+       PAGE SECTION NAVIGATION (pill tabs)
     ═══════════════════════════════════ */
     .sec-nav {
       position: sticky;
@@ -1109,27 +1109,45 @@
       z-index: 90;
       background: var(--white);
       border-bottom: 1px solid var(--border);
-      padding: 14px 48px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
     }
-    .sec-nav .wrap {
+    .sec-nav-inner {
+      max-width: var(--mw);
+      margin: 0 auto;
+      padding: 0 48px;
       display: flex;
-      align-items: center;
-      gap: 14px;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
-    .sec-nav-label {
+    .sec-nav-inner::-webkit-scrollbar { display: none; }
+    .sec-nav-inner a {
+      display: block;
+      padding: 14px 18px;
       font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .3px;
       color: var(--muted);
       white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+      cursor: pointer;
     }
-    .sec-nav-sel {
-      flex: 1;
-      max-width: 420px;
-      padding: 10px 36px 10px 14px;
+    .sec-nav-inner a:hover { color: var(--dark); }
+    .sec-nav-inner a.sn-active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+    .sec-nav-mob {
+      display: none;
+      padding: 10px 24px;
+    }
+    .sec-nav-mob select {
+      width: 100%;
+      padding: 12px 36px 12px 14px;
       font-family: var(--fb);
-      font-size: .88rem;
+      font-size: 16px;
       font-weight: 500;
       color: var(--text);
       background: var(--bg);
@@ -1141,11 +1159,6 @@
       background-repeat: no-repeat;
       background-position: right 12px center;
       cursor: pointer;
-      transition: border-color .2s;
-    }
-    .sec-nav-sel:focus {
-      outline: none;
-      border-color: var(--red);
     }
 
     /* ═══════════════════════════════════
@@ -1325,10 +1338,9 @@
     }
     @media (max-width: 768px) {
       .sec { padding: 60px 24px; }
-      .sec-nav { padding: 12px 24px; top: 71px; }
-      .sec-nav .wrap { gap: 10px; }
-      .sec-nav-label { display: none; }
-      .sec-nav-sel { max-width: 100%; font-size: 16px; }
+      .sec-nav { top: 71px; }
+      .sec-nav-inner { display: none; }
+      .sec-nav-mob { display: block; }
       .nav-inner { padding: 0 24px; }
       .hero-cnt { padding: 32px 24px 60px; }
       .sub-hero { padding: 80px 24px 52px; }
@@ -5583,19 +5595,46 @@
       }
     }
 
-    /* ── Section Jump (page dropdowns) ── */
+    /* ── Section Jump (page tabs & mobile dropdown) ── */
     function secJump(sel) {
-      var id = sel.value;
+      var id = (typeof sel === 'string') ? sel : sel.value;
       if (!id) return;
       var el = document.getElementById(id);
       if (el) {
         var navH = 72;
-        var secNavH = document.querySelector('.sec-nav') ? document.querySelector('.sec-nav').offsetHeight : 0;
+        var sn = el.closest('.page') ? el.closest('.page').querySelector('.sec-nav') : null;
+        var secNavH = sn ? sn.offsetHeight : 0;
         var y = el.getBoundingClientRect().top + window.pageYOffset - navH - secNavH - 8;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
-      sel.value = '';
+      if (typeof sel !== 'string' && sel.tagName === 'SELECT') sel.selectedIndex = 0;
     }
+
+    /* ── Scroll spy for sec-nav pill tabs ── */
+    (function() {
+      var _scrollTimer;
+      window.addEventListener('scroll', function() {
+        clearTimeout(_scrollTimer);
+        _scrollTimer = setTimeout(function() {
+          var activePage = document.querySelector('.page.active');
+          if (!activePage) return;
+          var nav = activePage.querySelector('.sec-nav-inner');
+          if (!nav) return;
+          var links = nav.querySelectorAll('a[data-sec]');
+          var best = null;
+          var offset = 180;
+          links.forEach(function(a) {
+            var sec = document.getElementById(a.getAttribute('data-sec'));
+            if (sec && sec.getBoundingClientRect().top < offset) best = a;
+          });
+          links.forEach(function(a) { a.classList.remove('sn-active'); });
+          if (best) {
+            best.classList.add('sn-active');
+            best.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+          }
+        }, 60);
+      });
+    })();
 
     /* ── Init ── */
     (function() {
