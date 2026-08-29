@@ -1101,6 +1101,54 @@
     .asset-fields.visible { display: flex; flex-direction: column; gap: 18px; }
 
     /* ═══════════════════════════════════
+       PAGE SECTION NAVIGATION
+    ═══════════════════════════════════ */
+    .sec-nav {
+      position: sticky;
+      top: 71px;
+      z-index: 90;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 48px;
+    }
+    .sec-nav .wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sec-nav-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .sec-nav-sel {
+      flex: 1;
+      max-width: 420px;
+      padding: 10px 36px 10px 14px;
+      font-family: var(--fb);
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .sec-nav-sel:focus {
+      outline: none;
+      border-color: var(--red);
+    }
+
+    /* ═══════════════════════════════════
        CTA BAND
     ═══════════════════════════════════ */
     .cta-band {
@@ -1277,6 +1325,10 @@
     }
     @media (max-width: 768px) {
       .sec { padding: 60px 24px; }
+      .sec-nav { padding: 12px 24px; top: 71px; }
+      .sec-nav .wrap { gap: 10px; }
+      .sec-nav-label { display: none; }
+      .sec-nav-sel { max-width: 100%; font-size: 16px; }
       .nav-inner { padding: 0 24px; }
       .hero-cnt { padding: 32px 24px 60px; }
       .sub-hero { padding: 80px 24px 52px; }
@@ -1504,107 +1556,996 @@
       </div>
     </section>
 
-    <section class="sec">
+    <!-- Section navigation -->
+    <div class="sec-nav">
       <div class="wrap">
-        <p class="intro-p">For an international company, India can be a market, a manufacturing base, a sourcing destination, an engineering centre, an OEM ecosystem and a supply-chain partner — often simultaneously. The question is not simply whether India is relevant, but how to develop the right commercial relationships.</p>
+        <label class="sec-nav-label">Jump to:</label>
+        <select class="sec-nav-sel" onchange="secJump(this)">
+          <option value="">Select a section...</option>
+          <option value="bti-intro">Introduction</option>
+          <option value="bti-opportunities">India's Opening Opportunities</option>
+          <option value="bti-objectives">What Are You Trying to Achieve?</option>
+          <option value="bti-right-companies">Finding the Right Companies</option>
+          <option value="bti-four-ways">Four Ways We Can Help</option>
+          <option value="bti-why-india">Why India</option>
+          <option value="bti-tech-led">Technology-Led Market Entry</option>
+          <option value="bti-industrial-tech">Industrial Technology &amp; Machinery</option>
+          <option value="bti-steel">Steel &amp; Heavy Engineering</option>
+          <option value="bti-aerospace">Aerospace &amp; Defence</option>
+          <option value="bti-semiconductor">Semiconductor &amp; Electronics</option>
+          <option value="bti-healthcare">Healthcare &amp; Medical Technologies</option>
+          <option value="bti-chemicals">Industrial Chemicals &amp; Process Technologies</option>
+          <option value="bti-advanced-mfg">Advanced Manufacturing</option>
+          <option value="bti-right-customer">Finding the Right Customer</option>
+          <option value="bti-distribution">India Distribution &amp; Representation</option>
+          <option value="bti-manufacturing-partners">Manufacturing Partners</option>
+          <option value="bti-oem">OEM &amp; Contract Manufacturing</option>
+          <option value="bti-tech-transfer">Technology Transfer &amp; Localisation</option>
+          <option value="bti-pipeline">Development Pipeline</option>
+          <option value="bti-readiness">Readiness Criteria</option>
+          <option value="bti-honesty">What We Do Not Promise</option>
+          <option value="bti-mandate">Mandate Structure</option>
+          <option value="bti-confidentiality">Confidentiality</option>
+          <option value="bti-who">Who Should Contact Us</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Introduction -->
+    <section class="sec" id="bti-intro">
+      <div class="wrap">
+        <p class="intro-p">India is no longer simply a market to be entered. It is increasingly a market, manufacturing base, sourcing destination, technology ecosystem and strategic business opportunity. For an international company, however, the size of the Indian opportunity does not automatically translate into business.</p>
 
         <div class="box">
-          <h3>Beyond Market Entry</h3>
-          <p>India market entry is not simply about finding a distributor or an agent. It is about understanding the market, identifying the right organisations and decision-makers, and building relationships that can develop into sustained commercial value.</p>
+          <h3>The Real Questions</h3>
+          <ul>
+            <li>Who should we sell to?</li>
+            <li>Who makes the decision?</li>
+            <li>Which Indian companies could become our customers, distributors, manufacturers or partners?</li>
+            <li>How should we enter the market?</li>
+            <li>What local relationships do we need?</li>
+            <li>Can we build a sustainable business in India rather than simply generate a few enquiries?</li>
+          </ul>
+        </div>
+
+        <p class="intro-p" style="margin-top:32px;">Trust DealMakers helps selected international companies answer these questions and develop practical commercial pathways into India.</p>
+      </div>
+    </section>
+
+    <!-- India's Opening Opportunities -->
+    <section class="sec bg-light" id="bti-opportunities">
+      <div class="wrap">
+        <p class="s-label-l">India Market Opportunity</p>
+        <h2 class="s-title">India Is Opening Opportunities Across Industries</h2>
+        <p class="s-lead">International companies are increasingly looking at India for:</p>
+        <div class="g4" style="margin-top:28px;">
+          <div class="card">
+            <h3>Market &amp; Sales</h3>
+            <ul>
+              <li>Market entry</li>
+              <li>Sales and distribution</li>
+              <li>Long-term commercial representation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Manufacturing</h3>
+            <ul>
+              <li>Manufacturing</li>
+              <li>OEM relationships</li>
+              <li>Contract manufacturing</li>
+              <li>Localisation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Sourcing &amp; Supply Chain</h3>
+            <ul>
+              <li>Strategic sourcing</li>
+              <li>Supply-chain diversification</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Partnerships</h3>
+            <ul>
+              <li>Technology partnerships</li>
+              <li>Joint ventures</li>
+              <li>Engineering partnerships</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tag-grid" style="margin-top:36px;">
+          <span class="tag">Advanced Manufacturing</span>
+          <span class="tag">Industrial Machinery</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Electronics</span>
+          <span class="tag">Semiconductor Technologies</span>
+          <span class="tag">Steel &amp; Heavy Engineering</span>
+          <span class="tag">Aerospace &amp; Defence</span>
+          <span class="tag">Healthcare &amp; Medical Technologies</span>
+          <span class="tag">Chemicals</span>
+          <span class="tag">Process Industries</span>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>Start with the Objective</h3>
+          <p>India market entry should begin with the commercial objective &mdash; not with a list of companies.</p>
         </div>
       </div>
     </section>
 
-    <section class="sec bg-light">
+    <!-- What Are You Trying to Achieve? -->
+    <section class="sec" id="bti-objectives">
       <div class="wrap">
-        <p class="s-label-l">Who This Is For</p>
-        <h2 class="s-title">International companies exploring India</h2>
-        <div class="g2" style="margin-top:28px;">
-          <div class="card">
-            <h3>International Manufacturers</h3>
-            <p>Industrial machinery, manufacturing technologies, automation, robotics, engineering equipment, process technologies, capital equipment and industrial products.</p>
-          </div>
-          <div class="card">
-            <h3>Technology Companies</h3>
-            <p>Industrial technology, manufacturing software, automation, precision systems, testing technology, industrial digitalisation and engineering know-how.</p>
-          </div>
-          <div class="card">
-            <h3>Healthcare &amp; Medical Technology</h3>
-            <p>Medical devices, hospital equipment, diagnostic systems, surgical technologies, laboratory equipment and healthcare infrastructure.</p>
-          </div>
-          <div class="card">
-            <h3>Global Sourcing &amp; Procurement</h3>
-            <p>International buying houses, procurement companies, supply chain organisations seeking qualified Indian manufacturers and suppliers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec">
-      <div class="wrap">
-        <p class="s-label-l">What We Do</p>
-        <h2 class="s-title">Our India market development services</h2>
+        <p class="s-label-l">Your Objective</p>
+        <h2 class="s-title">What Are You Trying to Achieve in India?</h2>
+        <p class="s-lead">Different objectives require different routes.</p>
         <div class="g3" style="margin-top:28px;">
           <div class="card">
-            <h3>India Market Entry</h3>
-            <p>Understanding the market opportunity, identifying potential customers, evaluating commercial viability and developing an appropriate market-entry strategy.</p>
+            <h3>Sell Products in India</h3>
+            <p>We can explore customers, distributors, channel partners, institutional buyers and commercial representation.</p>
           </div>
           <div class="card">
-            <h3>Customer Development</h3>
-            <p>Identifying and reaching relevant organisations and decision-makers — not simply company names, but the people responsible for purchasing, technology and business decisions.</p>
+            <h3>Find an Indian Distributor</h3>
+            <p>We can explore relevant distributors and channel partners based on the product, territory and market model.</p>
           </div>
           <div class="card">
-            <h3>Commercial Representation</h3>
-            <p>Acting as your India-based commercial presence — representing your company, products and technology to the Indian market on a sustained basis.</p>
+            <h3>Find Indian Manufacturers</h3>
+            <p>We can explore Indian manufacturers capable of OEM, contract manufacturing, localisation or strategic production relationships.</p>
           </div>
           <div class="card">
-            <h3>Distribution &amp; Channel Partners</h3>
-            <p>Identifying and evaluating potential distributors, channel partners, resellers and value-added partners across India.</p>
+            <h3>Source from India</h3>
+            <p>We can help explore Indian suppliers, manufacturers and sourcing opportunities.</p>
           </div>
           <div class="card">
-            <h3>Manufacturing &amp; OEM Partnerships</h3>
-            <p>Exploring Indian manufacturing partners, OEM relationships, contract manufacturing, localisation and technology partnerships.</p>
+            <h3>Find an Indian Technology Partner</h3>
+            <p>We can explore technology, engineering, manufacturing and commercial relationships.</p>
           </div>
           <div class="card">
-            <h3>Strategic Sourcing from India</h3>
-            <p>Supporting international buyers in identifying qualified Indian manufacturers, evaluating suppliers and developing strategic sourcing relationships.</p>
+            <h3>Localise Manufacturing</h3>
+            <p>We can explore Indian manufacturing partners, OEM relationships, contract manufacturing and other localisation possibilities.</p>
+          </div>
+          <div class="card">
+            <h3>Develop a Joint Venture</h3>
+            <p>We can explore potential Indian partners where complementary capabilities and commercial objectives exist.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial Representation in India</h3>
+            <p>We can discuss an appropriate representation and business-development mandate.</p>
+          </div>
+          <div class="card">
+            <h3>Understand the Indian Market First</h3>
+            <p>We can begin with the product, technology, target customer and commercial objective before determining the appropriate market-development route.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="sec bg-light">
+    <!-- Finding the Right Companies -->
+    <section class="sec bg-light" id="bti-right-companies">
       <div class="wrap">
-        <p class="s-label-l">How We Work</p>
-        <h2 class="s-title">A structured commercial approach</h2>
+        <p class="s-label-l">Our Approach</p>
+        <h2 class="s-title">Finding the Right Companies &mdash; Not Just Any Companies</h2>
+        <p class="s-lead">A database can provide thousands of Indian company names. That does not mean those companies are potential customers.</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>What Makes a Prospect Relevant?</h3>
+            <ul>
+              <li>Industry &amp; application</li>
+              <li>Technology &amp; manufacturing capability</li>
+              <li>Plant size &amp; geography</li>
+              <li>Existing suppliers</li>
+              <li>Procurement structure</li>
+              <li>Investment plans</li>
+              <li>Technical requirements</li>
+              <li>Decision-making authority</li>
+              <li>Distribution model</li>
+              <li>Commercial scale</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Our Approach</h3>
+            <p>We follow a structured commercial flow:</p>
+            <ul>
+              <li>Product / Technology</li>
+              <li>Application</li>
+              <li>Target Industry</li>
+              <li>Target Company</li>
+              <li>Decision-Maker</li>
+              <li>Commercial Proposition</li>
+              <li>Business Relationship</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>The Objective</h3>
+            <p>The objective is not a larger prospect list. The objective is a more relevant commercial opportunity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Four Ways We Can Help -->
+    <section class="sec" id="bti-four-ways">
+      <div class="wrap">
+        <p class="s-label-l">Bring to India</p>
+        <h2 class="s-title">Four Ways We Can Help</h2>
         <div class="g2" style="margin-top:28px;">
           <div class="card n-card">
             <span class="n-card-num">01</span>
-            <h3>Understand the Proposition</h3>
-            <p>We begin by understanding your technology, product, capability and commercial objectives. What are you selling? Who would buy it? Why would they choose it?</p>
+            <h3>Market Development</h3>
+            <p>Helping international companies identify and develop commercially relevant opportunities in India.</p>
+            <ul>
+              <li>Market opportunity identification</li>
+              <li>Customer mapping</li>
+              <li>Industry mapping</li>
+              <li>Prospect identification</li>
+              <li>Business-development support</li>
+              <li>Commercial introductions</li>
+              <li>Relationship development</li>
+            </ul>
           </div>
           <div class="card n-card">
             <span class="n-card-num">02</span>
-            <h3>Assess the Opportunity</h3>
-            <p>Evaluate the Indian market opportunity — relevant industries, potential applications, competitive landscape and realistic commercial potential.</p>
+            <h3>Commercial Representation</h3>
+            <p>For companies that want an ongoing business-development presence rather than occasional introductions.</p>
+            <ul>
+              <li>Market development</li>
+              <li>Customer development</li>
+              <li>Distributor development</li>
+              <li>Commercial representation</li>
+              <li>Business meetings</li>
+              <li>Follow-up &amp; opportunity development</li>
+              <li>Local coordination</li>
+            </ul>
+            <p style="margin-top:12px;font-size:14px;color:#666;">The exact scope is agreed before commencement.</p>
           </div>
           <div class="card n-card">
             <span class="n-card-num">03</span>
-            <h3>Identify &amp; Qualify</h3>
-            <p>Identify appropriate organisations and decision-makers. Qualify genuine interest, purchasing authority and commercial relevance.</p>
+            <h3>Sourcing &amp; Manufacturing</h3>
+            <p>India can be both a market and a manufacturing destination. We may help international companies explore:</p>
+            <ul>
+              <li>Indian manufacturers &amp; OEM suppliers</li>
+              <li>Contract manufacturers</li>
+              <li>Component suppliers</li>
+              <li>Engineering companies</li>
+              <li>Strategic sourcing</li>
+              <li>Private-label manufacturing</li>
+              <li>Localisation &amp; supply-chain partnerships</li>
+            </ul>
+            <p style="margin-top:12px;font-size:14px;color:#666;">The objective is to identify an Indian manufacturing or sourcing relationship that meets the technical, quality and commercial requirements of the international organisation.</p>
           </div>
           <div class="card n-card">
             <span class="n-card-num">04</span>
-            <h3>Connect &amp; Develop</h3>
-            <p>Create appropriate business conversations and help develop the relationship towards a meaningful commercial outcome.</p>
+            <h3>Technology &amp; Strategic Partnerships</h3>
+            <p>Some international companies do not simply want to sell into India. They want to build something in India.</p>
+            <ul>
+              <li>Technology transfer &amp; licensing</li>
+              <li>OEM relationships</li>
+              <li>Manufacturing partnerships</li>
+              <li>Engineering partnerships</li>
+              <li>Joint ventures</li>
+              <li>Localisation &amp; co-development</li>
+              <li>Strategic alliances</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Why India -->
+    <section class="sec bg-dark" id="bti-why-india">
+      <div class="wrap">
+        <p class="s-label">Why India</p>
+        <h2 class="s-title s-title-c">India Can Be Both the Market and the Platform</h2>
+        <p class="s-lead" style="text-align:center;">For an international organisation, India may offer several opportunities simultaneously.</p>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Sell in India</h3>
+            <p>Access a large and increasingly sophisticated customer base.</p>
+          </div>
+          <div class="card">
+            <h3>Manufacture in India</h3>
+            <p>Develop cost-effective and scalable manufacturing.</p>
+          </div>
+          <div class="card">
+            <h3>Source from India</h3>
+            <p>Build alternative or complementary supply chains.</p>
+          </div>
+          <div class="card">
+            <h3>Partner in India</h3>
+            <p>Access Indian engineering, manufacturing, distribution and market capabilities.</p>
+          </div>
+          <div class="card">
+            <h3>Localise in India</h3>
+            <p>Develop local production around an international technology or product.</p>
+          </div>
+          <div class="card">
+            <h3>Export from India</h3>
+            <p>Use Indian manufacturing capabilities as part of a wider international supply chain.</p>
+          </div>
+        </div>
+        <div class="box" style="margin-top:36px;border-color:rgba(255,255,255,0.2);">
+          <h3>The Broader Proposition</h3>
+          <p>Global Company &rarr; India &rarr; Market + Manufacturing + Sourcing + Partnerships</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology-Led Market Entry -->
+    <section class="sec" id="bti-tech-led">
+      <div class="wrap">
+        <p class="s-label-l">Commercial Intelligence</p>
+        <h2 class="s-title">Technology-Led Market Entry</h2>
+        <p class="s-lead">Industrial technology cannot be sold like a consumer product. A serious commercial conversation requires technical understanding.</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>The Questions That Matter</h3>
+            <ul>
+              <li>What process does the technology improve?</li>
+              <li>What existing equipment does it replace?</li>
+              <li>What production problem does it solve?</li>
+              <li>What capacity does it provide?</li>
+              <li>What level of automation is involved?</li>
+              <li>How does it integrate with an existing plant?</li>
+              <li>What is the expected return on investment?</li>
+              <li>What technical support is required?</li>
+              <li>Who specifies the technology?</li>
+              <li>Who approves the capital expenditure?</li>
+              <li>Who ultimately makes the purchase decision?</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Our Advantage</h3>
+            <p>Trust DealMakers combines industrial technology experience with 30 years of executive search experience, including interviewing C-Suite and senior industry professionals.</p>
+            <p style="margin-top:12px;">That combination helps us understand both:</p>
+            <ul>
+              <li><strong>The Technology</strong> &mdash; what it does, why it matters, how it competes</li>
+              <li><strong>The People Who Decide</strong> &mdash; whether to buy, invest, partner or collaborate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industrial Technology & Machinery -->
+    <section class="sec bg-light" id="bti-industrial-tech">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Industrial Technology &amp; Machinery</h2>
+        <p class="s-lead">Where technical understanding matters.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Machine Tools</span>
+          <span class="tag">CNC Machinery</span>
+          <span class="tag">Industrial Automation</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Cobots</span>
+          <span class="tag">Manufacturing Systems</span>
+          <span class="tag">Steel Plant Equipment</span>
+          <span class="tag">Rolling Mills</span>
+          <span class="tag">Furnaces</span>
+          <span class="tag">Metallurgical Equipment</span>
+          <span class="tag">Process Equipment</span>
+          <span class="tag">Material-Handling Systems</span>
+          <span class="tag">Industrial Software</span>
+          <span class="tag">Precision Engineering</span>
+          <span class="tag">Electronics Manufacturing</span>
+          <span class="tag">Semiconductor Manufacturing Equipment</span>
+          <span class="tag">Energy &amp; Industrial Systems</span>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>Why Should an Indian Customer Invest in This Technology?</h3>
+          <p>Price alone is rarely enough. The proposition may instead be:</p>
+          <ul>
+            <li>Higher productivity</li>
+            <li>Better quality</li>
+            <li>Lower operating cost</li>
+            <li>Automation &amp; labour optimisation</li>
+            <li>Energy efficiency</li>
+            <li>Higher throughput</li>
+            <li>Better precision</li>
+            <li>Technology advantage</li>
+            <li>Supply-chain resilience</li>
+            <li>Access to a capability not readily available locally</li>
+          </ul>
+          <p style="margin-top:12px;">That is the type of commercial proposition that needs to reach the right decision-makers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steel & Heavy Engineering -->
+    <section class="sec" id="bti-steel">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Steel &amp; Heavy Engineering</h2>
+        <p class="s-lead">India's steel and heavy-engineering industries represent significant opportunities for international technology and equipment companies.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Steel-Making Technology</span>
+          <span class="tag">Rolling-Mill Technology</span>
+          <span class="tag">Furnaces</span>
+          <span class="tag">Metallurgical Equipment</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Material Handling</span>
+          <span class="tag">Industrial Equipment</span>
+          <span class="tag">Engineering Systems</span>
+          <span class="tag">Process Technologies</span>
+          <span class="tag">Plant Modernisation</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">A technically informed approach is essential because capital-equipment decisions often involve long evaluation cycles and multiple stakeholders.</p>
+      </div>
+    </section>
+
+    <!-- Aerospace & Defence -->
+    <section class="sec bg-light" id="bti-aerospace">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Aerospace &amp; Defence Manufacturing</h2>
+        <p class="s-lead">India's aerospace and defence manufacturing ecosystem is developing rapidly.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Precision Manufacturing</span>
+          <span class="tag">Aerospace Components</span>
+          <span class="tag">Defence Manufacturing</span>
+          <span class="tag">Advanced Materials</span>
+          <span class="tag">Engineering Technologies</span>
+          <span class="tag">Production Equipment</span>
+          <span class="tag">Supply-Chain Partnerships</span>
+          <span class="tag">OEM Relationships</span>
+          <span class="tag">Technology Collaboration</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">Any engagement in this area must be conducted within applicable Indian laws, regulations, licensing requirements, export-control requirements and other compliance frameworks.</p>
+      </div>
+    </section>
+
+    <!-- Semiconductor & Electronics -->
+    <section class="sec" id="bti-semiconductor">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Semiconductor &amp; Electronics Manufacturing</h2>
+        <p class="s-lead">India is developing deeper electronics and semiconductor manufacturing capabilities.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Manufacturing Equipment</span>
+          <span class="tag">Precision Systems</span>
+          <span class="tag">Testing &amp; Inspection</span>
+          <span class="tag">Electronics Manufacturing Technologies</span>
+          <span class="tag">Cleanroom Technologies</span>
+          <span class="tag">Industrial Automation</span>
+          <span class="tag">Components</span>
+          <span class="tag">Specialised Manufacturing Systems</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">The opportunity may be commercial, technological, manufacturing-related or strategic.</p>
+      </div>
+    </section>
+
+    <!-- Healthcare & Medical Technologies -->
+    <section class="sec bg-light" id="bti-healthcare">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Healthcare &amp; Medical Technologies</h2>
+        <p class="s-lead">India's healthcare ecosystem creates opportunities for selected international companies.</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Companies We Can Help</h3>
+            <ul>
+              <li>Medical-device companies</li>
+              <li>Diagnostic technology companies</li>
+              <li>Hospital-equipment manufacturers</li>
+              <li>Laboratory technology companies</li>
+              <li>Surgical technology companies</li>
+              <li>Healthcare technology companies</li>
+              <li>Medical equipment suppliers</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Market Development May Involve</h3>
+            <ul>
+              <li>Hospitals &amp; hospital groups</li>
+              <li>Diagnostic networks</li>
+              <li>Distributors</li>
+              <li>Institutional buyers</li>
+              <li>Healthcare companies</li>
+              <li>Strategic partners</li>
+            </ul>
+            <p style="margin-top:12px;font-size:14px;color:#666;">Regulatory, registration and compliance requirements must be assessed according to the specific product and applicable Indian regulations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industrial Chemicals & Process Technologies -->
+    <section class="sec" id="bti-chemicals">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Industrial Chemicals &amp; Process Technologies</h2>
+        <p class="s-lead">Selected international companies may seek Indian opportunities in chemicals and process industries.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Industrial Chemicals</span>
+          <span class="tag">Specialty Chemicals</span>
+          <span class="tag">Process Technologies</span>
+          <span class="tag">Process Equipment</span>
+          <span class="tag">Manufacturing Systems</span>
+          <span class="tag">Environmental Technologies</span>
+          <span class="tag">Industrial Inputs</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">The precise opportunity depends on technical suitability, regulatory requirements, market demand and commercial economics.</p>
+      </div>
+    </section>
+
+    <!-- Advanced Manufacturing -->
+    <section class="sec bg-light" id="bti-advanced-mfg">
+      <div class="wrap">
+        <p class="s-label-l">Industry Focus</p>
+        <h2 class="s-title">Advanced Manufacturing</h2>
+        <p class="s-lead">India's industrial transformation is creating opportunities across multiple technology areas.</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Precision Manufacturing</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Machine Tools</span>
+          <span class="tag">Smart Manufacturing</span>
+          <span class="tag">Industrial Software</span>
+          <span class="tag">Digital Manufacturing</span>
+          <span class="tag">Electronics Manufacturing</span>
+          <span class="tag">Semiconductor Technologies</span>
+          <span class="tag">Engineering Technologies</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">For international technology companies, the opportunity may involve both selling technology into India and developing an Indian manufacturing or technology ecosystem around it.</p>
+      </div>
+    </section>
+
+    <!-- Mid-page CTA -->
+    <div class="cta-band">
+      <h2>Bring Your Technology to India</h2>
+      <p>Tell us about your company, product, technology and commercial objectives. We will assess whether India presents a meaningful commercial opportunity.</p>
+      <div class="cta-btns">
+        <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" class="btn btn-red">Submit India Market Enquiry</a>
+      </div>
+    </div>
+
+    <!-- Finding the Right Indian Customer -->
+    <section class="sec" id="bti-right-customer">
+      <div class="wrap">
+        <p class="s-label-l">Decision-Makers</p>
+        <h2 class="s-title">Finding the Right Indian Customer</h2>
+        <p class="s-lead">From Market &rarr; Industry &rarr; Company &rarr; Decision-Maker</p>
+
+        <p class="intro-p" style="margin-top:24px;">Depending on the product or technology, the relevant decision-maker could be:</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Promoter</span>
+          <span class="tag">Chairman</span>
+          <span class="tag">CEO</span>
+          <span class="tag">Managing Director</span>
+          <span class="tag">COO</span>
+          <span class="tag">Plant Head</span>
+          <span class="tag">Technical Director</span>
+          <span class="tag">Projects Director</span>
+          <span class="tag">Procurement Head</span>
+          <span class="tag">Engineering Head</span>
+          <span class="tag">R&amp;D Head</span>
+          <span class="tag">Supply Chain Head</span>
+          <span class="tag">Business Unit Head</span>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>Executive-Search Perspective</h3>
+          <p>Our executive-search experience provides an additional perspective here. We understand that finding the right person can be as important as finding the right company.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- India Distribution & Representation -->
+    <section class="sec bg-light" id="bti-distribution">
+      <div class="wrap">
+        <p class="s-label-l">Commercial Presence</p>
+        <h2 class="s-title">India Distribution &amp; Representation</h2>
+        <p class="s-lead">Building a local commercial presence without immediately creating a full local organisation.</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Channel Options</h3>
+            <ul>
+              <li>Distributors</li>
+              <li>Dealers</li>
+              <li>Channel partners</li>
+              <li>Sales representatives</li>
+              <li>Technical representatives</li>
+              <li>Industry partners</li>
+              <li>Strategic commercial representatives</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Depends On</h3>
+            <p>The appropriate structure depends on the product, territory, customer profile and desired level of market involvement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finding Indian Manufacturing Partners -->
+    <section class="sec" id="bti-manufacturing-partners">
+      <div class="wrap">
+        <p class="s-label-l">Supply Chain</p>
+        <h2 class="s-title">Finding Indian Manufacturing Partners</h2>
+        <p class="s-lead">India as a global supply-chain destination.</p>
+
+        <p class="intro-p" style="margin-top:24px;">International companies may be looking for Indian manufacturers because they need:</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Manufacturing Needs</h3>
+            <ul>
+              <li>Cost competitiveness</li>
+              <li>Engineering capability</li>
+              <li>Alternative sourcing</li>
+              <li>Supply-chain diversification</li>
+              <li>Production capacity</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Product Requirements</h3>
+            <ul>
+              <li>Components</li>
+              <li>Subassemblies</li>
+              <li>Finished products</li>
+              <li>OEM manufacturing</li>
+              <li>Contract manufacturing</li>
+              <li>Local production</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>What We Look For</h3>
+            <p>We explore Indian companies that may have the required combination of:</p>
+            <p style="margin-top:12px;"><strong>Technology + Capacity + Quality + Capability + Commercial Fit</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OEM & Contract Manufacturing -->
+    <section class="sec bg-light" id="bti-oem">
+      <div class="wrap">
+        <p class="s-label-l">Manufacturing</p>
+        <h2 class="s-title">OEM &amp; Contract Manufacturing</h2>
+        <p class="s-lead">Your product. An Indian manufacturing partner.</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>You May Have</h3>
+            <ul>
+              <li>Product design</li>
+              <li>Technology</li>
+              <li>Brand</li>
+              <li>Customers</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>But Need</h3>
+            <ul>
+              <li>Indian manufacturing</li>
+              <li>Components &amp; assembly</li>
+              <li>Fabrication &amp; engineering</li>
+              <li>Local sourcing</li>
+              <li>Production scale</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>Beyond Cheapest Supplier</h3>
+          <p>The objective is not simply to find the cheapest supplier. It is to identify a manufacturer capable of becoming a reliable long-term production partner.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Transfer & Localisation -->
+    <section class="sec" id="bti-tech-transfer">
+      <div class="wrap">
+        <p class="s-label-l">Technology</p>
+        <h2 class="s-title">Technology Transfer &amp; Localisation</h2>
+        <p class="s-lead">From international technology to Indian manufacturing.</p>
+
+        <div class="box" style="margin-top:28px;">
+          <h3>The Pathway</h3>
+          <p>Technology &rarr; Indian Partner &rarr; Localisation &rarr; Manufacturing &rarr; Indian Market &rarr; Potential Global Supply</p>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">Possible structures may include:</p>
+
+        <div class="tag-grid" style="margin-top:20px;">
+          <span class="tag">Licensing</span>
+          <span class="tag">Technology Transfer</span>
+          <span class="tag">Manufacturing Agreements</span>
+          <span class="tag">OEM Arrangements</span>
+          <span class="tag">Joint Ventures</span>
+          <span class="tag">Strategic Alliances</span>
+          <span class="tag">Co-Development</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">Every opportunity requires its own technical, commercial and legal evaluation.</p>
+      </div>
+    </section>
+
+    <!-- Development Pipeline -->
+    <section class="sec bg-light" id="bti-pipeline">
+      <div class="wrap">
+        <p class="s-label-l">The Journey</p>
+        <h2 class="s-title">From First Introduction to Commercial Relationship</h2>
+        <p class="s-lead">An introduction is only the beginning. A typical development pathway:</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card n-card">
+            <span class="n-card-num">01</span>
+            <h3>Identify</h3>
+            <p>Relevant Indian market and companies.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">02</span>
+            <h3>Qualify</h3>
+            <p>Commercial and technical relevance.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">03</span>
+            <h3>Connect</h3>
+            <p>Appropriate decision-makers.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">04</span>
+            <h3>Discuss</h3>
+            <p>Technical and commercial requirements.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">05</span>
+            <h3>Evaluate</h3>
+            <p>Product, technology, economics and fit.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">06</span>
+            <h3>Pilot / Sample / Trial</h3>
+            <p>Where appropriate.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">07</span>
+            <h3>Negotiate</h3>
+            <p>Commercial terms.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">08</span>
+            <h3>Order / Partnership</h3>
+            <p>The relationship becomes commercially active.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">09</span>
+            <h3>Develop</h3>
+            <p>Repeat business and long-term account development.</p>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">Our objective is to help move opportunities beyond the first introduction where the mandate requires continued involvement.</p>
+      </div>
+    </section>
+
+    <!-- Readiness Criteria -->
+    <section class="sec" id="bti-readiness">
+      <div class="wrap">
+        <p class="s-label-l">Are You Ready?</p>
+        <h2 class="s-title">What Makes an International Company Ready for India?</h2>
+        <p class="s-lead">We are particularly interested when a company has:</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Product &amp; Capability</h3>
+            <ul>
+              <li>A differentiated product or technology</li>
+              <li>Proven industrial capability</li>
+              <li>Competitive economics</li>
+              <li>Relevant international references</li>
+              <li>Technical support capability</li>
+              <li>Reliable supply</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Commitment &amp; Outlook</h3>
+            <ul>
+              <li>Management commitment</li>
+              <li>A clear India objective</li>
+              <li>Willingness to invest time in market development</li>
+              <li>A realistic understanding of India's commercial environment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>Systematic Market Development</h3>
+          <p>India market entry is rarely an overnight exercise. The companies most likely to build lasting business are generally those prepared to develop the market systematically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Not Promise -->
+    <section class="sec bg-light" id="bti-honesty">
+      <div class="wrap">
+        <p class="s-label-l">Our Commitment</p>
+        <h2 class="s-title">What We Do Not Promise</h2>
+        <p class="s-lead">We do not sell false certainty.</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>No Guaranteed Orders</h3>
+            <p>No responsible organisation can guarantee that an Indian company will purchase a product, appoint a distributor or enter into a partnership.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial Outcomes Depend On</h3>
+            <ul>
+              <li>Product &amp; technology</li>
+              <li>Price &amp; quality</li>
+              <li>Competition</li>
+              <li>Regulation &amp; timing</li>
+              <li>Customer requirements</li>
+              <li>Investment decisions</li>
+              <li>Commercial negotiations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:36px;">
+          <h3>What We Do</h3>
+          <p>We do not promise guaranteed orders. We help create and develop credible commercial opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mandate Structure -->
+    <section class="sec" id="bti-mandate">
+      <div class="wrap">
+        <p class="s-label-l">Engagement</p>
+        <h2 class="s-title">A Mandate-Driven Approach</h2>
+        <p class="s-lead">Clear objective. Clear market. Clear commercial route.</p>
+
+        <p class="intro-p" style="margin-top:24px;">Where appropriate, an India-market mandate may define:</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Scope Definition</h3>
+            <ul>
+              <li><strong>Product / Technology</strong> &mdash; What is being introduced into India?</li>
+              <li><strong>Target Market</strong> &mdash; Which industries or applications?</li>
+              <li><strong>Target Customers</strong> &mdash; Which companies and decision-makers?</li>
+              <li><strong>Territory</strong> &mdash; India-wide or selected regions?</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Commercial Terms</h3>
+            <ul>
+              <li><strong>Commercial Model</strong> &mdash; Sales, distribution, representation, sourcing, OEM, manufacturing or partnership?</li>
+              <li><strong>Objective</strong> &mdash; Market entry, customer development, distributor appointment, manufacturing, sourcing, technology partnership or another defined outcome.</li>
+              <li><strong>Period</strong> &mdash; An agreed initial engagement period.</li>
+              <li><strong>Commercial Structure</strong> &mdash; Professional fees, success fees, expenses and other agreed terms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">The scope is discussed and agreed before commencement.</p>
+      </div>
+    </section>
+
+    <!-- Confidentiality -->
+    <section class="sec bg-light" id="bti-confidentiality">
+      <div class="wrap">
+        <p class="s-label-l">Trust</p>
+        <h2 class="s-title">Confidentiality &amp; Commercial Discretion</h2>
+        <p class="s-lead">India market development may involve commercially sensitive information.</p>
+
+        <div class="card" style="margin-top:28px;">
+          <h3>Sensitive Information May Include</h3>
+          <ul>
+            <li>Technology &amp; pricing</li>
+            <li>Customers &amp; manufacturing capability</li>
+            <li>Drawings &amp; intellectual property</li>
+            <li>Business plans &amp; market strategy</li>
+            <li>Potential partners &amp; investment intentions</li>
+          </ul>
+        </div>
+
+        <div class="box" style="margin-top:28px;">
+          <h3>NDA Arrangements</h3>
+          <p>Where appropriate, confidentiality and NDA arrangements can be established before commercially sensitive information is exchanged. Commercial outreach is undertaken according to the agreed mandate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Should Contact Us -->
+    <section class="sec" id="bti-who">
+      <div class="wrap">
+        <p class="s-label-l">Is This for You?</p>
+        <h2 class="s-title">Who Should Contact Us</h2>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>International Manufacturers</h3>
+            <p>Wanting to sell machinery, equipment, components or industrial products in India.</p>
+          </div>
+          <div class="card">
+            <h3>Technology Companies</h3>
+            <p>Seeking customers, licensees, manufacturing partners or technology collaborators.</p>
+          </div>
+          <div class="card">
+            <h3>OEMs</h3>
+            <p>Looking for Indian suppliers or manufacturing partners.</p>
+          </div>
+          <div class="card">
+            <h3>Industrial Companies</h3>
+            <p>Seeking Indian sourcing, manufacturing or localisation opportunities.</p>
+          </div>
+          <div class="card">
+            <h3>Healthcare &amp; Medical Technology</h3>
+            <p>Looking for Indian customers, distributors or strategic partners.</p>
+          </div>
+          <div class="card">
+            <h3>International SMEs</h3>
+            <p>That have strong technology or products but do not yet have an India organisation.</p>
+          </div>
+          <div class="card">
+            <h3>Global Companies</h3>
+            <p>Looking at India as a manufacturing, sourcing or supply-chain destination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start With the Objective -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Getting Started</p>
+        <h2 class="s-title">Start With the Objective</h2>
+        <p class="s-lead">You do not need a fully developed India strategy before contacting us. You may simply know:</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Sales &amp; Distribution</h3>
+            <ul>
+              <li>We want to sell in India</li>
+              <li>We need an Indian distributor</li>
+              <li>We need commercial representation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Manufacturing &amp; Sourcing</h3>
+            <ul>
+              <li>We need Indian manufacturers</li>
+              <li>We want to source from India</li>
+              <li>We want to manufacture in India</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Technology &amp; Partnerships</h3>
+            <ul>
+              <li>We need an Indian technology partner</li>
+              <li>We want to explore a joint venture</li>
+              <li>We want to localise our technology</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">That is enough to begin the discussion. Tell us what you are trying to achieve. We will determine whether Trust DealMakers can add value and what commercial route may be appropriate.</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
     <div class="cta-band">
       <h2>Bring Your Business to India</h2>
-      <p>Tell us about your company, technology and commercial objectives. We will assess whether India presents a meaningful opportunity.</p>
+      <p>From international capability to Indian commercial opportunity. Tell us about your company, technology and commercial objectives.</p>
       <div class="cta-btns">
         <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" class="btn btn-red">Submit India Market Enquiry</a>
       </div>
@@ -1631,78 +2572,1046 @@
       </div>
     </section>
 
+    <!-- ── Section navigation ── -->
+    <div class="sec-nav">
+      <div class="wrap">
+        <label class="sec-nav-label">Jump to:</label>
+        <select class="sec-nav-sel" onchange="secJump(this)">
+          <option value="">Select a section...</option>
+          <option value="ttw-opportunity">Your Next Customer May Be Outside India</option>
+          <option value="ttw-market-selection">Market Selection Approach</option>
+          <option value="ttw-opportunity-test">Global Opportunity Test</option>
+          <option value="ttw-companies">Companies We Work With</option>
+          <option value="ttw-products">Product Categories</option>
+          <option value="ttw-oem">OEM &amp; Contract Manufacturing</option>
+          <option value="ttw-pipeline">From Exporter to Global Supplier</option>
+          <option value="ttw-process">8-Step Development Process</option>
+          <option value="ttw-buyers">International Buyers &amp; OEMs</option>
+          <option value="ttw-representation">International Representation</option>
+          <option value="ttw-india-plus">India+ Beyond China+1</option>
+          <option value="ttw-attractive">What Makes a Product Attractive</option>
+          <option value="ttw-mandate">Mandate Structure</option>
+          <option value="ttw-protecting">Protecting Relationships</option>
+          <option value="ttw-who">Who Should Talk to Us</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ── Intro ── -->
     <section class="sec">
       <div class="wrap">
-        <p class="intro-p">India's manufacturing and engineering ecosystem is increasingly capable of serving sophisticated international requirements. The opportunity is not simply to export more products — it is to build international commercial relationships that generate sustained revenue, global credibility and strategic business growth.</p>
+        <p class="intro-p">India has the manufacturing capability. India has engineering talent, competitive production, specialised products and increasingly sophisticated supply chains. But manufacturing successfully in India does not automatically create international business.</p>
+        <p class="intro-p">The challenge is finding the right market, the right customer, the right commercial proposition and the right route to market. That is where <strong>Take to the World</strong> comes in.</p>
+        <p class="intro-p">Trust DealMakers helps selected Indian manufacturers, exporters, technology companies and product businesses develop international markets, identify qualified overseas buyers, distributors and OEM customers, and build strategic commercial relationships.</p>
 
         <div class="box">
-          <h3>Beyond Export Documentation</h3>
-          <p>Many Indian companies have strong products and manufacturing capabilities but limited international market access. The transition from domestic manufacturer to international supplier requires more than export documentation — it requires market selection, buyer identification, international positioning and sustained relationship development.</p>
+          <h3>We Do Not Simply Ask &ldquo;Where Can We Export This Product?&rdquo;</h3>
+          <p>We ask: &ldquo;Where can this product compete, who is most likely to buy it, and how can that relationship become recurring business?&rdquo;</p>
+          <p style="margin-top:12px;font-weight:600;">India &rarr; Target Market &rarr; Right Buyer &rarr; First Order &rarr; Repeat Business</p>
         </div>
       </div>
     </section>
 
-    <section class="sec bg-light">
+    <!-- ── Your Next Customer ── -->
+    <section id="ttw-opportunity" class="sec bg-light">
       <div class="wrap">
-        <p class="s-label-l">Who This Is For</p>
-        <h2 class="s-title">Indian companies ready for international growth</h2>
-        <div class="g2" style="margin-top:28px;">
-          <div class="card">
-            <h3>Indian Manufacturers</h3>
-            <p>Companies with proven products and manufacturing capabilities seeking international buyers, distributors and OEM customers.</p>
-          </div>
-          <div class="card">
-            <h3>Engineering &amp; Technology Companies</h3>
-            <p>Indian engineering, technology and industrial companies with products and capabilities relevant to international markets.</p>
-          </div>
-          <div class="card">
-            <h3>Export-Ready Companies</h3>
-            <p>Organisations with existing export experience seeking to develop new markets, new customer segments or deeper international relationships.</p>
-          </div>
-          <div class="card">
-            <h3>Companies Seeking OEM Relationships</h3>
-            <p>Manufacturers wanting to become qualified suppliers, preferred vendors or strategic OEM partners to international companies.</p>
-          </div>
+        <p class="s-label-l">The Opportunity</p>
+        <h2 class="s-title">Your next major customer may be outside India</h2>
+        <p class="s-lead">From Indian manufacturing strength to global revenue.</p>
+
+        <p class="intro-p">International companies continually look for competitive manufacturers, reliable suppliers, alternative sources, OEM partners, contract manufacturers, private-label manufacturers, engineering suppliers, components, specialised products, sustainable products and strategic manufacturing partners.</p>
+        <p class="intro-p">The opportunity for Indian companies is therefore much broader than traditional exporting.</p>
+
+        <div class="box">
+          <h3>The Growth Path</h3>
+          <p style="font-weight:600;">Exporter &rarr; International Supplier &rarr; Approved Vendor &rarr; OEM Supplier &rarr; Strategic Global Partner</p>
+          <p style="margin-top:8px;">The first objective is to find the right market. The longer-term objective is to build the right international account.</p>
         </div>
       </div>
     </section>
 
-    <section class="sec">
+    <!-- ── Market Selection ── -->
+    <section id="ttw-market-selection" class="sec">
       <div class="wrap">
-        <p class="s-label-l">What We Do</p>
-        <h2 class="s-title">Our global market development services</h2>
+        <p class="s-label-l">Our Approach</p>
+        <h2 class="s-title">We do not promote everything everywhere</h2>
+        <p class="s-lead">Global market development starts with market selection.</p>
+
+        <p class="intro-p">One of the common mistakes in export development is: &ldquo;We manufacture X. Find buyers anywhere in the world.&rdquo; We take a different approach. Before approaching international buyers, we seek to understand:</p>
+
         <div class="g3" style="margin-top:28px;">
           <div class="card">
-            <h3>International Market Identification</h3>
-            <p>Evaluating which international markets offer the strongest commercial potential for your products, technology or manufacturing capability.</p>
+            <h3>The Product</h3>
+            <p>What exactly does the company manufacture?</p>
           </div>
           <div class="card">
-            <h3>Overseas Buyer Identification</h3>
-            <p>Identifying potential overseas customers, distributors, importers, OEM buyers and procurement organisations in target markets.</p>
+            <h3>The Technology</h3>
+            <p>What technical or manufacturing advantage does it offer?</p>
           </div>
           <div class="card">
-            <h3>International Positioning</h3>
-            <p>Helping present your company, products and capabilities in a manner appropriate for international B2B engagement.</p>
+            <h3>The Application</h3>
+            <p>What problem does the product solve?</p>
           </div>
           <div class="card">
-            <h3>Commercial Representation</h3>
-            <p>Representing your company to international markets — reaching decision-makers and developing commercial conversations.</p>
+            <h3>The Competitive Advantage</h3>
+            <p>Why should an international customer buy it from India?</p>
           </div>
           <div class="card">
-            <h3>Distributor &amp; OEM Development</h3>
-            <p>Identifying international distributors, OEM customers, strategic accounts and commercial partners.</p>
+            <h3>The Target Market</h3>
+            <p>Which countries or regions have genuine commercial potential?</p>
           </div>
           <div class="card">
-            <h3>Relationship Management</h3>
-            <p>Supporting ongoing development from first introduction through to repeat business and strategic partnership.</p>
+            <h3>The Customer</h3>
+            <p>Who actually needs the product and who makes the buying decision?</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:28px;">
+          <h3>The Commercial Route</h3>
+          <p>Should the opportunity be developed through:</p>
+          <ul>
+            <li>Direct sales</li>
+            <li>Importers</li>
+            <li>Distributors</li>
+            <li>Industrial users</li>
+            <li>OEMs</li>
+            <li>Private-label customers</li>
+            <li>Institutional buyers</li>
+            <li>Strategic partners</li>
+          </ul>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">Only then does meaningful international market development begin.</p>
+      </div>
+    </section>
+
+    <!-- ── Global Opportunity Test ── -->
+    <section id="ttw-opportunity-test" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Before We Begin</p>
+        <h2 class="s-title">The Global Opportunity Test</h2>
+        <p class="s-lead">Six questions before we develop a market. We look for the intersection of six factors.</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>Indian Advantage</h3>
+            <p>Can the product be manufactured competitively and consistently in India?</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>International Demand</h3>
+            <p>Is there a genuine requirement outside India?</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>Market Access</h3>
+            <p>Can the product realistically enter the target market?</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>Commercial Viability</h3>
+            <p>Can the buyer and manufacturer both make an acceptable economic case?</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>Supply Capability</h3>
+            <p>Can the Indian company deliver the required quality, volume and consistency?</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">6</span>
+            <h3>Repeat Potential</h3>
+            <p>Can the opportunity develop beyond a one-time transaction?</p>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">When these factors align, there may be a global market worth developing.</p>
+      </div>
+    </section>
+
+    <!-- ── Companies We Work With ── -->
+    <section id="ttw-companies" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Eligibility</p>
+        <h2 class="s-title">What kind of Indian companies do we work with?</h2>
+        <p class="s-lead">Manufacturing capability comes first. Take to the World is particularly relevant to Indian companies with:</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Manufacturing &amp; Quality</h3>
+            <ul>
+              <li>Established manufacturing capability</li>
+              <li>Consistent product quality</li>
+              <li>Competitive economics</li>
+              <li>Available or scalable capacity</li>
+              <li>Relevant certifications</li>
+              <li>Technical capability</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Market Readiness</h3>
+            <ul>
+              <li>Strong domestic references</li>
+              <li>Export readiness</li>
+              <li>Reliable delivery</li>
+              <li>Management commitment to international growth</li>
+              <li>Products with repeat-order potential</li>
+              <li>Existing export history (helpful, not required)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:28px;">
+          <h3>You Do Not Need to Be a Large Exporter</h3>
+          <p>You need to have something that gives an international customer a reason to choose you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Product Categories ── -->
+    <section id="ttw-products" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Product Categories</p>
+        <h2 class="s-title">Industries &amp; products with international potential</h2>
+        <p class="s-lead">We work across a range of Indian manufacturing sectors where genuine international demand exists.</p>
+
+        <!-- Engineering & Industrial -->
+        <div class="card" style="margin-top:28px;">
+          <h3>Engineering &amp; Industrial Products</h3>
+          <p>India has a deep engineering ecosystem capable of serving international supply chains. Opportunities may include:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Precision-machined components</span>
+            <span class="tag">Castings</span>
+            <span class="tag">Forgings</span>
+            <span class="tag">Fabricated components</span>
+            <span class="tag">Fasteners</span>
+            <span class="tag">Pumps</span>
+            <span class="tag">Valves</span>
+            <span class="tag">Industrial consumables</span>
+            <span class="tag">Engineering spares</span>
+            <span class="tag">Agricultural equipment</span>
+            <span class="tag">Industrial machinery</span>
+            <span class="tag">Electrical products</span>
+            <span class="tag">OEM components</span>
+            <span class="tag">Subassemblies</span>
+            <span class="tag">Contract-manufactured products</span>
+            <span class="tag">Specialised engineering products</span>
+          </div>
+          <p style="margin-top:12px;">The opportunity may be direct export, OEM supply, contract manufacturing or long-term international sourcing.</p>
+        </div>
+
+        <!-- Steel, Metals & Heavy Engineering -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Steel, Metals &amp; Heavy Engineering</h3>
+          <p>Selected Indian manufacturers may have international opportunities in:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Steel products</span>
+            <span class="tag">Specialised steel applications</span>
+            <span class="tag">Fabricated structures</span>
+            <span class="tag">Industrial equipment</span>
+            <span class="tag">Rolling-mill components</span>
+            <span class="tag">Process equipment</span>
+            <span class="tag">Heavy engineering</span>
+            <span class="tag">Metallurgical equipment</span>
+            <span class="tag">Industrial machinery</span>
+            <span class="tag">Specialised industrial spares</span>
+          </div>
+          <p style="margin-top:12px;">Where technical capability, quality, capacity and commercial economics align, Indian manufacturers can become part of international industrial supply chains.</p>
+        </div>
+
+        <!-- Natural & Sustainable -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Natural &amp; Sustainable Products</h3>
+          <p>India has significant manufacturing capabilities based on natural materials and agricultural resources.</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Areca-leaf products</span>
+            <span class="tag">Palm-leaf products</span>
+            <span class="tag">Banana-leaf products</span>
+            <span class="tag">Bamboo products</span>
+            <span class="tag">Coir products</span>
+            <span class="tag">Coir mats</span>
+            <span class="tag">Coir geotextiles</span>
+            <span class="tag">Coco peat</span>
+            <span class="tag">Coco peat blocks</span>
+            <span class="tag">Coco peat grow bags</span>
+            <span class="tag">Coco chips</span>
+            <span class="tag">Natural fibres</span>
+            <span class="tag">Sustainable packaging</span>
+            <span class="tag">Biodegradable food-service products</span>
+            <span class="tag">Agricultural-waste-based products</span>
+          </div>
+          <p style="margin-top:12px;">The commercial proposition cannot simply be &ldquo;This is an eco-friendly Indian product.&rdquo; The international buyer needs a stronger reason: Why should I buy this product? Why should I switch suppliers? Why is this product commercially better for my business?</p>
+        </div>
+
+        <!-- Coco Peat Example -->
+        <div class="box" style="margin-top:20px;">
+          <h3>Coco Peat &mdash; An Example of the Right Approach</h3>
+          <p>A manufacturer may tell us: &ldquo;We manufacture coco peat.&rdquo; Our questions would go further:</p>
+          <ul>
+            <li>Who needs it? Where is demand strongest?</li>
+            <li>Which specifications are required? Which countries import it?</li>
+            <li>Who are the major buyers? Who distributes it? Which growers use it?</li>
+            <li>What competing origins exist? What price levels are commercially realistic?</li>
+            <li>What volumes can the manufacturer supply? Can quality remain consistent?</li>
+            <li>Is repeat business possible?</li>
+          </ul>
+          <p style="margin-top:12px;">That is the difference between <strong>export promotion</strong> and <strong>global market development</strong>.</p>
+        </div>
+
+        <!-- Food & Agricultural -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Food &amp; Agricultural Products</h3>
+          <p>Selected Indian food and agricultural manufacturers may have opportunities across:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Rice</span>
+            <span class="tag">Basmati rice</span>
+            <span class="tag">Spices</span>
+            <span class="tag">Pulses</span>
+            <span class="tag">Cashews</span>
+            <span class="tag">Groundnuts</span>
+            <span class="tag">Fruits</span>
+            <span class="tag">Vegetables</span>
+            <span class="tag">Fruit pulp</span>
+            <span class="tag">Fruit concentrates</span>
+            <span class="tag">Dehydrated foods</span>
+            <span class="tag">Processed foods</span>
+            <span class="tag">Ready-to-eat products</span>
+            <span class="tag">Ready-to-cook products</span>
+            <span class="tag">Pickles</span>
+            <span class="tag">Chutneys</span>
+            <span class="tag">Papads</span>
+            <span class="tag">Jaggery</span>
+            <span class="tag">Cereal products</span>
+            <span class="tag">Speciality food products</span>
+          </div>
+          <p style="margin-top:12px;">International development must take account of destination-market food-safety, labelling, certification and import requirements.</p>
+        </div>
+
+        <!-- Textiles -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Textiles, Natural Fibres &amp; Lifestyle Products</h3>
+          <p>India&rsquo;s textile and manufacturing ecosystem creates opportunities across:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Cotton products</span>
+            <span class="tag">Home textiles</span>
+            <span class="tag">Handloom products</span>
+            <span class="tag">Jute</span>
+            <span class="tag">Coir</span>
+            <span class="tag">Natural fibres</span>
+            <span class="tag">Carpets</span>
+            <span class="tag">Rugs</span>
+            <span class="tag">Bags</span>
+            <span class="tag">Baskets</span>
+            <span class="tag">Home d&eacute;cor</span>
+            <span class="tag">Lifestyle products</span>
+            <span class="tag">Artisan products</span>
+            <span class="tag">Sustainable products</span>
+          </div>
+          <p style="margin-top:12px;">The international proposition may combine: Indian materials + manufacturing capability + design + quality + competitive economics.</p>
+        </div>
+
+        <!-- Leather -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Leather &amp; Leather Products</h3>
+          <p>Selected Indian manufacturers may have international opportunities in:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Leather goods</span>
+            <span class="tag">Bags</span>
+            <span class="tag">Wallets</span>
+            <span class="tag">Belts</span>
+            <span class="tag">Footwear</span>
+            <span class="tag">Travel accessories</span>
+            <span class="tag">Equestrian products</span>
+            <span class="tag">Industrial leather products</span>
+            <span class="tag">Finished leather</span>
+          </div>
+          <p style="margin-top:12px;">International success depends on quality, consistency, design, capacity, compliance and destination-market requirements.</p>
+        </div>
+
+        <!-- Botanical -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Natural, Botanical &amp; Plant-Based Products</h3>
+          <p>Potential categories may include:</p>
+          <div class="tag-grid" style="margin-top:12px;">
+            <span class="tag">Botanical ingredients</span>
+            <span class="tag">Herbal ingredients</span>
+            <span class="tag">Natural extracts</span>
+            <span class="tag">Essential oils</span>
+            <span class="tag">Plant-based ingredients</span>
+            <span class="tag">Natural colours</span>
+            <span class="tag">Natural additives</span>
+            <span class="tag">Ayurvedic ingredients</span>
+            <span class="tag">Plant-based personal-care ingredients</span>
+          </div>
+          <p style="margin-top:12px;">Regulatory requirements vary by product and destination market and must be assessed accordingly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Mid-page CTA ── -->
+    <div class="cta-band">
+      <h2>Have a Product With International Potential?</h2>
+      <p>Tell us about your product, manufacturing capability and the markets you want to enter. We will assess whether there is a meaningful global opportunity.</p>
+      <div class="cta-btns">
+        <a href="/engage/" onclick="engageFrom('take-to-world');return false;" class="btn btn-red">Submit Global Market Enquiry</a>
+      </div>
+    </div>
+
+    <!-- ── OEM & Contract Manufacturing ── -->
+    <section id="ttw-oem" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Beyond Your Own Brand</p>
+        <h2 class="s-title">OEM &amp; Contract Manufacturing</h2>
+        <p class="s-lead">Your factory may be more valuable than your brand.</p>
+
+        <p class="intro-p">An international company may not want to purchase an Indian brand. It may want an Indian manufacturing partner. It could be looking for:</p>
+
+        <div class="g4" style="margin-top:28px;">
+          <div class="card">
+            <h3>OEM Manufacturing</h3>
+            <p>Products manufactured to the buyer&rsquo;s design and specifications.</p>
+          </div>
+          <div class="card">
+            <h3>Contract Manufacturing</h3>
+            <p>Dedicated production capacity for an international company.</p>
+          </div>
+          <div class="card">
+            <h3>Private-Label Production</h3>
+            <p>Products sold under the buyer&rsquo;s brand.</p>
+          </div>
+          <div class="card">
+            <h3>Components &amp; Subassemblies</h3>
+            <p>Parts integrated into the buyer&rsquo;s finished products.</p>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:28px;">
+          <h3>A Fundamentally Different Opportunity</h3>
+          <p>Instead of: <strong>One buyer &rarr; One export order</strong></p>
+          <p>The objective becomes: <strong>International company &rarr; Indian manufacturer &rarr; Recurring supply relationship</strong></p>
+          <p style="margin-top:8px;">That can create considerably greater long-term value.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── From Exporter to Global Supplier ── -->
+    <section id="ttw-pipeline" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">The Bigger Opportunity</p>
+        <h2 class="s-title">From exporter to global supplier</h2>
+        <p class="s-lead">Our objective is not to maximise the number of export enquiries. It is to develop valuable international commercial relationships.</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>One Export Order</h3>
+            <p>The first international transaction.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>Repeat Buyer</h3>
+            <p>The customer returns with additional orders.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>Approved Supplier</h3>
+            <p>Formal vendor qualification is completed.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>Preferred Supplier</h3>
+            <p>Priority status within the buyer&rsquo;s supply chain.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>OEM Relationship</h3>
+            <p>Integrated manufacturing partnership.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">6</span>
+            <h3>Strategic International Account</h3>
+            <p>A long-term supply partnership generating recurring value.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── What Does a Buyer Need to Know ── -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">International Positioning</p>
+        <h2 class="s-title">What does an international buyer need to know?</h2>
+        <p class="s-lead">Why should they buy from you? The strongest international proposition is rarely simply &ldquo;We are cheaper.&rdquo; It is: &ldquo;We provide a compelling commercial and technical reason for you to choose us.&rdquo;</p>
+
+        <div class="tag-grid" style="margin-top:28px;">
+          <span class="tag">Price</span>
+          <span class="tag">Quality</span>
+          <span class="tag">Engineering capability</span>
+          <span class="tag">Product performance</span>
+          <span class="tag">Manufacturing scale</span>
+          <span class="tag">Raw-material advantage</span>
+          <span class="tag">Delivery capability</span>
+          <span class="tag">Customisation</span>
+          <span class="tag">Certifications</span>
+          <span class="tag">Sustainability</span>
+          <span class="tag">Design</span>
+          <span class="tag">Technology</span>
+          <span class="tag">Specialised know-how</span>
+          <span class="tag">Product availability</span>
+          <span class="tag">Supply-chain diversification</span>
+          <span class="tag">Difficult-to-replicate capability</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8-Step Development Process ── -->
+    <section id="ttw-process" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Our Process</p>
+        <h2 class="s-title">How Trust DealMakers develops international markets</h2>
+        <p class="s-lead">From product to commercial opportunity &mdash; an eight-step approach.</p>
+
+        <div class="g4" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">01</span>
+            <h3>Discover</h3>
+            <p>We understand your product, technology, manufacturing capability, capacity, quality, certifications, pricing, existing markets, export history, competitive advantage and international ambitions.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">02</span>
+            <h3>Select</h3>
+            <p>We identify markets where the proposition may have the strongest potential.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">03</span>
+            <h3>Map</h3>
+            <p>We identify relevant customer ecosystems, importers, distributors, OEMs and industrial users.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">04</span>
+            <h3>Qualify</h3>
+            <p>We prioritise prospects according to relevance and commercial potential.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">05</span>
+            <h3>Connect</h3>
+            <p>We develop appropriate commercial introductions.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">06</span>
+            <h3>Develop</h3>
+            <p>We support the relationship as the opportunity progresses.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">07</span>
+            <h3>Convert</h3>
+            <p>The objective is a genuine commercial opportunity.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">08</span>
+            <h3>Repeat</h3>
+            <p>The ultimate objective is recurring international business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact to Customer ── -->
+    <section class="sec bg-dark">
+      <div class="wrap">
+        <p class="s-label-l">From Contact to Customer</p>
+        <h2 class="s-title">A lead is not a business opportunity</h2>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>Contact</h3>
+            <p>A company has been identified.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>Prospect</h3>
+            <p>There appears to be relevance.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>Qualified Prospect</h3>
+            <p>There is a genuine potential requirement.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>Commercial Opportunity</h3>
+            <p>An active business discussion exists.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>Negotiation</h3>
+            <p>Commercial terms are being considered.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">6</span>
+            <h3>Order</h3>
+            <p>Business is secured.</p>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;"><strong>Our objective is not a database. Our objective is business.</strong></p>
+      </div>
+    </section>
+
+    <!-- ── International Buyers ── -->
+    <section id="ttw-buyers" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Buyer Types</p>
+        <h2 class="s-title">International buyers, distributors &amp; OEMs</h2>
+        <p class="s-lead">Depending on the product and mandate, we may explore:</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Importers</h3>
+            <p>Companies that already import comparable products.</p>
+          </div>
+          <div class="card">
+            <h3>Distributors</h3>
+            <p>Established channels capable of developing the product in a defined territory.</p>
+          </div>
+          <div class="card">
+            <h3>Industrial Users</h3>
+            <p>Companies that consume the product or use it within their manufacturing process.</p>
+          </div>
+          <div class="card">
+            <h3>OEMs</h3>
+            <p>Companies that can incorporate Indian manufacturing capability into their own supply chain.</p>
+          </div>
+          <div class="card">
+            <h3>Private-Label Customers</h3>
+            <p>Companies seeking products manufactured to their specifications or branding.</p>
+          </div>
+          <div class="card">
+            <h3>Strategic Accounts</h3>
+            <p>Larger or strategically important customers where a long-term relationship may be developed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── International Representation ── -->
+    <section id="ttw-representation" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Representation</p>
+        <h2 class="s-title">International representation</h2>
+        <p class="s-lead">When you need a business-development partner, not another report.</p>
+
+        <p class="intro-p">Some Indian companies do not need another export study. They need someone to help: Identify &rarr; Approach &rarr; Connect &rarr; Follow Up &rarr; Develop &rarr; Coordinate with international counterparties.</p>
+        <p class="intro-p">Depending on the mandate, Trust DealMakers can support selected Indian companies in international business development and commercial representation. The precise scope is agreed before engagement.</p>
+
+        <div class="box" style="margin-top:24px;">
+          <h3>International Market Development Is Not a Brochure Exercise</h3>
+          <p>A catalogue does not create international demand. An exhibition does not automatically create customers. An export portal does not create a market.</p>
+          <p style="margin-top:12px;">International business develops when a relevant customer finds a relevant product at a commercially viable proposition from a supplier capable of delivering consistently. That is the commercial bridge we seek to build.</p>
+        </div>
+
+        <div style="margin-top:24px;">
+          <a href="/engage/" onclick="engageFrom('take-to-world');return false;" class="btn btn-red">Discuss International Representation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── India+ Beyond China+1 ── -->
+    <section id="ttw-india-plus" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Strategic Positioning</p>
+        <h2 class="s-title">India+ &mdash; Beyond China+1</h2>
+        <p class="s-lead">India can become part of global supply chains.</p>
+
+        <p class="intro-p">The China+1 discussion is often viewed simply as supply-chain diversification. For an Indian manufacturer, the opportunity can be broader.</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>Domestic Manufacturing Base</h3>
+            <p>Established Indian manufacturing operations.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>Export Base</h3>
+            <p>Serving international orders from India.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>International Supply-Chain Partner</h3>
+            <p>Integrated into global procurement workflows.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>OEM Manufacturing Location</h3>
+            <p>Producing to international OEM specifications.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>Strategic Global Supplier</h3>
+            <p>Long-term manufacturing partnership with international companies.</p>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:28px;">
+          <h3>The Bigger Question</h3>
+          <p>The question is not merely: &ldquo;Can we export?&rdquo;</p>
+          <p>It can be: &ldquo;Can we become part of an international company&rsquo;s global supply chain?&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Beyond the First Order ── -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Long-Term Value</p>
+        <h2 class="s-title">Beyond the first order</h2>
+        <p class="s-lead">The real value may begin after the first sale. This is why we think beyond the first enquiry.</p>
+
+        <div class="g4" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>Buyer</h3>
+            <p>Initial purchase.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>Repeat Buyer</h3>
+            <p>Additional orders placed.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>Preferred Supplier</h3>
+            <p>Priority sourcing status.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>Strategic Account</h3>
+            <p>High-value ongoing relationship.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>OEM Relationship</h3>
+            <p>Integrated manufacturing partnership.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">6</span>
+            <h3>Long-Term Supply Partnership</h3>
+            <p>Sustained multi-year commercial engagement.</p>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">7</span>
+            <h3>International Manufacturing Relationship</h3>
+            <p>Strategic global manufacturing partner.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What Makes a Product Attractive ── -->
+    <section id="ttw-attractive" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Product Assessment</p>
+        <h2 class="s-title">What makes a product attractive to us?</h2>
+        <p class="s-lead">We become particularly interested when several of the following are present:</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Manufacturing Strengths</h3>
+            <ul>
+              <li>India has a manufacturing advantage</li>
+              <li>India has a raw-material advantage</li>
+              <li>Product quality is consistent</li>
+              <li>Capacity can scale</li>
+              <li>Total cost is competitive</li>
+              <li>Certifications are available</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Market Strengths</h3>
+            <ul>
+              <li>The product solves a genuine problem</li>
+              <li>International demand exists</li>
+              <li>The product has repeat-order potential</li>
+              <li>The manufacturer can meet international specifications</li>
+              <li>The company is management-committed to export development</li>
+              <li>The product could become part of an international supply chain</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What We Do Not Promise ── -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Honest Expectations</p>
+        <h2 class="s-title">What we do not promise</h2>
+        <p class="s-lead">We do not sell false certainty. No responsible organisation can guarantee an overseas order.</p>
+
+        <p class="intro-p">International business depends on product, price, quality, competition, regulations, certifications, logistics, timing, market conditions, buyer requirements and commercial negotiations.</p>
+
+        <div class="box" style="margin-top:24px;">
+          <h3>We Do Not Guarantee Export Orders</h3>
+          <p>What we offer is a structured and commercially disciplined approach to identifying and developing genuine international opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Mandate Structure ── -->
+    <section id="ttw-mandate" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">How We Work</p>
+        <h2 class="s-title">The global market development mandate</h2>
+        <p class="s-lead">Clear objective. Clear market. Clear commercial route. Where appropriate, a mandate can define:</p>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Product</h3>
+            <p>The exact product or product family.</p>
+          </div>
+          <div class="card">
+            <h3>Territory</h3>
+            <p>Specific countries or regions.</p>
+          </div>
+          <div class="card">
+            <h3>Customer</h3>
+            <p>Importers, distributors, OEMs, industrial users or other target groups.</p>
+          </div>
+          <div class="card">
+            <h3>Objective</h3>
+            <ul>
+              <li>Market entry</li>
+              <li>Buyer development</li>
+              <li>Distributor appointment</li>
+              <li>Export-order development</li>
+              <li>OEM development</li>
+              <li>International representation</li>
+              <li>Strategic account development</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Period</h3>
+            <p>An agreed initial mandate period.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial Structure</h3>
+            <p>Professional fees, success commission, expenses, travel and other agreed terms.</p>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">Everything is discussed and agreed before commencement.</p>
+      </div>
+    </section>
+
+    <!-- ── Protecting Relationships ── -->
+    <section id="ttw-protecting" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Confidentiality &amp; Protection</p>
+        <h2 class="s-title">Protecting the commercial relationship</h2>
+        <p class="s-lead">International business development can involve commercially sensitive information.</p>
+
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Commercially Sensitive Information</h3>
+            <ul>
+              <li>Product specifications</li>
+              <li>Pricing</li>
+              <li>Customers</li>
+              <li>Manufacturing capacity</li>
+              <li>Drawings</li>
+              <li>Technology</li>
+              <li>Commercial terms</li>
+              <li>Existing distributors</li>
+              <li>Prospective buyers</li>
+              <li>Market strategy</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Commercial Agreement Provisions</h3>
+            <ul>
+              <li>Introduced accounts</li>
+              <li>Protected accounts</li>
+              <li>Territory</li>
+              <li>Commission entitlement</li>
+              <li>Repeat orders</li>
+              <li>Post-mandate protection</li>
+              <li>Non-circumvention</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">Where appropriate, confidentiality and NDA arrangements can be established before commercially sensitive information is exchanged. The exact provisions are agreed in writing between the parties.</p>
+      </div>
+    </section>
+
+    <!-- ── International Market Visits ── -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Market Visits</p>
+        <h2 class="s-title">International market visits</h2>
+        <p class="s-lead">Travel should follow opportunity &mdash; not replace it.</p>
+
+        <p class="intro-p">International travel can be valuable when a genuine commercial opportunity exists. Depending on the mandate, activities may include:</p>
+
+        <div class="tag-grid" style="margin-top:20px;">
+          <span class="tag">Buyer meetings</span>
+          <span class="tag">Distributor meetings</span>
+          <span class="tag">Industry exhibitions</span>
+          <span class="tag">Market visits</span>
+          <span class="tag">Commercial negotiations</span>
+          <span class="tag">Strategic partner meetings</span>
+        </div>
+
+        <p class="intro-p" style="margin-top:20px;">We prefer to develop credible opportunities before significant travel resources are committed.</p>
+      </div>
+    </section>
+
+    <!-- ── Who Should Talk to Us ── -->
+    <section id="ttw-who" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Is This for You?</p>
+        <h2 class="s-title">Who should talk to us?</h2>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Indian Manufacturers</h3>
+            <p>Looking for overseas buyers, distributors or OEM customers.</p>
+          </div>
+          <div class="card">
+            <h3>Indian Exporters</h3>
+            <p>Looking to enter additional international markets.</p>
+          </div>
+          <div class="card">
+            <h3>Engineering Companies</h3>
+            <p>Looking for international supply-chain opportunities.</p>
+          </div>
+          <div class="card">
+            <h3>OEM Manufacturers</h3>
+            <p>Looking to become an overseas company&rsquo;s manufacturing partner.</p>
+          </div>
+          <div class="card">
+            <h3>Product Companies</h3>
+            <p>With differentiated products that can compete internationally.</p>
+          </div>
+          <div class="card">
+            <h3>Family-Owned Businesses</h3>
+            <p>Looking to develop a professional international business-development channel.</p>
+          </div>
+          <div class="card">
+            <h3>Growing SMEs</h3>
+            <p>With strong manufacturing capability but limited international reach.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── You Don't Have to Be Large ── -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Size Is Not the Question</p>
+        <h2 class="s-title">You do not have to be a large exporter</h2>
+        <p class="s-lead">You have to have something worth buying.</p>
+
+        <p class="intro-p">Some of the most interesting opportunities can come from companies with strong manufacturing, excellent products, limited overseas exposure, under-utilised capacity, few international customers and no structured international business-development programme.</p>
+
+        <div class="box" style="margin-top:24px;">
+          <h3>The Right Question</h3>
+          <p>The question is not: &ldquo;How large is your export department?&rdquo;</p>
+          <p>The question is: &ldquo;Is there something the international market should know about?&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What Should You Tell Us ── -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Getting Started</p>
+        <h2 class="s-title">What should you tell us?</h2>
+        <p class="s-lead">Don&rsquo;t send us a brochure alone. Start with the commercial story.</p>
+
+        <div class="card" style="margin-top:28px;">
+          <h3>Tell Us</h3>
+          <ul>
+            <li>What do you manufacture?</li>
+            <li>Why should an international customer buy it from India?</li>
+            <li>Which countries do you currently export to?</li>
+            <li>Which countries do you want to enter?</li>
+            <li>Who is your ideal customer?</li>
+            <li>What is your manufacturing capacity?</li>
+            <li>What certifications do you have?</li>
+            <li>What is your current export experience?</li>
+            <li>What makes you different from suppliers in China, Vietnam, Turkey, Europe or elsewhere?</li>
+            <li>What would successful international development look like over the next 12&ndash;24 months?</li>
+          </ul>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">You do not need a perfect answer to every question. You only need to start the conversation.</p>
+      </div>
+    </section>
+
+    <!-- ── Start With One Product ── -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="s-label-l">A Simple First Step</p>
+        <h2 class="s-title">Start with one product</h2>
+        <p class="s-lead">You do not need to present your entire product catalogue. Start with the product you believe has the strongest international potential.</p>
+
+        <div class="box" style="margin-top:24px;">
+          <h3>Your Starting Point</h3>
+          <p style="font-weight:600;">Product &rarr; Current Market &rarr; Capacity &rarr; Competitive Advantage &rarr; Target Country &rarr; Desired Customer</p>
+          <p style="margin-top:8px;">We can then discuss whether there is a meaningful opportunity to develop further.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── From India to the World ── -->
+    <section class="sec bg-dark">
+      <div class="wrap">
+        <p class="s-label-l">The Journey</p>
+        <h2 class="s-title">From India to the world</h2>
+
+        <div class="g4" style="margin-top:28px;">
+          <div class="n-card">
+            <span class="n-card-num">1</span>
+            <h3>Find the Advantage</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">2</span>
+            <h3>Find the Market</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">3</span>
+            <h3>Find the Buyer</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">4</span>
+            <h3>Develop the Relationship</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">5</span>
+            <h3>Win the Order</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">6</span>
+            <h3>Build the Account</h3>
+          </div>
+          <div class="n-card">
+            <span class="n-card-num">7</span>
+            <h3>Create Repeat Business</h3>
+          </div>
+        </div>
+
+        <p class="intro-p" style="margin-top:24px;">That is the purpose of <strong>Take to the World</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ── Final CTA band ── -->
     <div class="cta-band">
-      <h2>Take Your Business to the World</h2>
-      <p>Tell us about your company, products and international ambitions. We will assess whether there is a meaningful global market opportunity.</p>
+      <h2>Ready to Take Your Product to the World?</h2>
+      <p>Your next major customer may be outside India. Perhaps you already have a successful product, a strong manufacturing facility, available capacity, a domestic leadership position, existing export customers, an OEM capability, a sustainable product, a specialised engineering product &mdash; or a product that could replace an expensive overseas source.</p>
+      <p style="margin-top:12px;">Perhaps you simply have one question: &ldquo;Could this product work internationally?&rdquo; That is enough to begin.</p>
       <div class="cta-btns">
         <a href="/engage/" onclick="engageFrom('take-to-world');return false;" class="btn btn-red">Submit Global Market Enquiry</a>
       </div>
@@ -1729,65 +3638,622 @@
       </div>
     </section>
 
+    <!-- Section navigation -->
+    <div class="sec-nav">
+      <div class="wrap">
+        <label class="sec-nav-label">Jump to:</label>
+        <select class="sec-nav-sel" onchange="secJump(this)">
+          <option value="">Select a section...</option>
+          <option value="rd-surplus">Your Surplus May Be Someone Else's Opportunity</option>
+          <option value="rd-approach">Starting with "Who Could Use It"</option>
+          <option value="rd-assets">Asset Types We Work With</option>
+          <option value="rd-techinfo">Technical Information Requirements</option>
+          <option value="rd-complete-vs-individual">Complete Plant vs Individual Equipment</option>
+          <option value="rd-why-buyers">Why Buyers Consider Used Equipment</option>
+          <option value="rd-pipeline">Surplus-to-Second-Life Pipeline</option>
+          <option value="rd-whatwedo">What Trust DealMakers Can Do</option>
+          <option value="rd-not-listing">Not a Listing Website</option>
+          <option value="rd-old-value">Old Machinery &mdash; Why It May Still Have Value</option>
+          <option value="rd-modernisation">Modernisation Creates Opportunities</option>
+          <option value="rd-confidential">Confidential Mandates</option>
+          <option value="rd-who-buys">Who Buys</option>
+          <option value="rd-who-approach">Who Can Approach Us</option>
+          <option value="rd-why-tdm">Why Trust DealMakers</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ── Intro ── -->
     <section class="sec">
       <div class="wrap">
-        <p class="intro-p">Industrial modernisation creates one of the most under-recognised commercial opportunities. A plant, production line or machine that is no longer required by one owner may still have considerable productive value for another manufacturer — often in a different country.</p>
+        <p class="s-label-l">Redeploy Globally</p>
+        <h2 class="s-title">Turn Surplus Industrial Assets into International Opportunities</h2>
+        <p class="intro-p">Industrial equipment does not necessarily lose its value because a company has replaced it. A machine may have become surplus because a plant was modernised. A production line may no longer fit the owner&rsquo;s manufacturing strategy. A complete plant may have been shut down, relocated or replaced. A CNC machine may be technologically old for one manufacturer but entirely suitable for another.</p>
+        <p class="intro-p">A rolling mill, furnace, process plant or specialised production line may still have years of productive life.</p>
+        <p class="intro-p"><strong>Redeploy Globally</strong> helps owners explore whether those assets can find a new productive home in another market. We help connect selected owners of industrial assets with potential international buyers, investors, manufacturers and operators seeking cost-effective production capabilities.</p>
 
         <div class="box">
-          <h3>Old Does Not Mean Commercially Worthless</h3>
-          <p>The important questions are: What does the machine do? What capacity does it have? What condition is it in? Where is that technology still commercially relevant? Which countries may have demand? Who might want to buy it? Trust DealMakers brings the industrial technology experience to evaluate these questions and the international reach to identify the right buyers.</p>
+          <h3>The Opportunity</h3>
+          <p>Surplus Asset &rarr; Identify Market &rarr; Find Buyer &rarr; Qualify Interest &rarr; Develop Transaction. The objective is not simply to dispose of machinery. The objective is to discover its next productive commercial life.</p>
         </div>
       </div>
     </section>
 
-    <section class="sec bg-light">
+    <!-- ── Your Surplus May Be Someone Else's Production Opportunity ── -->
+    <section id="rd-surplus" class="sec bg-light">
       <div class="wrap">
-        <p class="s-label-l">What We Help Redeploy</p>
-        <h2 class="s-title">Assets we work with</h2>
+        <p class="s-label-l">The Opportunity</p>
+        <h2 class="s-title">Your Surplus May Be Someone Else&rsquo;s Production Opportunity</h2>
+        <p class="s-lead">Industrial companies regularly upgrade their manufacturing capabilities. As a result, perfectly usable equipment can become surplus to the present owner&rsquo;s requirements.</p>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>They Install Newer</h3>
+            <ul>
+              <li>CNC machines</li>
+              <li>Robotics</li>
+              <li>Automation systems</li>
+              <li>Furnaces</li>
+              <li>Rolling mills</li>
+              <li>Production lines</li>
+              <li>Process equipment</li>
+              <li>Material-handling systems</li>
+              <li>Electrical and control systems</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Manufacturers Elsewhere May Be Looking For</h3>
+            <ul>
+              <li>Proven machinery</li>
+              <li>Complete production lines</li>
+              <li>Second-hand equipment</li>
+              <li>Replacement equipment</li>
+              <li>Cost-effective manufacturing capacity</li>
+              <li>Technology embedded in existing machinery</li>
+              <li>Complete plants</li>
+              <li>Spare production capacity</li>
+            </ul>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">This creates a genuine cross-border commercial opportunity. What is surplus to one organisation may be productive capital for another.</p>
+      </div>
+    </section>
+
+    <!-- ── Starting with "Who Could Use It" ── -->
+    <section id="rd-approach" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Our Approach</p>
+        <h2 class="s-title">We Do Not Start with &ldquo;How Much Is It Worth?&rdquo;</h2>
+        <p class="s-lead">We start with a more important question: <strong>&ldquo;Who could actually use it?&rdquo;</strong></p>
+        <p class="intro-p">The commercial value of an industrial asset depends on much more than its original purchase price.</p>
         <div class="g3" style="margin-top:28px;">
           <div class="card">
+            <h3>Asset Characteristics</h3>
+            <ul>
+              <li>Age</li>
+              <li>Make</li>
+              <li>Model</li>
+              <li>Technical specification</li>
+              <li>Capacity</li>
+              <li>Condition</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Operational Factors</h3>
+            <ul>
+              <li>Maintenance history</li>
+              <li>Automation level</li>
+              <li>Production application</li>
+              <li>Availability of spares</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Market Factors</h3>
+            <ul>
+              <li>Installation requirements</li>
+              <li>Dismantling requirements</li>
+              <li>Transport economics</li>
+              <li>Buyer demand</li>
+              <li>Destination-market requirements</li>
+            </ul>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">A machine with limited value in one market can have meaningful value in another. Therefore, market identification and buyer identification are central to the redeployment process.</p>
+      </div>
+    </section>
+
+    <!-- ── Asset Types We Work With ── -->
+    <section id="rd-assets" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">What We Help Redeploy</p>
+        <h2 class="s-title">Asset Types We Work With</h2>
+        <p class="s-lead">We are interested in a broad range of industrial assets where there may be a credible international market.</p>
+
+        <div class="sector-grid">
+
+          <div class="sector-card">
             <h3>Complete Industrial Plants</h3>
             <ul>
-              <li>Steel Plants &amp; Rolling Mills</li>
+              <li>Complete manufacturing plants</li>
+              <li>Production facilities</li>
+              <li>Processing plants</li>
+              <li>Manufacturing units</li>
+              <li>Plant sections</li>
+              <li>Integrated production systems</li>
+              <li>Turnkey production lines</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Steel Plants &amp; Metallurgical Equipment</h3>
+            <ul>
               <li>Steel Melt Shops</li>
-              <li>Chemical &amp; Process Plants</li>
-              <li>Food Processing Facilities</li>
-              <li>Manufacturing Units</li>
+              <li>Electric Arc Furnaces</li>
+              <li>Induction Furnaces</li>
+              <li>Ladle Furnaces</li>
+              <li>Continuous Casting Machines</li>
+              <li>Rolling Mills</li>
+              <li>Reheating Furnaces</li>
+              <li>Heat-treatment equipment</li>
+              <li>Billet and bar-processing equipment</li>
+              <li>Wire-rod equipment</li>
+              <li>Material-handling systems</li>
+              <li>Metallurgical equipment</li>
+              <li>Steel plant auxiliaries</li>
+              <li>Pollution-control systems</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Machine Tools &amp; CNC Equipment</h3>
+            <ul>
+              <li>CNC machining centres</li>
+              <li>CNC turning machines</li>
+              <li>CNC lathes</li>
+              <li>VMCs</li>
+              <li>HMCs</li>
+              <li>Grinding machines</li>
+              <li>Milling machines</li>
+              <li>Gear-cutting machines</li>
+              <li>Presses</li>
+              <li>EDM machines</li>
+              <li>Laser machines</li>
+              <li>Sheet-metal machinery</li>
+              <li>Fabrication machinery</li>
+              <li>Special-purpose machines</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Industrial Automation &amp; Robotics</h3>
+            <ul>
+              <li>Industrial robots</li>
+              <li>Cobots</li>
+              <li>Robotic cells</li>
+              <li>PLC systems</li>
+              <li>Automation systems</li>
+              <li>Control systems</li>
+              <li>Drives</li>
+              <li>Industrial vision systems</li>
+              <li>Automated material handling</li>
+              <li>Production-line automation</li>
+              <li>Assembly automation</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Furnaces, Heat-Treatment &amp; Process Equipment</h3>
+            <ul>
+              <li>Industrial furnaces</li>
+              <li>Heat-treatment systems</li>
+              <li>Annealing systems</li>
+              <li>Heat-treatment lines</li>
+              <li>Kilns</li>
+              <li>Dryers</li>
+              <li>Industrial ovens</li>
+              <li>Process vessels</li>
+              <li>Reactors</li>
+              <li>Process equipment</li>
+              <li>Pumps</li>
+              <li>Compressors</li>
+              <li>Boilers</li>
+              <li>Chillers</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Chemical &amp; Process Industries</h3>
+            <ul>
+              <li>Process plants</li>
+              <li>Solvent extraction equipment</li>
+              <li>Reactors</li>
+              <li>Distillation systems</li>
+              <li>Separation equipment</li>
+              <li>Evaporation systems</li>
+              <li>Filtration systems</li>
+              <li>Storage systems</li>
+              <li>Pumps</li>
+              <li>Compressors</li>
+              <li>Heat exchangers</li>
+              <li>Process-control systems</li>
+              <li>Industrial utilities</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Food, Agricultural &amp; Consumer Processing</h3>
+            <ul>
+              <li>Food-processing lines</li>
+              <li>Packaging machinery</li>
+              <li>Filling equipment</li>
+              <li>Bottling systems</li>
+              <li>Processing equipment</li>
+              <li>Oil-processing equipment</li>
+              <li>Solvent extraction equipment</li>
+              <li>Vegetable-oil processing equipment</li>
+              <li>Material-handling systems</li>
+              <li>Cold-storage equipment</li>
+              <li>Industrial refrigeration</li>
+              <li>Agricultural-processing machinery</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Electrical, Power &amp; Industrial Utilities</h3>
+            <ul>
+              <li>Transformers</li>
+              <li>Generators</li>
+              <li>Electrical panels</li>
+              <li>Switchgear</li>
+              <li>Industrial compressors</li>
+              <li>Boilers</li>
+              <li>Chillers</li>
+              <li>Cooling systems</li>
+              <li>Industrial pumps</li>
+              <li>Power-generation equipment</li>
+              <li>Utility systems</li>
+              <li>Material-handling equipment</li>
+            </ul>
+          </div>
+
+          <div class="sector-card">
+            <h3>Healthcare &amp; Specialised Equipment</h3>
+            <ul>
+              <li>Hospital equipment</li>
+              <li>Laboratory equipment</li>
+              <li>Diagnostic equipment</li>
+              <li>Medical production equipment</li>
+              <li>Sterilisation systems</li>
+              <li>Specialised processing equipment</li>
+              <li>Healthcare infrastructure equipment</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">For major steel and metallurgical assets, technical configuration and plant capacity are particularly important in identifying suitable buyers. For machine tools, make, model, year, specifications, controls, condition and application can materially affect buyer interest. For chemical and process equipment, technical specifications, materials of construction, process application and regulatory considerations must be assessed before approaching potential buyers.</p>
+      </div>
+    </section>
+
+    <!-- ── Mid-page CTA ── -->
+    <div class="cta-band">
+      <h2>Have Surplus Machinery or a Complete Plant?</h2>
+      <p>Tell us about your industrial assets. We will assess the international market opportunity and identify potential buyers.</p>
+      <div class="cta-btns">
+        <a href="/engage/" onclick="engageFrom('industrial');return false;" class="btn btn-red">Submit Industrial Asset Enquiry</a>
+      </div>
+    </div>
+
+    <!-- ── Technical Information Requirements ── -->
+    <section id="rd-techinfo" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">What We Need</p>
+        <h2 class="s-title">The Most Important Information Is Technical</h2>
+        <p class="s-lead">Don&rsquo;t just send us a machinery photograph. A photograph is useful. A technical specification is much more useful.</p>
+
+        <div class="box" style="margin-bottom:36px;">
+          <h3>If You Have Surplus Machinery, Start with These 10 Items</h3>
+          <p>1. What is the equipment? &nbsp; 2. Who manufactured it? &nbsp; 3. What is the make and model? &nbsp; 4. When was it manufactured? &nbsp; 5. What is its capacity/specification? &nbsp; 6. Is it currently operational? &nbsp; 7. Where is it located? &nbsp; 8. Is it available individually or as part of a complete line/plant? &nbsp; 9. When can it be made available? &nbsp; 10. What does the owner expect commercially?</p>
+        </div>
+
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Asset Information</h3>
+            <ul>
+              <li>Manufacturer</li>
+              <li>Make</li>
+              <li>Model</li>
+              <li>Year of manufacture</li>
+              <li>Serial number, where appropriate</li>
+              <li>Quantity</li>
+              <li>Current location</li>
+              <li>Current operating status</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Production Lines &amp; Machinery</h3>
+            <h3>Technical Information</h3>
             <ul>
-              <li>Complete Production Lines</li>
-              <li>Machine Tools &amp; CNC Machines</li>
-              <li>Industrial Automation &amp; Robotics</li>
-              <li>Material Handling Equipment</li>
-              <li>Power Generation Equipment</li>
+              <li>Capacity</li>
+              <li>Dimensions</li>
+              <li>Power requirements</li>
+              <li>Production specifications</li>
+              <li>Control system</li>
+              <li>Automation level</li>
+              <li>Technical configuration</li>
+              <li>Major components</li>
+              <li>Applicable tooling</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Specialised Equipment</h3>
+            <h3>Condition</h3>
             <ul>
-              <li>Industrial Furnaces &amp; Boilers</li>
-              <li>Process Equipment</li>
-              <li>Cement &amp; Heavy Engineering</li>
-              <li>Healthcare &amp; Medical Equipment</li>
-              <li>Packaging &amp; Assembly Systems</li>
+              <li>Operational / non-operational</li>
+              <li>Maintenance history</li>
+              <li>Last operating date</li>
+              <li>Current condition</li>
+              <li>Known defects</li>
+              <li>Availability of spare parts</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <h3>Commercial Information</h3>
+          <ul>
+            <li>Owner&rsquo;s expectations</li>
+            <li>Whether individual machines or complete lines are available</li>
+            <li>Whether the plant is operational</li>
+            <li>Whether inspection is possible</li>
+            <li>Whether dismantling is required</li>
+            <li>Whether the owner can support dismantling</li>
+            <li>Expected transaction structure</li>
+          </ul>
+        </div>
+
+        <p class="intro-p" style="margin-top:28px;">The better the information, the more intelligently the opportunity can be presented to potential buyers. Photographs, equipment lists, technical brochures and available documentation can then provide additional context.</p>
+      </div>
+    </section>
+
+    <!-- ── Complete Plant vs Individual Equipment ── -->
+    <section id="rd-complete-vs-individual" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Strategy</p>
+        <h2 class="s-title">Complete Plant or Individual Machine?</h2>
+        <p class="s-lead">Both may have a market. The appropriate strategy depends on the asset and the potential buyer ecosystem.</p>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>Complete Plant Opportunities</h3>
+            <p>Sometimes the most attractive proposition is a complete plant. A potential international buyer may be interested in the integrated manufacturing capability, not simply individual machines. Before dismantling a complete plant, it can be worthwhile to determine whether an international buyer may want the plant as a system.</p>
+          </div>
+          <div class="card">
+            <h3>Individual Equipment Opportunities</h3>
+            <p>In other cases, individual equipment may be more commercially attractive &mdash; a CNC machine to a specialist manufacturer, a furnace to a steel producer, an automation system to an industrial operator, or a production line to a manufacturer in an emerging market.</p>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:32px;">
+          <h3>Do You Have an Entire Plant? Don&rsquo;t Dismantle It Before Understanding the Market</h3>
+          <p>A complete facility may contain production equipment, utilities, electrical systems, automation, material handling, process equipment, ancillary equipment, spare parts, tooling and engineering documentation. A potential international buyer may want the plant as an integrated manufacturing capability. Therefore, before dismantling, determine whether there is an international buyer for the plant as a system.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why Buyers Consider Used Equipment ── -->
+    <section id="rd-why-buyers" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Buyer Perspective</p>
+        <h2 class="s-title">Why International Buyers Consider Used Industrial Equipment</h2>
+        <p class="s-lead">For the buyer, the question is often not &ldquo;Is this machine new?&rdquo; &mdash; it is &ldquo;Can this machine economically produce what I need?&rdquo;</p>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Capital Efficiency</h3>
+            <ul>
+              <li>Lower capital expenditure</li>
+              <li>Opportunity to expand capacity economically</li>
+              <li>Access to equipment that may otherwise be difficult to procure</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Speed &amp; Proven Technology</h3>
+            <ul>
+              <li>Faster access to production capability</li>
+              <li>Proven technology</li>
+              <li>Shorter equipment lead times</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Production Capability</h3>
+            <ul>
+              <li>Access to established production systems</li>
+              <li>Cost-effective manufacturing capacity</li>
+              <li>Technology embedded in existing machinery</li>
+            </ul>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">That is why the technical and commercial suitability of the asset matters. Selling price is only one part of the equation &mdash; dismantling cost, packing, transportation, export requirements, installation, buyer refurbishment and commissioning all contribute to the buyer&rsquo;s total project economics.</p>
+      </div>
+    </section>
+
+    <!-- ── Surplus-to-Second-Life Pipeline ── -->
+    <section id="rd-pipeline" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">The Process</p>
+        <h2 class="s-title">From Surplus to Productive Second Life</h2>
+        <p class="s-lead">The redeployment opportunity follows a structured route. The exact process varies according to the asset, buyer and transaction structure.</p>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card n-card">
+            <span class="n-card-num">01</span>
+            <h3>Surplus Equipment</h3>
+            <p>Owner identifies surplus, replaced or under-utilised industrial assets and provides technical and commercial information.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">02</span>
+            <h3>Technical &amp; Commercial Assessment</h3>
+            <p>We assess the asset&rsquo;s technical configuration, condition, capacity and commercial potential for international markets.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">03</span>
+            <h3>Potential Applications &amp; Target Markets</h3>
+            <p>Identify industries, applications and geographies where the asset may have commercial relevance.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">04</span>
+            <h3>Potential Buyers &amp; Qualified Interest</h3>
+            <p>Identify and approach potential international buyers. Distinguish genuinely relevant buyers from generic contacts.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">05</span>
+            <h3>Inspection &amp; Technical Discussion</h3>
+            <p>Facilitate exchange of technical information, arrange inspection where appropriate, and coordinate technical discussions between parties.</p>
+          </div>
+          <div class="card n-card">
+            <span class="n-card-num">06</span>
+            <h3>Commercial Negotiation &amp; Transaction</h3>
+            <p>Support commercial negotiation and help coordinate dismantling, logistics and installation requirements as the transaction develops.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="sec">
+    <!-- ── What Trust DealMakers Can Do ── -->
+    <section id="rd-whatwedo" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Our Capabilities</p>
+        <h2 class="s-title">What Trust DealMakers Can Do</h2>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>International Market Development</h3>
+            <p>Explore where a particular asset or equipment category may have commercial relevance in international markets.</p>
+          </div>
+          <div class="card">
+            <h3>Buyer Identification &amp; Qualification</h3>
+            <p>Identify potential international organisations that may have a relevant application. Distinguish potentially relevant buyers from generic contacts.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial Outreach</h3>
+            <p>Where covered by the mandate, approach selected potential counterparties with an appropriate commercial proposition.</p>
+          </div>
+          <div class="card">
+            <h3>Buyer&ndash;Seller Introduction</h3>
+            <p>Where genuine interest develops, facilitate appropriate commercial discussions between asset owner and potential buyer.</p>
+          </div>
+          <div class="card">
+            <h3>Technical Information Coordination</h3>
+            <p>Help coordinate the exchange of available technical information between the parties.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial Development &amp; Cross-Border Coordination</h3>
+            <p>Where appropriate, remain involved as the opportunity progresses towards negotiation. Help coordinate communication around inspection, dismantling, logistics and other transaction-related requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Not a Listing Website ── -->
+    <section id="rd-not-listing" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">An Important Distinction</p>
+        <h2 class="s-title">We Are Not a Used-Machinery Listing Website</h2>
+        <p class="s-lead">We are not trying to create another online catalogue containing thousands of machines. Our objective is more selective.</p>
+        <div class="box">
+          <h3>Identify &rarr; Understand &rarr; Find &rarr; Develop</h3>
+          <p>Identify the asset &rarr; understand its application &rarr; identify relevant markets &rarr; find potential buyers &rarr; develop genuine commercial interest. A database can provide names. A commercial mandate should create opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Old Machinery — Why It May Still Have Value ── -->
+    <section id="rd-old-value" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Rethinking Value</p>
+        <h2 class="s-title">Old Machinery Can Still Have Value</h2>
+        <p class="s-lead">Age alone does not determine commercial value. We do not automatically classify equipment as valuable or worthless based only on age.</p>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>A Machine May Be Old But</h3>
+            <ul>
+              <li>Well maintained</li>
+              <li>Operational</li>
+              <li>Mechanically sound</li>
+              <li>Supported by available spares</li>
+              <li>Proven in production</li>
+              <li>Suitable for a specific application</li>
+              <li>Economically attractive compared with new equipment</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>What Matters</h3>
+            <p>Conversely, a relatively new machine may have limited buyer interest if its specifications are highly specialised or obsolete. Application, condition, configuration and market demand matter.</p>
+            <p style="margin-top:16px;">A machine is not simply a piece of metal. It represents: Technology + Capacity + Application + Production Capability + Capital Investment. Understanding the technology behind an asset helps determine who might need it, which industries could use it and which countries may have demand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Modernisation Creates Opportunities ── -->
+    <section id="rd-modernisation" class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Market Dynamics</p>
+        <h2 class="s-title">Industrial Modernisation Creates Redeployment Opportunities</h2>
+        <p class="s-lead">As companies modernise their manufacturing systems, the resulting surplus can create an opportunity for manufacturers elsewhere.</p>
+        <div class="g2" style="margin-top:28px;">
+          <div class="card">
+            <h3>What Gets Replaced</h3>
+            <ul>
+              <li>Older production lines</li>
+              <li>Conventional machine tools</li>
+              <li>Manual equipment</li>
+              <li>Legacy automation</li>
+              <li>Older furnaces</li>
+              <li>Process systems</li>
+              <li>Complete plants</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Where Demand Exists</h3>
+            <p>This is particularly relevant where the receiving market has:</p>
+            <ul>
+              <li>Lower capital availability</li>
+              <li>Growing industrial demand</li>
+              <li>Existing technical capability</li>
+              <li>Demand for proven equipment</li>
+              <li>Need for economical production capacity</li>
+            </ul>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">India has a large installed base of industrial machinery and manufacturing equipment. As Indian companies modernise, consolidate and upgrade facilities, additional industrial assets may become available. At the same time, manufacturers in other markets may be looking for economical access to production capability. Trust DealMakers operates between these two realities.</p>
+      </div>
+    </section>
+
+    <!-- ── Confidential Mandates ── -->
+    <section id="rd-confidential" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Discretion</p>
+        <h2 class="s-title">Confidential Industrial Asset Mandates</h2>
+        <p class="s-lead">We understand that surplus equipment can be commercially sensitive.</p>
+        <p class="intro-p">An owner may not want the market to know that:</p>
+        <div class="tag-grid" style="margin-bottom:28px;">
+          <span class="tag">A plant is being closed</span>
+          <span class="tag">A production line is being replaced</span>
+          <span class="tag">Machinery is available</span>
+          <span class="tag">Capacity is being rationalised</span>
+          <span class="tag">A business is restructuring</span>
+          <span class="tag">A facility is being relocated</span>
+        </div>
+        <p class="intro-p">For appropriate mandates, commercial outreach can be handled discreetly. Where required, confidentiality and NDA arrangements can be discussed before sensitive information is released.</p>
+      </div>
+    </section>
+
+    <!-- ── Who Buys ── -->
+    <section id="rd-who-buys" class="sec bg-light">
       <div class="wrap">
         <p class="s-label-l">Who Buys</p>
-        <h2 class="s-title">Connecting assets with global demand</h2>
+        <h2 class="s-title">Connecting Assets with Global Demand</h2>
         <p class="s-lead">Through international business development, we connect industrial assets with organisations that can extract long-term productive value.</p>
         <div class="g2" style="margin-top:28px;">
           <div class="card">
             <h3>Overseas Industrial Buyers</h3>
-            <p>Manufacturers expanding production capacity through acquisition of proven industrial equipment — organisations that value productive capacity over greenfield capital expenditure.</p>
+            <p>Manufacturers expanding production capacity through acquisition of proven industrial equipment &mdash; organisations that value productive capacity over greenfield capital expenditure.</p>
           </div>
           <div class="card">
             <h3>EPC Contractors &amp; Project Organisations</h3>
@@ -1805,6 +4271,177 @@
       </div>
     </section>
 
+    <!-- ── From Machine to Market ── -->
+    <section class="sec bg-dark">
+      <div class="wrap">
+        <p class="s-label-l" style="color:rgba(255,255,255,.6);">From Machine to Market</p>
+        <h2 class="s-title" style="color:#fff;">The Core Question: Where Can This Asset Create Value Again?</h2>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">Machine &rarr; Manufacturer</h3>
+            <p style="color:rgba(255,255,255,.7);">Individual equipment matched with a specialist manufacturer who can put it to productive use.</p>
+          </div>
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">Production Line &rarr; New Operator</h3>
+            <p style="color:rgba(255,255,255,.7);">Complete production lines redeployed to manufacturers in emerging markets expanding their operations.</p>
+          </div>
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">Steel Plant &rarr; Emerging Market</h3>
+            <p style="color:rgba(255,255,255,.7);">Integrated steel-making facilities finding new life in markets with growing industrial demand.</p>
+          </div>
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">CNC Equipment &rarr; Engineering Company</h3>
+            <p style="color:rgba(255,255,255,.7);">Precision machine tools matched with specialist engineering operations seeking proven equipment.</p>
+          </div>
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">Process Plant &rarr; Industrial Investor</h3>
+            <p style="color:rgba(255,255,255,.7);">Chemical and process installations redeployed to investors establishing manufacturing operations.</p>
+          </div>
+          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
+            <h3 style="color:#fff;">Complete Plant &rarr; International Buyer</h3>
+            <p style="color:rgba(255,255,255,.7);">Entire manufacturing facilities acquired as integrated systems by international industrial groups.</p>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,.7);margin-top:28px;font-size:.95rem;line-height:1.7;">The opportunity is different for every asset.</p>
+      </div>
+    </section>
+
+    <!-- ── Who Can Approach Us ── -->
+    <section id="rd-who-approach" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Who Can Approach Us</p>
+        <h2 class="s-title">We Work with a Range of Industrial Stakeholders</h2>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Industrial Owners</h3>
+            <p>Companies replacing machinery or modernising plants.</p>
+          </div>
+          <div class="card">
+            <h3>Plant Owners</h3>
+            <p>Owners closing, relocating or restructuring manufacturing operations.</p>
+          </div>
+          <div class="card">
+            <h3>Industrial Companies</h3>
+            <p>Organisations holding surplus equipment after capacity changes.</p>
+          </div>
+          <div class="card">
+            <h3>EPC &amp; Project Organisations</h3>
+            <p>Companies handling plant dismantling, relocation or redevelopment.</p>
+          </div>
+          <div class="card">
+            <h3>Asset Owners &amp; Investors</h3>
+            <p>Organisations seeking international buyers for industrial equipment.</p>
+          </div>
+          <div class="card">
+            <h3>Manufacturers</h3>
+            <p>Companies with under-utilised production equipment or capacity.</p>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">We also work with corporate restructuring and asset transition situations where industrial equipment needs a new commercial destination.</p>
+      </div>
+    </section>
+
+    <!-- ── What We Do Not Promise ── -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Transparency</p>
+        <h2 class="s-title">What We Do Not Promise</h2>
+        <p class="s-lead">We do not guarantee a buyer. No responsible intermediary can guarantee that a particular machine or plant will sell.</p>
+        <p class="intro-p">International asset transactions depend on equipment condition, technical suitability, price expectations, buyer demand, country regulations, inspection, dismantling, transportation, installation, financing and commercial negotiations.</p>
+        <div class="box">
+          <h3>What We Can Offer</h3>
+          <p>A structured attempt to identify and develop genuine international buyer opportunities. A successful international asset transaction requires both sides to understand the complete commercial proposition &mdash; from asset value and dismantling cost through packing, transportation, export requirements, installation, buyer refurbishment and commissioning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why Trust DealMakers ── -->
+    <section id="rd-why-tdm" class="sec">
+      <div class="wrap">
+        <p class="s-label-l">Why Trust DealMakers</p>
+        <h2 class="s-title">Industrial Experience Matters</h2>
+        <p class="s-lead">Understanding industrial equipment requires more than knowing a machine&rsquo;s name. Our perspective is informed by practical experience.</p>
+        <div class="g3" style="margin-top:28px;">
+          <div class="card">
+            <h3>Industrial &amp; Manufacturing</h3>
+            <ul>
+              <li>Steel manufacturing</li>
+              <li>Steel projects</li>
+              <li>Rolling mills</li>
+              <li>Industrial oxygen plants</li>
+              <li>Solvent extraction</li>
+              <li>Manufacturing operations</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Procurement &amp; Commercial</h3>
+            <ul>
+              <li>Industrial procurement</li>
+              <li>Capital equipment</li>
+              <li>International trade</li>
+              <li>Supplier evaluation</li>
+              <li>Project execution</li>
+              <li>Commercial negotiation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Executive-Level Understanding</h3>
+            <p>Trust DealMakers is led by Anil Mahajane, MBA (IIFT), whose executive-search career has involved interviewing and assessing C-suite and senior industry professionals across manufacturing, engineering and technology. Industrial transactions are ultimately driven by senior decision-makers &mdash; CEO, Managing Director, Plant Head, Operations Head, Procurement Head, CFO, Technical Director and Project Director. Understanding how they think about technology, capital expenditure, production economics and commercial opportunity adds another dimension to industrial asset redeployment.</p>
+          </div>
+        </div>
+        <p class="intro-p" style="margin-top:28px;">This industrial understanding helps us communicate more meaningfully with both asset owners and potential buyers. Understanding the technology behind an asset helps determine who might need it, which industries could use it, which countries may have demand, what alternative equipment exists, whether the technology remains commercially relevant, and whether it is better sold individually or as part of a production system.</p>
+        <div style="margin-top:20px;">
+          <a href="/about/" onclick="showPage('about');return false;" class="btn btn-red" style="background:transparent;color:var(--red);border:2px solid var(--red);">About Trust DealMakers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Summary Tag Cloud ── -->
+    <section class="sec bg-light">
+      <div class="wrap">
+        <p class="s-label-l">Industrial Assets We May Consider</p>
+        <h2 class="s-title">Our Focus Can Include</h2>
+        <div class="tag-grid">
+          <span class="tag">Steel Melt Shops</span>
+          <span class="tag">Furnaces</span>
+          <span class="tag">Continuous Casting</span>
+          <span class="tag">Rolling Mills</span>
+          <span class="tag">Reheating Furnaces</span>
+          <span class="tag">Heat Treatment</span>
+          <span class="tag">CNC</span>
+          <span class="tag">VMC</span>
+          <span class="tag">HMC</span>
+          <span class="tag">Turning</span>
+          <span class="tag">Grinding</span>
+          <span class="tag">Milling</span>
+          <span class="tag">EDM</span>
+          <span class="tag">Gear Machines</span>
+          <span class="tag">Presses</span>
+          <span class="tag">Sheet-Metal Equipment</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Cobots</span>
+          <span class="tag">PLC</span>
+          <span class="tag">Industrial Vision</span>
+          <span class="tag">Chemical Plants</span>
+          <span class="tag">Solvent Extraction</span>
+          <span class="tag">Reactors</span>
+          <span class="tag">Distillation</span>
+          <span class="tag">Heat Exchangers</span>
+          <span class="tag">Boilers</span>
+          <span class="tag">Compressors</span>
+          <span class="tag">Chillers</span>
+          <span class="tag">Generators</span>
+          <span class="tag">Transformers</span>
+          <span class="tag">Production Lines</span>
+          <span class="tag">Packaging</span>
+          <span class="tag">Food Processing</span>
+          <span class="tag">Hospital Equipment</span>
+          <span class="tag">Laboratory Equipment</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
     <div class="cta-band">
       <h2>Redeploy Your Industrial Assets Globally</h2>
       <p>Tell us about your surplus machinery, plant or equipment. We will assess the international market opportunity and identify potential buyers.</p>
@@ -1812,7 +4449,6 @@
         <a href="/engage/" onclick="engageFrom('industrial');return false;" class="btn btn-red">Submit Industrial Asset Enquiry</a>
       </div>
     </div>
-
   </div><!-- /industrial -->
 
 
@@ -2945,6 +5581,20 @@
         var y = toc.getBoundingClientRect().top + window.pageYOffset - 90;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
+    }
+
+    /* ── Section Jump (page dropdowns) ── */
+    function secJump(sel) {
+      var id = sel.value;
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (el) {
+        var navH = 72;
+        var secNavH = document.querySelector('.sec-nav') ? document.querySelector('.sec-nav').offsetHeight : 0;
+        var y = el.getBoundingClientRect().top + window.pageYOffset - navH - secNavH - 8;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      sel.value = '';
     }
 
     /* ── Init ── */
