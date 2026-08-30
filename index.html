@@ -821,6 +821,19 @@
       transition: background .2s, border-color .2s, color .2s;
     }
     .tag:hover { background: var(--red); border-color: var(--red); color: var(--white); }
+    .bg-dark .tag { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.12); color: #fff; }
+    .bg-dark .tag p, .bg-dark .tag-desc { color: rgba(255,255,255,.7); }
+
+    .center-cta-p {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 32px auto 0;
+      line-height: 1.7;
+    }
+    .center-cta-p a { color: var(--red); font-weight: 600; }
+    .accent-link { color: var(--red); font-weight: 600; }
 
     /* ═══════════════════════════════════
        PROFILE (ABOUT)
@@ -1681,7 +1694,7 @@
           </div>
         </div>
 
-        <p style="text-align:center;font-size:1rem;color:#666;max-width:640px;margin:40px auto 0;line-height:1.7;">Not sure which of these is yours yet? <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" style="color:#CC0000;font-weight:600;cursor:pointer;">Tell us your objective</a> and we'll help you find the route.</p>
+        <p class="center-cta-p">Not sure which of these is yours yet? <a href="/engage/" onclick="engageFrom('bring-to-india');return false;">Tell us your objective</a> and we'll help you find the route.</p>
       </div>
     </section>
 
@@ -1708,7 +1721,7 @@
           <span class="tag">Distribution Model</span>
           <span class="tag">Commercial Scale</span>
         </div>
-        <p style="margin-top:16px;color:#666;">Not on how many results a search returns.</p>
+        <p style="margin-top:16px;color:var(--muted);">Not on how many results a search returns.</p>
 
         <div class="box" style="margin-top:24px;">
           <h3>Our Approach</h3>
@@ -1807,7 +1820,7 @@
               <li>Co-development</li>
               <li>Strategic alliances</li>
             </ul>
-            <p style="margin-top:12px;">Often the first step toward Indian manufacturing feeding a wider global supply chain. For partnerships beyond a standard customer relationship, see <a href="/strategic-partnerships/" onclick="showPage('strategic-partnerships');return false;" style="color:#CC0000;font-weight:600;">Strategic Partnerships</a>.</p>
+            <p style="margin-top:12px;">Often the first step toward Indian manufacturing feeding a wider global supply chain. For partnerships beyond a standard customer relationship, see <a href="/strategic-partnerships/" onclick="showPage('strategic-partnerships');return false;" class="accent-link">Strategic Partnerships</a>.</p>
           </div>
           <div class="card n-card">
             <span class="n-card-num">05</span>
@@ -2172,7 +2185,7 @@
           <p style="margin-top:12px;">Not on us. We don't sell guaranteed orders. We build credible commercial opportunities.</p>
         </div>
 
-        <p style="text-align:center;font-size:1rem;color:#666;max-width:640px;margin:40px auto 0;line-height:1.7;">Ready to scope a mandate? <a href="/engage/" onclick="engageFrom('bring-to-india');return false;" style="color:#CC0000;font-weight:600;cursor:pointer;">Start the conversation</a> — there's no obligation until the mandate is agreed.</p>
+        <p class="center-cta-p">Ready to scope a mandate? <a href="/engage/" onclick="engageFrom('bring-to-india');return false;">Start the conversation</a> — there is no obligation until the mandate is agreed.</p>
       </div>
     </section>
 
@@ -3412,35 +3425,35 @@
     <!-- ── Machine to Market (dark band) ── -->
     <section class="sec bg-dark">
       <div class="wrap">
-        <p class="s-label-l" style="color:rgba(255,255,255,.6);">From Machine to Market</p>
-        <h2 class="s-title" style="color:#fff;">Where Can This Asset Create Value Again?</h2>
+        <p class="s-label">From Machine to Market</p>
+        <h2 class="s-title s-title-c">Where Can This Asset Create Value Again?</h2>
         <div class="g3" style="margin-top:24px;">
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">Machine &rarr; Manufacturer</h3>
-            <p style="color:rgba(255,255,255,.7);">Individual equipment matched with a specialist manufacturer.</p>
+          <div class="card">
+            <h3>Machine &rarr; Manufacturer</h3>
+            <p>Individual equipment matched with a specialist manufacturer.</p>
           </div>
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">Production Line &rarr; New Operator</h3>
-            <p style="color:rgba(255,255,255,.7);">Complete lines redeployed to expanding manufacturers.</p>
+          <div class="card">
+            <h3>Production Line &rarr; New Operator</h3>
+            <p>Complete lines redeployed to expanding manufacturers.</p>
           </div>
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">Steel Plant &rarr; Emerging Market</h3>
-            <p style="color:rgba(255,255,255,.7);">Integrated steel-making facilities finding new life.</p>
+          <div class="card">
+            <h3>Steel Plant &rarr; Emerging Market</h3>
+            <p>Integrated steel-making facilities finding new life.</p>
           </div>
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">CNC Equipment &rarr; Engineering Company</h3>
-            <p style="color:rgba(255,255,255,.7);">Precision machine tools matched with proven demand.</p>
+          <div class="card">
+            <h3>CNC Equipment &rarr; Engineering Company</h3>
+            <p>Precision machine tools matched with proven demand.</p>
           </div>
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">Process Plant &rarr; Industrial Investor</h3>
-            <p style="color:rgba(255,255,255,.7);">Chemical and process installations redeployed to investors.</p>
+          <div class="card">
+            <h3>Process Plant &rarr; Industrial Investor</h3>
+            <p>Chemical and process installations redeployed to investors.</p>
           </div>
-          <div class="card" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);">
-            <h3 style="color:#fff;">Complete Plant &rarr; International Buyer</h3>
-            <p style="color:rgba(255,255,255,.7);">Entire facilities acquired as integrated systems.</p>
+          <div class="card">
+            <h3>Complete Plant &rarr; International Buyer</h3>
+            <p>Entire facilities acquired as integrated systems.</p>
           </div>
         </div>
-        <p style="color:rgba(255,255,255,.7);margin-top:24px;font-size:.95rem;">The opportunity is different for every asset.</p>
+        <p class="s-lead s-lead-c" style="margin-top:24px;margin-bottom:0;">The opportunity is different for every asset.</p>
       </div>
     </section>
 
@@ -3912,7 +3925,7 @@
         </div>
 
         <div class="box" style="margin-top:32px;">
-          <h3 style="color:var(--dark);">Anil Mahajane's Combined Experience</h3>
+          <h3>Anil Mahajane's Combined Experience</h3>
           <ul>
             <li>Industrial manufacturing experience</li>
             <li>Capital-equipment experience</li>
@@ -3934,7 +3947,7 @@
         </div>
 
         <div class="box" style="margin-top:24px;">
-          <h3 style="color:var(--dark);">Particularly Useful in Evaluating and Developing</h3>
+          <h3>Particularly Useful in Evaluating and Developing</h3>
           <ul>
             <li>Technology partnerships</li>
             <li>Industrial technology tie-ups</li>
