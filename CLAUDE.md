@@ -61,6 +61,21 @@ Machinery manufacturers · Industrial chemicals · Specialty chemicals · Medica
 | A | mail | 95.216.16.101 | DNS only |
 | MX | trustdealmakers.in | mail.trustdealmakers.in | DNS only |
 
+### trustdealmakers.com (redirect-only domain)
+
+Registered at GoDaddy, DNS on Cloudflare (same imani + nash nameservers). It hosts no site: every request 301-redirects to `https://trustdealmakers.in/`.
+
+| Type | Name | Value | Proxy |
+|------|------|-------|-------|
+| A | trustdealmakers.com | 192.0.2.1 (placeholder, never reached) | Proxied |
+| CNAME | www | trustdealmakers.com | Proxied |
+| MX ×3 | trustdealmakers.com | route1/2/3.mx.cloudflare.net | DNS only |
+| TXT | trustdealmakers.com | SPF, plus DKIM and DMARC records for Email Routing | DNS only |
+
+- **Redirect:** Cloudflare → Rules → Redirect Rules, "Redirect to .in": hostname `trustdealmakers.com` or `www.trustdealmakers.com` → static 301 to `https://trustdealmakers.in`. Paths and query strings are dropped (fine for a single-page site).
+- **Email:** Cloudflare Email Routing forwards `india@trustdealmakers.com` to the owner's Gmail.
+- **Gotcha:** GoDaddy's "domain forwarding" setting does nothing here. It only works while the domain uses GoDaddy nameservers. Moving DNS to Cloudflare (for Email Routing) also imported GoDaddy's parking records, which showed a GoDaddy `/lander` page until they were replaced (fixed 2026-10-16). The A and www records must stay **Proxied**, or the redirect rule never runs.
+
 ---
 
 ## Site structure
