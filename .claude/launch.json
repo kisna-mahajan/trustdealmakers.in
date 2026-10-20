@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/dev-server.js"],
+      "port": 8765
+    },
+    {
+      "name": "site-built",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/dev-server.js", "_site"],
+      "port": 8767
+    }
+  ]
+}
