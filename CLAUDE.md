@@ -40,7 +40,7 @@ Machinery manufacturers · Industrial chemicals · Specialty chemicals · Medica
 
 | Item | Detail |
 |------|--------|
-| Hosting | GitHub Pages, `main` branch, `/ (root)` |
+| Hosting | GitHub Pages, source **GitHub Actions** (`Publish site` workflow builds `_site/` from `main`; switched from "Deploy from a branch" on 2026-10-20) |
 | DNS | Cloudflare (nameservers: imani + nash) |
 | Domain registrar | GoDaddy |
 | Custom domain | trustdealmakers.in |
@@ -175,6 +175,7 @@ Scale: hero h1 `clamp(2rem, 3.9vw, 3.6rem)` > sub-hero h1 > `.s-title` `clamp(1.
 - Inline JS in `onclick="..."` attributes: Python `re.sub` replacement strings can leave a literal backslash before quotes and break the handler. After bulk edits, run `node --check` on the extracted `<script>` and on each inline handler.
 - A new page or URL needs: a `div.page`, entries in `pageUrls` (plus any alias in `urlToPage`), `404.html`, `pageTitles`, `routes` in `tools/build-site.mjs`, the hero preload map in `<head>` (if it has a hero), and `sitemap.xml`.
 - The build rewrites head tags by exact pattern (`<meta name="description" content="..." />` etc.). If you change how those tags are written in index.html, run `node tools/build-site.mjs` locally: it stops with an error rather than publish wrong metadata.
+- Never create an `AGENTS.md`: Codex reads this CLAUDE.md as its fallback, and an AGENTS.md would take its place.
 - Python scripts in a temp folder: run them with `python -I`. A helper named like a stdlib module (e.g. `inspect.py`) next to the script gets imported instead of the real module.
 - `.nav-dd:focus-within` drives keyboard opening of the dropdown. Do not switch it to `:has(:focus-visible)`: focus is lost while moving from the trigger into the menu.
 - Do not set `overflow-x: hidden` on `html`: `body` then becomes the scroll container and the sticky section nav stops sticking.
@@ -184,5 +185,5 @@ Scale: hero h1 `clamp(2rem, 3.9vw, 3.6rem)` > sub-hero h1 > `.s-title` `clamp(1.
 
 ## Known issues / pending work
 
-1. (Resolved 2026-10-20, once Pages uses GitHub Actions) Inner pages used to return 404 + redirect while sitemap.xml listed them. Now each is a real page. After the switch, check Google Search Console for the 8 inner URLs.
+1. (Resolved 2026-10-20, live after PR #11) Inner pages used to return 404 + redirect while sitemap.xml listed them. Verified live: all 8 inner URLs return 200 with their own titles; `/CLAUDE.md` and `/README.md` now 404. Owner to resubmit sitemap.xml in Google Search Console and check the inner URLs get indexed.
 2. `images/international.webp` (662 KB) and the original hero files are no longer loaded; they can be removed from the repo once the owner is happy with the new images.
